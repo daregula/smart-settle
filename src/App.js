@@ -1,11 +1,19 @@
-import './styles/App.css'
-import { CloseIcon, AtSignIcon } from '@chakra-ui/icons'
+import './styles/App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import {Home} from "./pages/Home"
+import {Login} from "./pages/Login"
+import {Navbar} from "./Navbar"
 
 function App() {
   return (
     <div className="App">
-      <CloseIcon />
-      <AtSignIcon />
+      <Router>
+        <Navbar></Navbar>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/login' element={<Login/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
