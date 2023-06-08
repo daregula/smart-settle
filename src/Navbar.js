@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles/Navbar.css';
 import { Link } from "react-router-dom"
+import logo from './images/logo.png';
 import {
   Box,
   Flex,
@@ -64,7 +65,7 @@ export const WithSubnavigation = () => {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
-            Logo
+            <img src={logo} alt='' className='logo'></img>
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -202,28 +203,24 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/'
   },
   {
-    label: 'My Searches',
-    href: '/contact',
+    label: 'Get Started',
+    children: [
+      {
+        label: 'Find your dream location',
+        subLabel: 'Find your dream location',
+        href: '#',
+      },
+      {
+        label: 'My Searches',
+        subLabel: 'Look at your previous searches',
+        href: '#',
+      },
+    ],
   },
   {
     label: 'About',
     href: '/about',
   }
-  // {
-  //   label: 'Temp',
-  //   children: [
-  //     {
-  //       label: 'Job Board',
-  //       subLabel: 'Find your dream design job',
-  //       href: '#',
-  //     },
-  //     {
-  //       label: 'Freelance Projects',
-  //       subLabel: 'An exclusive list for contract work',
-  //       href: '#',
-  //     },
-  //   ],
-  // }
 ];
 
 

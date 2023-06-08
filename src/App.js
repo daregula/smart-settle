@@ -24,6 +24,7 @@ function App() {
           <Route path='/about' element={<About/>} />
           <Route path='/contact' element={<Login/>} />
           <Route path='/signup' element={<SignUp/>} />
+          <Route path='*' element={<h1>Page Not Found</h1>} />
         </Routes>
         <Footer></Footer>
       </Router>
