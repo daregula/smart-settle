@@ -1,7 +1,7 @@
 import React from 'react'
 import { extendTheme } from '@chakra-ui/react'
 
-cosnt config = {
+const config = {
   initialColorMode: 'dark',
   useSystemColorMode: 'false',
 }
