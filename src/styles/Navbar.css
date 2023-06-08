@@ -1,4 +1,5 @@
 .navbar {
-    background-color: rgb(196, 193, 193);
-    height: 60px;
+    border-bottom: 0.5px solid black;
+    height: 40px;
+    margin: 10px;
 }
