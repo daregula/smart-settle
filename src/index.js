@@ -4,9 +4,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { extendTheme, ChakraProvider } from '@chakra-ui/react'
 
-
-
-
 const colors = {
   brand: {
     900: '#1a365d',
