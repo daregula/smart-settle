@@ -1,9 +1,11 @@
-import './styles/App.css';
+import './styles/App.css'
+import { CloseIcon, AtSignIcon } from '@chakra-ui/icons'
 
 function App() {
   return (
     <div className="App">
-      bs
+      <CloseIcon />
+      <AtSignIcon />
     </div>
   );
 }
