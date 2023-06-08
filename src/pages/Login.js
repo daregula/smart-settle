@@ -18,7 +18,7 @@ import {
 
 export const Login = () => {
     return (
-        <div></div>
+        <SimpleCard></SimpleCard>
     )
 }
 

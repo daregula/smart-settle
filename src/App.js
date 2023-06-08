@@ -7,7 +7,6 @@ import {About} from "./pages/About"
 import {Navbar} from "./Navbar"
 import {Footer} from "./Footer"
 import {WithSubnavigation} from "./Navbar"
-import {SimpleCard} from "./pages/Login"
 
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
         {/* <DesktopNav></DesktopNav> */}
         {/* <DesktopSubNav></DesktopSubNav> */}
         <WithSubnavigation></WithSubnavigation>
-        <SimpleCard></SimpleCard>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/login' element={<Login/>} />
