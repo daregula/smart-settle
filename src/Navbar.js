@@ -20,15 +20,9 @@ import {
 import {
   HamburgerIcon,
   CloseIcon,
-  ChevronDownIcon,
+  // ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
-
-
-// SmartSettle
-// <Link to="/"> Home </Link>
-// <Link to="/login"> Login </Link>
-
 
 export const Navbar = () => {
   return (
@@ -98,7 +92,7 @@ export const WithSubnavigation = () => {
             fontWeight={600}
             color={'white'}
             bg={'pink.400'}
-            href={'#'}
+            href={'/signup'}
             _hover={{
               bg: 'pink.300',
             }}>
@@ -126,7 +120,7 @@ export const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 p={2}
-                href={navItem.href ?? '#'}
+                to={navItem.href ?? '#'}
                 fontSize={'sm'}
                 fontWeight={500}
                 color={linkColor}
@@ -204,43 +198,32 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
-    children: [
-      {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
-      },
-      {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Find Work',
-    children: [
-      {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
-      },
-      {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Learn Design',
-    href: '#',
-  },
-  {
     label: 'Home',
-    href: 'pages/Home',
+    href: '/'
   },
+  {
+    label: 'My Searches',
+    href: '/contact',
+  },
+  {
+    label: 'About',
+    href: '/about',
+  }
+  // {
+  //   label: 'Temp',
+  //   children: [
+  //     {
+  //       label: 'Job Board',
+  //       subLabel: 'Find your dream design job',
+  //       href: '#',
+  //     },
+  //     {
+  //       label: 'Freelance Projects',
+  //       subLabel: 'An exclusive list for contract work',
+  //       href: '#',
+  //     },
+  //   ],
+  // }
 ];
 
 

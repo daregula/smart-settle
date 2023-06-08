@@ -1,5 +1,5 @@
 import React from 'react'
-import { extendTheme } from '@chakra-ui/react'
+// import { extendTheme } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
 
 
