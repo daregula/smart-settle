@@ -12,6 +12,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar></Navbar>
+        {/* might not need this shit under */}
         {/* <DesktopNav></DesktopNav> */}
         {/* <DesktopSubNav></DesktopSubNav> */}
         <WithSubnavigation></WithSubnavigation>
