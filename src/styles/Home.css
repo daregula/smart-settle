@@ -2,13 +2,10 @@
     margin-left: auto;
     margin-right: auto;
     width: 30em;
-    height: calc(100vh - 60px - 150px);
-    display: flex;
-    flex-direction: column;
 }
 
 
-.signup {
+/* .signup {
     margin: 10px;
     border-top: 0.5px solid black;
-}
+} */

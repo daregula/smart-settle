@@ -159,7 +159,7 @@ export const DesktopNav = () => {
 export const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
     <Link
-      href={href}
+      to={href}
       role={'group'}
       display={'block'}
       p={2}
@@ -209,7 +209,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'Find your dream location',
         subLabel: 'Find your dream location',
-        href: '#',
+        href: '/survey',
       },
       {
         label: 'My Searches',

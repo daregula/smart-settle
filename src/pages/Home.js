@@ -16,14 +16,6 @@ import {
 export const Home = () => {
     return (
         <div className='container'>
-            {/* <div className='intro'>
-                
-            </div>
-            <div className='signup'>
-                Get Started!
-                Don't have an account?
-                Sign up! 
-            </div> */}
             <CallToActionWithAnnotation />
         </div>
     )
