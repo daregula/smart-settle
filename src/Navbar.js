@@ -65,7 +65,8 @@ export const WithSubnavigation = () => {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
-            <img src={logo} alt='' className='logo'></img>
+              {/* dont know why tf href wont work here so used 'to' instead */}
+            <Link to={'/'}><img src={logo} alt='' className='logo'></img></Link>
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -217,10 +218,6 @@ const NAV_ITEMS: Array<NavItem> = [
       },
     ],
   },
-  {
-    label: 'About',
-    href: '/about',
-  }
 ];
 
 

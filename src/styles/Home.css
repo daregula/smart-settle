@@ -1,12 +1,12 @@
 .container {
     margin-left: auto;
     margin-right: auto;
-    width: 30em
+    width: 30em;
+    height: calc(100vh - 60px - 150px);
+    display: flex;
+    flex-direction: column;
 }
 
-.intro {
-    
-}
 
 .signup {
     margin: 10px;

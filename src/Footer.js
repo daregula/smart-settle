@@ -1,6 +1,5 @@
 import React from 'react'
 import './styles/Footer.css';
-import { Link } from "react-router-dom";
 import logo from './images/logo.png';
 
 import {
@@ -9,6 +8,7 @@ import {
     Container,
     SimpleGrid,
     Stack,
+    Link,
     Text,
     VisuallyHidden,
     Input,
@@ -89,7 +89,7 @@ export default function LargeWithNewsletter() {
                     <Logo color={useColorModeValue('gray.700', 'white')} />
                 </Box>
                 <Text fontSize={'sm'}>
-                    © 2022 Chakra Templates. All rights reserved
+                    © 2023 Smart Settle. All rights reserved
                 </Text>
                 <Stack direction={'row'} spacing={6}>
                     <SocialButton label={'Twitter'} href={'#'}>
@@ -105,19 +105,14 @@ export default function LargeWithNewsletter() {
                 </Stack>
                 <Stack align={'flex-start'}>
                 <ListHeader>Company</ListHeader>
-                <Link href={'#'}>About us</Link>
-                <Link href={'#'}>Blog</Link>
+                <Link href={'./'}>About us</Link>
                 <Link href={'#'}>Contact us</Link>
-                <Link href={'#'}>Pricing</Link>
-                <Link href={'#'}>Testimonials</Link>
                 </Stack>
                 <Stack align={'flex-start'}>
                 <ListHeader>Support</ListHeader>
-                <Link href={'#'}>Help Center</Link>
                 <Link href={'#'}>Terms of Service</Link>
                 <Link href={'#'}>Legal</Link>
                 <Link href={'#'}>Privacy Policy</Link>
-                <Link href={'#'}>Satus</Link>
                 </Stack>
                 <Stack align={'flex-start'}>
                 <ListHeader>Stay up to date</ListHeader>
