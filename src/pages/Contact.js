@@ -36,11 +36,11 @@ export const Contact = () => {
 
 export function ContactForm() {
     return (
-    <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
+    <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
     <Flex>
         <Box
-        bg="#02054B"
-        color="white"
+        bg="gray.100"
+        color="#0B0E3F"
         borderRadius="lg"
         m={{ sm: 4, md: 16, lg: 10 }}
         p={{ sm: 5, md: 5, lg: 16 }}>
@@ -49,7 +49,7 @@ export function ContactForm() {
             <WrapItem>
                 <Box>
                 <Heading>Contact</Heading>
-                <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
+                <Text mt={{ sm: 3, md: 3, lg: 5 }} color="#0B0E3F">
                     Fill up the form below to contact
                 </Text>
                 <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
@@ -59,9 +59,9 @@ export function ContactForm() {
                         height="48px"
                         width="200px"
                         variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdPhone color="#1970F1" size="20px" />}>
+                        color="#0B0E3F"
+                        _hover={{ border: '2px solid #BA68C8' }}
+                        leftIcon={<MdPhone color="#BA68C8" size="20px" />}>
                         +91-988888888
                     </Button>
                     <Button
@@ -69,9 +69,9 @@ export function ContactForm() {
                         height="48px"
                         width="200px"
                         variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdEmail color="#1970F1" size="20px" />}>
+                        color="#0B0E3F"
+                        _hover={{ border: '2px solid #BA68C8' }}
+                        leftIcon={<MdEmail color="#BA68C8" size="20px" />}>
                         hello@abc.com
                     </Button>
                     <Button
@@ -79,9 +79,9 @@ export function ContactForm() {
                         height="48px"
                         width="200px"
                         variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
+                        color="#0B0E3F"
+                        _hover={{ border: '2px solid #BA68C8' }}
+                        leftIcon={<MdLocationOn color="#BA68C8" size="20px" />}>
                         Karnavati, India
                     </Button>
                     </VStack>
@@ -96,7 +96,7 @@ export function ContactForm() {
                     variant="ghost"
                     size="lg"
                     isRound={true}
-                    _hover={{ bg: '#0D74FF' }}
+                    _hover={{ bg: 'purple.300' }}
                     icon={<MdFacebook size="28px" />}
                     />
                     <IconButton
@@ -104,7 +104,7 @@ export function ContactForm() {
                     variant="ghost"
                     size="lg"
                     isRound={true}
-                    _hover={{ bg: '#0D74FF' }}
+                    _hover={{ bg: 'purple.300' }}
                     icon={<BsGithub size="28px" />}
                     />
                     <IconButton
@@ -112,7 +112,7 @@ export function ContactForm() {
                     variant="ghost"
                     size="lg"
                     isRound={true}
-                    _hover={{ bg: '#0D74FF' }}
+                    _hover={{ bg: 'purple.300' }}
                     icon={<BsDiscord size="28px" />}
                     />
                 </HStack>
@@ -155,9 +155,9 @@ export function ContactForm() {
                     <FormControl id="name" float="right">
                         <Button
                         variant="solid"
-                        bg="#0D74FF"
+                        bg="purple.400"
                         color="white"
-                        _hover={{}}>
+                        _hover={{bg: "purple.300"}}>
                         Send Message
                         </Button>
                     </FormControl>
