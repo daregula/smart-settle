@@ -29,12 +29,12 @@ import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
 
 export const Contact = () => {
     return (
-        <contactForm />
+        <ContactForm />
     )
 }
 
 
-export function contactForm() {
+export function ContactForm() {
     return (
     <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
     <Flex>
