@@ -126,10 +126,10 @@ export default function LargeWithNewsletter() {
                     }}
                     />
                     <IconButton
-                    bg={useColorModeValue('green.400', 'green.800')}
+                    bg={useColorModeValue('purple.400', 'purple.800')}
                     color={useColorModeValue('white', 'gray.800')}
                     _hover={{
-                        bg: 'green.600',
+                        bg: 'purple.300',
                     }}
                     aria-label="Subscribe"
                     icon={<BiMailSend />}

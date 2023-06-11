@@ -64,7 +64,7 @@ export default function CallToActionWithAnnotation() {
                 rounded={'full'}
                 px={6}
                 _hover={{
-                bg: 'purple.500',
+                bg: 'purple.300',
             }}>
             Get Started
             </Button>

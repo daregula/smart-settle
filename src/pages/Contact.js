@@ -38,7 +38,7 @@ export function ContactForm() {
     return (
     <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
     <Flex>
-        <Box
+        <Box 
         bg="gray.100"
         color="#0B0E3F"
         borderRadius="lg"
