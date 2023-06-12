@@ -1,15 +1,15 @@
 import './styles/App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import {Contact} from "./pages/Contact"
-import {Home} from "./pages/Home"
-import {Login} from "./pages/Login"
+import { Contact } from "./pages/Contact"
+import { Home } from "./pages/Home"
+import { Login } from "./pages/Login"
 import { SignUp } from './pages/SignUp';
 import { Survey } from './pages/Survey';
-import {About} from "./pages/About"
-import {Navbar} from "./Navbar"
-import {Footer} from "./Footer"
-import {PageNotFound} from "./pages/PageNotFound"
-import {WithSubnavigation} from "./Navbar"
+import { About } from "./pages/About"
+import { Navbar } from "./Navbar"
+import { Footer } from "./Footer"
+import { PageNotFound } from "./pages/PageNotFound"
+import { WithSubnavigation } from "./Navbar"
 
 
 function App() {
