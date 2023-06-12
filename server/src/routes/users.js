@@ -4,10 +4,10 @@ import bcrypt from "bcrypt"
 import { UserModel } from "../models/Users.js"
 
 const router = express.Router()
+
 // creating the two route endpoints for registering a user
 router.post("/register", async (req, res) => {
-    const { username, password } = req.body
-
+    const { username, password, firstname, lastname, email } = req.body
     // creating a request to our mongodb collections
     const user = await UserModel.findOne({ username })
 
@@ -17,11 +17,14 @@ router.post("/register", async (req, res) => {
     
     const hashedPassword = await bcrypt.hash(password, 10)
 
-    const newUser = new UserModel({ username, password: hashedPassword })
+    const newUser = new UserModel({ username, password: hashedPassword, firstname, lastname, email })
     await newUser.save()
 
     res.json({ message:"User registered successfully" })
 })
+
+
+
 
 // creating the route for user login
 router.post("/login", async (req, res) => {

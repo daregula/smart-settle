@@ -34,14 +34,21 @@ export default function SignupCard() {
     const [showPassword, setShowPassword] = useState(false);
 
     // anytime the state of the username/password field is changed i.e. a new character is entered they variables are updated
-    const [password, setPassword] = useState("");
-    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("")
+    const [username, setUsername] = useState("")
+    const [firstname, setFirstname] = useState("")
+    const [lastname, setLastname] = useState("")
+    const [email, setEmail] = useState("")
+
     const onSubmit = async (event) => {
         event.preventDefault()
         try {
             await axios.post("http://localhost:3001/auth/register", {
                 username,
-                password
+                password,
+                firstname,
+                lastname,
+                email
             })
             alert("Registration Complete")
         } catch(err){
@@ -74,18 +81,28 @@ export default function SignupCard() {
                 <Box>
                 <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
-                    <Input type="text" />
+                    <Input
+                    id="firstName"
+                    type="text"
+                    onChange={(event) => setFirstname(event.target.value)}
+                    value={firstname}
+                    />
                 </FormControl>
                 </Box>
                 <Box>
                 <FormControl id="lastName">
                     <FormLabel>Last Name</FormLabel>
-                    <Input type="text" />
+                    <Input 
+                    id="lastName"
+                    type="text" 
+                    onChange={(event) => setLastname(event.target.value)}
+                    value={lastname}
+                    />
                 </FormControl>
                 </Box>
             </HStack>
             <FormControl id="username" isRequired>
-                <FormLabel>username</FormLabel>
+                <FormLabel>Username</FormLabel>
                 <Input
                 id="username"
                 type="text" 
@@ -95,26 +112,31 @@ export default function SignupCard() {
             </FormControl>
             <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input 
+                id="email"
+                type="email" 
+                onChange={(event) => setEmail(event.target.value)}
+                value={email}
+                />
             </FormControl>
             <FormControl id="password" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
-                <Input
-                id="password" 
-                type={showPassword ? 'text' : 'password'}
-                onChange={(event) => setPassword(event.target.value)}
-                value={password}
-                />
-                <InputRightElement h={'full'}>
-                    <Button
-                    variant={'ghost'}
-                    onClick={() =>
-                        setShowPassword((showPassword) => !showPassword)
-                    }>
-                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-                    </Button>
-                </InputRightElement>
+                    <Input
+                    id="password" 
+                    type={showPassword ? 'text' : 'password'}
+                    onChange={(event) => setPassword(event.target.value)}
+                    value={password}
+                    />
+                    <InputRightElement h={'full'}>
+                        <Button
+                        variant={'ghost'}
+                        onClick={() =>
+                            setShowPassword((showPassword) => !showPassword)
+                        }>
+                        {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                        </Button>
+                    </InputRightElement>
                 </InputGroup>
             </FormControl>
             <Stack spacing={10} pt={2}>

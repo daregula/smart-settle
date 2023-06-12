@@ -1,7 +1,9 @@
 import React from 'react'
 import './styles/Navbar.css';
 import { Link } from "react-router-dom"
-import logo from './images/logo.png';
+import logo from './images/logo.png'
+import { useCookies } from 'react-cookie'
+import { useNavigate } from 'react-router-dom'
 import {
   Box,
   Flex,
@@ -26,15 +28,21 @@ import {
 } from '@chakra-ui/icons';
 
 export const Navbar = () => {
+  
   return (
-    <div className='navbar'>
-      
-    </div>
+    <div className='navbar' />
   )
 }
 export const WithSubnavigation = () => {
   const { isOpen, onToggle } = useDisclosure();
+  const [cookies, setCookies] = useCookies(["access_token"])
+  const navigate = useNavigate()
 
+  const logout = () => {
+    setCookies("access_token", "")
+    window.localStorage.removeItem("userID")
+    navigate("/login")
+  }
   return (
     <Box>
       <Flex
@@ -73,19 +81,24 @@ export const WithSubnavigation = () => {
             <DesktopNav />
           </Flex>
         </Flex>
-
+          {/* setting functionality to detect when the user is signed in will remove the login and sign up buttons and replace it with a logout button instead */}
         <Stack
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <Button
+          {!cookies.access_token ? 
+            (<Stack
+              flex={{ base: 1, md: 0 }}
+              justify={'flex-end'}
+              direction={'row'}
+              spacing={6}><Button
             as={'a'}
             fontSize={'sm'}
             fontWeight={400}
             variant={'link'}
             href={'/login'}>
-            Sign In
+            Login
           </Button>
           <Button
             as={'a'}
@@ -100,6 +113,21 @@ export const WithSubnavigation = () => {
             }}>
             Sign Up
           </Button>
+          </Stack>) :
+          <Button
+            onClick={logout}
+            as={'a'}
+            display={{ base: 'none', md: 'inline-flex' }}
+            fontSize={'sm'}
+            fontWeight={600}
+            color={'white'}
+            bg={'purple.400'}
+            href={'#'}
+            _hover={{
+              bg: 'purple.300',
+            }}>
+            Logout
+          </Button>}
         </Stack>
       </Flex>
 
