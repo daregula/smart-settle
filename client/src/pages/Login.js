@@ -1,4 +1,6 @@
 import React from 'react'
+import { useState } from 'react';
+import axios from "axios"
 // import { extendTheme } from '@chakra-ui/react'
 import {
     Flex,
@@ -18,11 +20,16 @@ import {
 
 export const Login = () => {
     return (
-        <SimpleCard />
+        <div className="auth">
+            <SimpleCard />
+        </div>
+        
     )
 }
 
 export function SimpleCard() {
+    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
     return (
     <Flex
         minH={'75vh'}
@@ -42,13 +49,23 @@ export function SimpleCard() {
             boxShadow={'lg'}
             p={8}>
             <Stack spacing={4}>
-        <FormControl id="email">
-                <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+        <FormControl id="username">
+                <FormLabel>username</FormLabel>
+                <Input 
+                id="username"
+                type="text"
+                onChange={(event) => setUsername(event.target.value)}
+                value={username}
+                />
         </FormControl>
         <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" />
+                <Input 
+                id="password"
+                type="password"
+                onChange={(event) => setPassword(event.target.value)}
+                value={password}
+                />
         </FormControl>
         <Stack spacing={10}>
                 <Stack
