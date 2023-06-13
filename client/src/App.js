@@ -6,6 +6,8 @@ import { Login } from "./pages/Login"
 import { SignUp } from './pages/SignUp';
 import { Survey } from './pages/Survey';
 import { About } from "./pages/About"
+import { Results } from "./pages/Results"
+import { MySearches } from "./pages/MySearches"
 import { Navbar } from "./Navbar"
 import { Footer } from "./Footer"
 import { PageNotFound } from "./pages/PageNotFound"
@@ -28,6 +30,8 @@ function App() {
           <Route path='/contact' element={<Contact/>} />
           <Route path='/signup' element={<SignUp/>} />
           <Route path='/survey' element={<Survey/>} />
+          <Route path='/results' element={<Results/>} />
+          <Route path='/mysearches' element={<MySearches/>} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
         <Footer></Footer>

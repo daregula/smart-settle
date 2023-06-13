@@ -242,7 +242,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'My Searches',
         subLabel: 'Look at your previous searches',
-        href: '#',
+        href: '/mysearches',
       },
     ],
   },
