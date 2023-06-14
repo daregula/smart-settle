@@ -2,41 +2,43 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios';
 import { useGetUserID } from '../hooks/useGetUserID';
+import '../styles/MySearches.css'
 
 export const MySearches = () => {
     const [responses, setResponses] = useState([]);
     const userOwner = useGetUserID();
+    
 
     useEffect(() => {
-        const fetchResponses = async () => {
-            try {
-                const response = await axios.get("http://localhost:3001/responses");
-                setResponses(response.data)
-            } catch (err) {
-                console.log(err);
-            }
-        }
+        // const fetchResponses = async () => {
+        // try {
+        //     const response = await axios.get("http://localhost:3001/responses");
+        //     setResponses(response.data);
+        // } catch (err) {
+        //     console.log(err);
+        // }
+        // };
 
         const fetchSavedResponses = async () => {
             try {
                 const response = await axios.get(`http://localhost:3001/responses/savedResponses/ids/${userOwner}`);
-                console.log(response.data)
+                setResponses(response.data);
             } catch (err) {
                 console.log(err);
             }
-        }
+        };
 
-        fetchResponses();
+        // fetchResponses();
         fetchSavedResponses();
-    }, [])
+    }, [userOwner]);
     return (
         <div>
-            <h1> Responses </h1>
+            <h1> My Previous Searches </h1>
             <br></br>
             <ul>
                 {responses.map((response) => (
                     <li key={response._id}>
-                        <div>
+                        <div className="mySearches">
                             <h2>Salary: {response.salary}</h2>
                             <h2>Employment: {response.employment}</h2>
                             <h2>Education: {response.education}</h2>

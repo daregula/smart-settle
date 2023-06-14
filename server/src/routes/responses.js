@@ -36,13 +36,13 @@ router.put("/", async (req, res) => {
     }
 })
 
-router.get("/savedResponses/ids:userOwner", async (req, res) => {
+router.get("/savedResponses/ids/:userOwner", async (req, res) => {
     try {
-        const user = await ResponseModel.find({
-            userOwner: { $in: userOwner},
+        const userOwner = req.params.userOwner;
+        const userResponses = await ResponseModel.find({
+            userOwner,
         });
-        // console.log(req.body.userOwner)
-        res.json(user)
+        res.json(userResponses)
     } catch (err) {
         res.json(err);
     }
