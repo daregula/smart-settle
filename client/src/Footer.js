@@ -105,7 +105,7 @@ export default function LargeWithNewsletter() {
                 </Stack>
                 <Stack align={'flex-start'}>
                 <ListHeader>Company</ListHeader>
-                <Link href={'./'}>About us</Link>
+                <Link href={'/about'}>About us</Link>
                 <Link href={'/contact'}>Contact us</Link>
                 </Stack>
                 <Stack align={'flex-start'}>

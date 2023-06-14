@@ -44,6 +44,7 @@ export const MySearches = () => {
                             <h2>Education: {response.education}</h2>
                             <h2>Weather: {response.weather}</h2>
                             <h2>Transportation: {response.transportation}</h2>
+                            <button style={{background: "lightgrey", width: "150px"}}> View Result </button>
                             <br></br>
                         </div>
                     </li>
