@@ -111,7 +111,7 @@ export const Survey = () => {
                         <option value="10">10</option>
                     </select>
                 </div>
-                    <button type='submit'> Submit </button>
+                    <button id='butt'type='submit'> Submit </button>
             </form>
             
         </div>
