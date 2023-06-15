@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios';
-import { useGetUserID } from '../hooks/useGetUserID';
+import { useGetUserID } from '../hooks/useGetUserID'
 import '../styles/MySearches.css'
+import { useNavigate } from 'react-router-dom'
+import { useCookies } from 'react-cookie'
+import { Text, Heading, Button } from '@chakra-ui/react'
 
 export const MySearches = () => {
-    const [responses, setResponses] = useState([]);
-    const userOwner = useGetUserID();
-    
+    const [responses, setResponses] = useState([])
+    const userOwner = useGetUserID()
+    const [cookies, setCookies] = useCookies(["access_token"])
+    const navigate = useNavigate()
 
     useEffect(() => {
         // const fetchResponses = async () => {
@@ -18,6 +22,10 @@ export const MySearches = () => {
         //     console.log(err);
         // }
         // };
+        
+        if (!cookies.access_token){
+            navigate("*")
+        }
 
         const fetchSavedResponses = async () => {
             try {
@@ -32,9 +40,14 @@ export const MySearches = () => {
         fetchSavedResponses();
     }, [userOwner]);
     return (
+        
         <div>
+            <Heading
+            fontWeight={600}
+            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            lineHeight={'110%'}>
             <h1> My Previous Searches </h1>
-            <br></br>
+            </Heading><br></br>
             <ul>
                 {responses.map((response) => (
                     <li key={response._id}>
@@ -44,7 +57,8 @@ export const MySearches = () => {
                             <h2>Education: {response.education}</h2>
                             <h2>Weather: {response.weather}</h2>
                             <h2>Transportation: {response.transportation}</h2>
-                            <button style={{background: "lightgrey", width: "150px"}}> View Result </button>
+                            <Button bg={'purple.400'} color={'white'} 
+                            _hover={{bg: 'purple.300'}}> View Result </Button>
                             <br></br>
                         </div>
                     </li>
