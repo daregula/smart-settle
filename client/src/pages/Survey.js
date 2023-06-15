@@ -3,7 +3,23 @@ import axios from "axios";
 import { useGetUserID } from '../hooks/useGetUserID';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Survey.css'
-
+import {
+    Flex,
+    Box,
+    Select,
+    FormControl,
+    FormLabel,
+    Input,
+    InputGroup,
+    HStack,
+    InputRightElement,
+    Stack,
+    Button,
+    Heading,
+    Text,
+    useColorModeValue,
+    Link,
+} from '@chakra-ui/react';
 
 export const Survey = () => {
     const userID = useGetUserID();
@@ -41,32 +57,49 @@ export const Survey = () => {
     return (
         
         <div className='survey'>
-            
-            <h1>Survey</h1>
             <form id="form" onSubmit={onSubmit}>
-                <div class="form-control">
-                    <label htmlFor='salary'> Salary </label>
-                    <input type='text' id='salary' name='salary' onChange={handleChange}></input>
+            <Flex
+                minH={'75vh'}
+                align={'center'}
+                justify={'center'}
+                bg={useColorModeValue('gray.50', 'gray.800')}>
+                <Stack spacing={8} mx={'auto'} maxW={'xlg'} py={12} px={6}>
+                <Stack align={'center'}>
+                    <Heading fontSize={'4xl'} textAlign={'center'}>
+                    Survey
+                    </Heading>
+                </Stack>
+                <Box
+                rounded={'lg'}
+                bg={useColorModeValue('white', 'gray.700')}
+                boxShadow={'lg'}
+                p={8}>
+                <HStack>
+                    <div class="form-control">
+                    <FormLabel>Salary</FormLabel>
+                    <Input type='text' id='salary' name='salary' onChange={handleChange} />
                 </div>
                 <div class="form-control">
-                    <label htmlFor='employment'> Employment </label>
-                    <select type='text' id='employment' name='employment' onChange={handleChange}>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
+                <FormLabel>Employment</FormLabel>
+                    <Select type='text' id='employment' name='employment' onChange={handleChange}>
+                        <option value="1">industry1</option>
+                        <option value="2">industry2</option>
+                        <option value="3">industry3</option>
+                        <option value="4">industry4</option>
+                        <option value="5">industry5</option>
+                        <option value="6">industry6</option>
+                        <option value="7">industry7</option>
+                        <option value="8">industry8</option>
+                        <option value="9">industry9</option>
+                        <option value="10">industry10</option>
+                    </Select>
                 </div>
+                </HStack>
                 
+                <HStack>
                 <div class="form-control">
-                    <label htmlFor='education'> Education </label>
-                    <select type='text' id='education' name='education' onChange={handleChange}>
+                    <FormLabel>Education</FormLabel>
+                    <Select type='text' id='education' name='education' onChange={handleChange}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -77,12 +110,12 @@ export const Survey = () => {
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option>
-                    </select>
+                    </Select>
                 </div>
 
                 <div class="form-control">
-                    <label htmlFor='weather'> Weather </label>
-                    <select type='text' id='weather' name='weather' onChange={handleChange}>
+                    <FormLabel>Weather</FormLabel>   
+                    <Select type='text' id='weather' name='weather' onChange={handleChange}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -93,12 +126,12 @@ export const Survey = () => {
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option>
-                    </select>
+                    </Select>
                 </div>
-
+                </HStack>
                 <div class="form-control">
-                    <label htmlFor='transportation'> Transportation </label>
-                    <select type='text' id='transportation' name='transportation' onChange={handleChange}>
+                    <FormLabel>Transportation</FormLabel>
+                    <Select type='text' id='transportation' name='transportation' onChange={handleChange}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -109,9 +142,22 @@ export const Survey = () => {
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option>
-                    </select>
+                    </Select>
                 </div>
-                    <button type='submit'> Submit </button>
+                <Button
+                type="submit"
+                loadingText="Submitting"
+                size="lg"
+                bg={'purple.400'}
+                color={'white'}
+                _hover={{
+                    bg: 'purple.300',
+                }}>
+                Submit
+                </Button>
+                </Box>
+                </Stack>
+                </Flex>
             </form>
             
         </div>
