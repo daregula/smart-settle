@@ -59,7 +59,13 @@ export function SimpleCard() {
             console.error(err);
         }
     }
+
+    const rstpwrd = () => {
+        navigate('/resetpassword')
+    }
+
     return (
+    <div>
     <form onSubmit={onSubmit}>
     <Flex
         minH={'75vh'}
@@ -114,7 +120,8 @@ export function SimpleCard() {
             align={'start'}
             justify={'space-between'}>
             <Checkbox>Remember me</Checkbox>
-            <Link color={'blue.400'}>Forgot password?</Link>
+            
+            <Link onClick={rstpwrd} color={'blue.400'}> Forgot password? </Link>
             </Stack>
             <Button
             type="submit"
@@ -130,5 +137,7 @@ export function SimpleCard() {
         </Stack>
     </Flex>
     </form>
+    
+    </div>
     );
 }

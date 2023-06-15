@@ -1,13 +1,15 @@
 import { Box, Heading, Text, Button } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-export const PageNotFound = () => {
+export const ResetPassword = () => {
     return (
-        <NotFound />
+        <Reset />
     )
 }
 
-export default function NotFound() {
+export default function Reset() {
+
+
     return (
         <Box textAlign="center" py={10} px={6}>
         <Heading
@@ -16,14 +18,8 @@ export default function NotFound() {
             size="2xl"
             bgGradient="linear(to-r, purple.400, purple.600)"
             backgroundClip="text">
-            404
+            ResetPassword
         </Heading>
-        <Text fontSize="18px" mt={3} mb={2}>
-            Page Not Found
-        </Text>
-        <Text color={'gray.500'} mb={6}>
-            The page you're looking for does not seem to exist
-        </Text>
 
         <Link to={'/'}> 
         <Button bg={'purple.400'} color={'white'} _hover={{bg: 'purple.300'}} > Go Home </Button>
