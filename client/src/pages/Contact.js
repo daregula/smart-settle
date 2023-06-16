@@ -19,7 +19,6 @@ import {
     Textarea,
 } from '@chakra-ui/react';
 import {
-    MdPhone,
     MdEmail,
     MdLocationOn,
     MdFacebook,
@@ -35,6 +34,7 @@ export const Contact = () => {
 //
 
 export function ContactForm() {
+
     return (
     <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
     <Flex>
@@ -50,29 +50,18 @@ export function ContactForm() {
                 <Box>
                 <Heading>Contact</Heading>
                 <Text mt={{ sm: 3, md: 3, lg: 5 }} color="#0B0E3F">
-                    Fill up the form below to contact
+                    Fill out the form for support
                 </Text>
                 <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                     <VStack pl={0} spacing={3} alignItems="flex-start">
                     <Button
                         size="md"
                         height="48px"
-                        width="200px"
+                        width="300px"
                         variant="ghost"
                         color="#0B0E3F"
-                        _hover={{ border: '2px solid #BA68C8' }}
-                        leftIcon={<MdPhone color="#BA68C8" size="20px" />}>
-                        +91-988888888
-                    </Button>
-                    <Button
-                        size="md"
-                        height="48px"
-                        width="200px"
-                        variant="ghost"
-                        color="#0B0E3F"
-                        _hover={{ border: '2px solid #BA68C8' }}
                         leftIcon={<MdEmail color="#BA68C8" size="20px" />}>
-                        hello@abc.com
+                        helloWorld@smartsettle.com
                     </Button>
                     <Button
                         size="md"
@@ -80,9 +69,8 @@ export function ContactForm() {
                         width="200px"
                         variant="ghost"
                         color="#0B0E3F"
-                        _hover={{ border: '2px solid #BA68C8' }}
                         leftIcon={<MdLocationOn color="#BA68C8" size="20px" />}>
-                        Karnavati, India
+                        Miami, Florida
                     </Button>
                     </VStack>
                 </Box>

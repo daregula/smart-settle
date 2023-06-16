@@ -25,9 +25,8 @@ import {
     RadioGroup,
     HStack,
     Radio
-  } from '@chakra-ui/react';
-  
-  import { useToast } from '@chakra-ui/react';
+} from '@chakra-ui/react';
+import { useToast } from '@chakra-ui/react';
 
 
 export const Survey = () => {

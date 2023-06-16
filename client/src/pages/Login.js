@@ -9,11 +9,11 @@ import {
     FormControl,
     FormLabel,
     Input,
+    Link,
     InputGroup,
     InputRightElement,
     Checkbox,
     Stack,
-    Link,
     Button,
     Heading,
     Text,
@@ -41,6 +41,7 @@ export function SimpleCard() {
     const [_, setCookies] = useCookies(["access_token"])
 
     const navigate = useNavigate()
+
     const onSubmit = async (event) => {
         event.preventDefault()
         try {
@@ -58,10 +59,6 @@ export function SimpleCard() {
         } catch(err){
             console.error(err);
         }
-    }
-
-    const rstpwrd = () => {
-        navigate('/resetpassword')
     }
 
     return (
@@ -121,7 +118,7 @@ export function SimpleCard() {
             justify={'space-between'}>
             <Checkbox>Remember me</Checkbox>
             
-            <Link onClick={rstpwrd} color={'blue.400'}> Forgot password? </Link>
+            <Link href='/resetpassword' color={'blue.400'}> Forgot password?</Link>
             </Stack>
             <Button
             type="submit"
