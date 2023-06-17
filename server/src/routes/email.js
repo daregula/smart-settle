@@ -5,9 +5,8 @@ const router = express.Router();
 
 router.post("/support", async (req, res) => {
     // creating variables that will hold the username and passwords that the user will be providing
-    const { eFrom, eBody, name } = req.body
-    
-    console.log(eBody, eFrom, name)
+    const { from, body, name } = req.body
+
 
     const client = new SMTPClient({
         user: 'smrtstl.sup@gmail.com',
@@ -19,9 +18,9 @@ router.post("/support", async (req, res) => {
 // send the message and get a callback with an error or details of the message that was sent
     client.send(
         {
-            text: 'eBody',
-            from: eFrom,
-            to: 'smrtstl.sup@gmail.com',
+            text: name + ": " + body,
+            from: 'smrtstl.sup@gmail.com',
+            to: from,
             cc: '',
             subject: 'testing emailjs',
         },
@@ -29,7 +28,8 @@ router.post("/support", async (req, res) => {
             console.log(err);
         }
     );
-
+    
+    return res.json({ message: "email sent" })
 })
 
 
