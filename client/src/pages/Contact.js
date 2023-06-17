@@ -1,4 +1,7 @@
 import React from 'react'
+import { useState } from 'react'
+import axios from "axios"
+import { useNavigate } from 'react-router-dom'
 import {
     Container,
     Flex,
@@ -17,14 +20,14 @@ import {
     InputGroup,
     InputLeftElement,
     Textarea,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 import {
     MdEmail,
     MdLocationOn,
     MdFacebook,
     MdOutlineEmail,
-} from 'react-icons/md';
-import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
+} from 'react-icons/md'
+import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs'
 
 export const Contact = () => {
     return (
@@ -34,9 +37,30 @@ export const Contact = () => {
 //
 
 export function ContactForm() {
+    const [name, setName] = useState("")
+    const [from, setFrom] = useState("")
+    const [body, setBody] = useState("")
+
+    const onSubmit = async (event) => {
+        event.preventDefault()
+        try {
+            // grabbing the reponse form the api = json webtoken so we can authenticate the user 
+            const response = await axios.post("http://localhost:3001/smtp/support", {
+                from,
+                body,
+                name
+            })
+
+            alert("Email Sent")
+            
+        } catch(err){
+            console.error(err);
+        }
+    }
 
     return (
     <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
+    <form onSubmit={onSubmit}>
     <Flex>
         <Box
         bg="gray.100"
@@ -117,17 +141,26 @@ export function ContactForm() {
                             pointerEvents="none"
                             children={<BsPerson color="gray.800" />}
                         />
-                        <Input type="text" size="md" />
+                        <Input type="text" 
+                        size="md" 
+                        onChange={(event) => setName(event.target.value)}
+                        value={name}
+                        />
                         </InputGroup>
                     </FormControl>
                     <FormControl id="name">
-                        <FormLabel>Mail</FormLabel>
+                        <FormLabel>Email</FormLabel>
                         <InputGroup borderColor="#E0E1E7">
                         <InputLeftElement
                             pointerEvents="none"
                             children={<MdOutlineEmail color="gray.800" />}
                         />
-                        <Input type="text" size="md" />
+                        <Input 
+                        type="text" 
+                        size="md" 
+                        onChange={(event) => setFrom(event.target.value)}
+                        value={from}
+                        />
                         </InputGroup>
                     </FormControl>
                     <FormControl id="name">
@@ -138,6 +171,8 @@ export function ContactForm() {
                             borderRadius: 'gray.300',
                         }}
                         placeholder="message"
+                        onChange={(event) => setBody(event.target.value)}
+                        value={body}
                         />
                     </FormControl>
                     <FormControl id="name" float="right">
@@ -145,7 +180,9 @@ export function ContactForm() {
                         variant="solid"
                         bg="purple.400"
                         color="white"
-                        _hover={{bg: "purple.300"}}>
+                        _hover={{bg: "purple.300"}}
+                        type="submit"
+                        >
                         Send Message
                         </Button>
                     </FormControl>
@@ -157,6 +194,7 @@ export function ContactForm() {
         </Box>
         </Box>
     </Flex>
+    </form>
     </Container>
 );
 }
