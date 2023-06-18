@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 import { UserModel } from "../models/Users.js"
 
+
 const router = express.Router()
 
 // creating the two route endpoints for registering a user
@@ -34,7 +35,7 @@ router.post("/login", async (req, res) => {
 
     // if user returns a null value we return this error message
     if (!user) {
-        return res.json({ message: "User does not exist "})
+        return res.json({ message: "username"})
     }
 
     // bycrypt built in function that we use to compare the password provided by the user with the password that we have in the database for that username
@@ -42,12 +43,25 @@ router.post("/login", async (req, res) => {
 
     // if password is incorrect we will be returned a false value and in turn return an error message
     if (!isPasswordValid) {
-        return res.json({ message: "Username or Password is Incorrect" })
+        return res.json({ message: "password" })
     }
     // create an environment variable for the string secret
     const token = jwt.sign({ id: user._id }, "secret")
     res.json({ token, userID: user._id })
 
 })
+
+router.post("/verify", async (req, res) => {
+    const { email } = req.body
+    const user = await UserModel.findOne({ email })
+
+    if (!user){
+        res.send(false)
+    }
+    else{
+        res.send(true)
+    }
+})
+
 
 export { router as userRouter }

@@ -14,6 +14,8 @@ import {
     } from '@chakra-ui/react';
 
 export const Home = () => {
+    // figure out later to do this in a less ghetto way
+    window.localStorage.removeItem("loginStat")
     return (
         <div className='container'>
             <CallToActionWithAnnotation />

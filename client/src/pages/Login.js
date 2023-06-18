@@ -18,6 +18,7 @@ import {
     Heading,
     Text,
     useColorModeValue,
+    Show
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
@@ -33,10 +34,13 @@ export const Login = () => {
 }
 
 export function SimpleCard() {
+    
     const [showPassword, setShowPassword] = useState(false);
-
     const [password, setPassword] = useState("")
     const [username, setUsername] = useState("")
+    let loginStat = ""
+    let isInvalid = false
+    let userNotFound = false
 
     const [_, setCookies] = useCookies(["access_token"])
 
@@ -50,17 +54,27 @@ export function SimpleCard() {
                 username,
                 password
             })
-            // using cookies to authenticate if the user is signed in
-            setCookies("access_token", response.data.token)
             
-            // grabbing the unique userID from the db to use as an identifier for the user that is currently signed in
-            window.localStorage.setItem("userID", response.data.userID)
-            navigate("/")
+            if (response.data.message === "password" || response.data.message === "username" ){
+                response.data.message === "password" ? 
+                window.localStorage.setItem("loginStat", "password") : 
+                window.localStorage.setItem("loginStat", "username")
+                window.location.reload()
+            }
+            else{
+                // using cookies to authenticate if the user is signed in
+                setCookies("access_token", response.data.token)
+                // grabbing the unique userID from the db to use as an identifier for the user that is currently signed in
+                window.localStorage.setItem("userID", response.data.userID)
+                window.localStorage.removeItem("loginStat")
+                navigate("/")
+            }
         } catch(err){
             console.error(err);
         }
     }
 
+    loginStat = window.localStorage.getItem("loginStat")
     return (
     <div>
     <form onSubmit={onSubmit}>
@@ -84,7 +98,9 @@ export function SimpleCard() {
             <Stack spacing={4}>
         <FormControl id="username">
             <FormLabel>Username</FormLabel>
-            <Input 
+            <Input
+            isInvalid={loginStat === 'username' ? userNotFound=true : userNotFound=false}
+            errorBorderColor='crimson'
             id="username"
             type="text"
             onChange={(event) => setUsername(event.target.value)}
@@ -94,7 +110,9 @@ export function SimpleCard() {
         <FormControl id="password">
             <FormLabel>Password</FormLabel>
             <InputGroup>
-                <Input 
+                <Input
+                isInvalid={loginStat === 'password' ? isInvalid=true : isInvalid=false}
+                errorBorderColor='crimson'
                 id="password"
                 type={showPassword ? 'text' : 'password'}
                 onChange={(event) => setPassword(event.target.value)}
@@ -120,6 +138,14 @@ export function SimpleCard() {
             
             <Link href='/resetpassword' color={'blue.400'}> Forgot password?</Link>
             </Stack>
+            
+            { isInvalid ? 
+            <Text color={'crimson'}> Error: Invalid username or password. Try clicking 'Forgot Password' if you're having trouble signing in.</Text>
+            : 
+            userNotFound ? 
+            <Text color={'crimson'}> Error: username not found sign up for an account today!</Text>
+            :
+            <></> }
             <Button
             type="submit"
             bg={'purple.400'}

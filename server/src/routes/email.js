@@ -1,5 +1,8 @@
 import { SMTPClient } from 'emailjs';
 import  express  from "express";
+import { UserModel } from "../models/Users.js"
+import bcrypt from "bcrypt";
+
 
 const router = express.Router();
 
@@ -68,7 +71,7 @@ const temp_pwd = randomKey()
 
 
 
-router.post("/resetpwd", async (req, res) => {
+router.post("/tempPwd", async (req, res) => {
     // creating variables that will hold the username and passwords that the user will be providing
     const { email } = req.body
 
@@ -93,8 +96,15 @@ router.post("/resetpwd", async (req, res) => {
             console.log(err);
         }
     );
+
+// updating the users password to match the temp password
+    const hashedPassword = await bcrypt.hash(temp_pwd, 10)
+    const filter = { email: email }
+    const update = { password: hashedPassword }
     
-    return res.json({ message: "email sent" })
+    let doc = await UserModel.findOneAndUpdate(filter, update)
+    
+    return res.json({ message: "password updated" })
 })
 
 

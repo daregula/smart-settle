@@ -25,15 +25,33 @@ export const ResetPassword = () => {
 export function Reset() {
     const [email, setEmail] = useState("")
 
+
     const onSubmit = async (event) => {
             event.preventDefault()
+            // first check if the user email is tied to an account
+            let user;
             try{
-                const response = await axios.post("http://localhost:3001/smtp/resetpwd",{email})
-                alert("Check email for secure code")
+                user = await axios.post("http://localhost:3001/auth/verify",{email})
+                console.log(user)
             }
             catch(err){
                 console.error(err)
             }
+
+            if (!user.data){
+                alert("The email you entered is not associated with an account")
+            }
+            else{
+                try{
+                    const response = await axios.post("http://localhost:3001/smtp/tempPwd",{email})
+                    alert("Check email for secure code")
+                }
+                catch(err){
+                    console.error(err)
+                }
+            }
+            // after user is authenticated then proceed with the password reset
+                
         }
 
     return (
