@@ -85,12 +85,12 @@ export function ContactForm() {
                         variant="ghost"
                         color="#0B0E3F"
                         leftIcon={<MdEmail color="#BA68C8" size="20px" />}>
-                        helloWorld@smartsettle.com
+                        smrtstl.sup@gmail.com
                     </Button>
                     <Button
                         size="md"
                         height="48px"
-                        width="200px"
+                        width="230px"
                         variant="ghost"
                         color="#0B0E3F"
                         leftIcon={<MdLocationOn color="#BA68C8" size="20px" />}>

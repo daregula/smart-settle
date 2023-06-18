@@ -1,3 +1,6 @@
+import React from 'react'
+import { useState } from 'react'
+import axios from 'axios'
 import {
     Flex,
     Box,
@@ -11,7 +14,7 @@ import {
     Heading,
     Text,
     useColorModeValue,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 
 export const ResetPassword = () => {
@@ -20,11 +23,18 @@ export const ResetPassword = () => {
     )
 }
 export function Reset() {
+    const [email, setEmail] = useState("")
 
-const onSubmit = async (event) => {
-        event.preventDefault()
-        
-    }
+    const onSubmit = async (event) => {
+            event.preventDefault()
+            try{
+                const response = await axios.post("http://localhost:3001/smtp/resetpwd",{email})
+                alert("Check email for secure code")
+            }
+            catch(err){
+                console.error(err)
+            }
+        }
 
     return (
     <div>
@@ -46,7 +56,12 @@ const onSubmit = async (event) => {
             <Stack spacing={4}>
         <FormControl id="email">
             <FormLabel>Email</FormLabel>
-            <Input id="email" type="text"/>
+            <Input 
+            id="email" 
+            type="text"
+            onChange={(event) => setEmail(event.target.value)}
+            value={email}
+            />
         </FormControl>
         <Stack spacing={10}>
             <Button

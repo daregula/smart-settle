@@ -24,8 +24,6 @@ router.post("/register", async (req, res) => {
 })
 
 
-
-
 // creating the route for user login
 router.post("/login", async (req, res) => {
     // creating variables that will hold the username and passwords that the user will be providing
