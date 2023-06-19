@@ -13,6 +13,7 @@ import { Footer } from "./Footer"
 import { PageNotFound } from "./pages/PageNotFound"
 import { WithSubnavigation } from "./Navbar"
 import { ResetPassword } from "./pages/ResetPassword"
+import { Profile } from "./pages/Profile"
 
 function App() {
   
@@ -35,6 +36,7 @@ function App() {
           <Route path='/mysearches' element={<MySearches/>} />
           <Route path='*' element={<PageNotFound />} />
           <Route path='/resetpassword' element={<ResetPassword />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
         <Footer></Footer>
       </Router>

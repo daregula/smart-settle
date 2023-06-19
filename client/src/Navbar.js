@@ -244,6 +244,11 @@ const NAV_ITEMS: Array<NavItem> = [
         subLabel: 'Look at your previous searches',
         href: '/mysearches',
       },
+      {
+        label: 'My Profile',
+        subLabel: 'Edit your Profile here',
+        href: '/profile',
+      },
     ],
   },
 ];
