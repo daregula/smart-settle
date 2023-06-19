@@ -18,7 +18,6 @@ import {
     Heading,
     Text,
     useColorModeValue,
-    Show
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
@@ -66,6 +65,11 @@ export function SimpleCard() {
                 setCookies("access_token", response.data.token)
                 // grabbing the unique userID from the db to use as an identifier for the user that is currently signed in
                 window.localStorage.setItem("userID", response.data.userID)
+                window.localStorage.setItem("username", response.data.username)
+                window.localStorage.setItem("email", response.data.email)
+                window.localStorage.setItem("firstname", response.data.firstname)
+                window.localStorage.setItem("lastname", response.data.lastname)
+
                 window.localStorage.removeItem("loginStat")
                 navigate("/")
             }
