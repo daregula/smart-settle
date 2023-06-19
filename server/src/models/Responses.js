@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 
+//Created a schema for mongoDB responses collection
 const ResponseSchema = new mongoose.Schema({
     salary: { type: String, required: true, unique: true },
     employment: { type: String, required: true },

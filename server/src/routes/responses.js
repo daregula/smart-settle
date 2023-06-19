@@ -3,8 +3,10 @@ import  express  from "express";
 import mongoose from "mongoose";
 import { UserModel } from "../models/Users.js";
 
+// Create an Express router
 const router = express.Router();
 
+// GET endpoint to fetch all responses
 router.get("/", async (req, res) => {
     try {
         const response = await ResponseModel.find({});
@@ -14,6 +16,7 @@ router.get("/", async (req, res) => {
     }
 })
 
+// POST endpoint to create a new response
 router.post("/", async (req, res) => {
     const responses = new ResponseModel(req.body);
     try {
@@ -24,6 +27,7 @@ router.post("/", async (req, res) => {
     }
 })
 
+// PUT endpoint to update a response and associate it with a user
 router.put("/", async (req, res) => {
     try {
         const responses = await ResponseModel.findById(req.body.responseID)
@@ -36,6 +40,7 @@ router.put("/", async (req, res) => {
     }
 })
 
+// GET endpoint to fetch saved responses for a specific user (handles showing "My previous searches" page)
 router.get("/savedResponses/ids/:userOwner", async (req, res) => {
     try {
         const userOwner = req.params.userOwner;
@@ -48,18 +53,7 @@ router.get("/savedResponses/ids/:userOwner", async (req, res) => {
     }
 })
 
-// router.get("/savedResponses", async (req, res) => {
-//     try {
-//         const user = await UserModel.findById(req.body.userID);
-//         const savedResponses = await ResponseModel.find({
-//             _id: { $in: user.savedResponses},
-//         });
-//         res.json({savedResponses})
-//     } catch (err) {
-//         res.json(err);
-//     }
-// })
-
+// Export the router
 export { router as responseRouter }
 
 

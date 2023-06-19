@@ -14,19 +14,12 @@ export const MySearches = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        // const fetchResponses = async () => {
-        // try {
-        //     const response = await axios.get("http://localhost:3001/responses");
-        //     setResponses(response.data);
-        // } catch (err) {
-        //     console.log(err);
-        // }
-        // };
         
         if (!cookies.access_token){
             navigate("*")
         }
-
+        
+        //Fetches all data from mongoDB where the userID is found
         const fetchSavedResponses = async () => {
             try {
                 const response = await axios.get(`http://localhost:3001/responses/savedResponses/ids/${userOwner}`);
@@ -36,7 +29,6 @@ export const MySearches = () => {
             }
         };
 
-        // fetchResponses();
         fetchSavedResponses();
     }, [userOwner]);
     return (
@@ -49,6 +41,7 @@ export const MySearches = () => {
             <h1> My Previous Searches </h1>
             </Heading><br></br>
             <ul>
+                {/* Maps through responses and displays each category on the front end */}
                 {responses.map((response) => (
                     <li key={response._id}>
                         <div className="mySearches">

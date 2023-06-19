@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Home.css'
+import { useNavigate } from 'react-router-dom'
 
 import {
     Box,
@@ -23,9 +24,8 @@ export const Home = () => {
     )
 }
 
-
-
 export default function CallToActionWithAnnotation() {
+    const navigate = useNavigate()
     return (
         <>
         <link
@@ -61,6 +61,7 @@ export default function CallToActionWithAnnotation() {
             alignSelf={'center'}
             position={'relative'}>
             <Button
+            onClick={() => navigate("/survey")}
                 colorScheme={'green'}
                 bg={'purple.400'}
                 rounded={'full'}
