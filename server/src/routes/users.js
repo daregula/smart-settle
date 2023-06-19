@@ -63,5 +63,5 @@ router.post("/verify", async (req, res) => {
     }
 })
 
-
+// Export the router
 export { router as userRouter }

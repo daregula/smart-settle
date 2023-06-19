@@ -34,7 +34,6 @@ export const Contact = () => {
         <ContactForm />
     )
 }
-//
 
 export function ContactForm() {
     const [name, setName] = useState("")
