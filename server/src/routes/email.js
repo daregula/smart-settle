@@ -100,7 +100,7 @@ router.post("/tempPwd", async (req, res) => {
 // updating the users password to match the temp password
     const hashedPassword = await bcrypt.hash(temp_pwd, 10)
     const filter = { email: email }
-    const update = { password: hashedPassword }
+    const update = { $set: {password: hashedPassword} }
     
     let doc = await UserModel.findOneAndUpdate(filter, update)
     
