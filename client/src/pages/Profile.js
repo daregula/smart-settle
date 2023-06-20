@@ -10,20 +10,27 @@ import {
     Button,
     Heading,
     useColorModeValue,
+    InputRightElement,
+    InputGroup
 } from '@chakra-ui/react';
 import axios from "axios"
 import { useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
+import { useGetUserID } from '../hooks/useGetUserID';
 
 
 export const Profile = () => {
     const navigate = useNavigate()
     const [cookies, setCookies] = useCookies(["access_token"])
 
-    if (!cookies.access_token){
-        navigate("*")
-    }
+    useEffect(() => {
+        if (!cookies.access_token){
+            navigate("/login");
+            // alert("Must be logged into access this page");
+        }
+    }, [navigate, cookies.access_token])
 
     return (
         <SignupCard />
@@ -31,28 +38,58 @@ export const Profile = () => {
 }
 
 export default function SignupCard() {
-
-    // anytime the state of the username/password field is changed i.e. a new character is entered they variables are updated
-    const [username, setUsername] = useState("")
-    const [email, setEmail] = useState("")
-    const firstname = window.localStorage.getItem("firstname")
-    const lastname = window.localStorage.getItem("lastname")
+    const firstnameph = window.localStorage.getItem("firstname")
+    const lastnameph = window.localStorage.getItem("lastname")
     const emailph = window.localStorage.getItem("email")
     const usernameph = window.localStorage.getItem("username")
+    const [show, setShow] = React.useState(false)
+    const handleClick = () => setShow(!show)
 
+    const userID = useGetUserID();
 
-    const onSubmit = async (event) => {
-        event.preventDefault()
+    const [updatedProfile, setUpdatedProfile] = useState({
+        firstname: "",
+        lastname: "",
+        username: "",
+        oldpassword: "",
+        newpassword: "",
+        userID: userID
+    });
+
+    //Allows us to navigate when needed
+    const navigate = useNavigate()
+
+    //Uses onChange to grab what the user responded and sets the response based off the name : value
+    const handleChange = (e) => {
+        const {name, value} = e.target || {};
+        setUpdatedProfile({...updatedProfile, [name] : value})
+    }
+
+    //On submit, we make to API requests, one for handling previous searches, and one for sending data to backend in order to generate a result
+    const onSubmit = async (e) => {
+        e.preventDefault();
+
         try {
-            await axios.post("http://localhost:3001/auth/register", {
-                username,
-                email
-            })
-            alert("Update successful")
-        } catch(err){
-            console.error(err);
+            await axios.post("http://localhost:3001/edit-profile", updatedProfile);
+            alert("Changes complete")
+        } catch (err) {
+            console.log(err);
         }
     }
+
+
+    // const onSubmit = async (event) => {
+    //     event.preventDefault()
+    //     try {
+    //         await axios.post("http://localhost:3001/auth/register", {
+    //             username,
+    //             email
+    //         })
+    //         alert("Update successful")
+    //     } catch(err){
+    //         console.error(err);
+    //     }
+    // }
 
 
     return (
@@ -76,47 +113,72 @@ export default function SignupCard() {
             <Stack spacing={4}>
             <HStack>
                 <Box>
-                <FormControl id="firstName">
+                <FormControl id="firstName" onChange={handleChange}>
                     <FormLabel>First Name</FormLabel>
                     <Input
-                    id="firstName"
+                    name="firstname"
                     type="text"
-                    readonly={{firstname}}
-                    placeholder={firstname}/>
+                    placeholder={firstnameph}/>
                 </FormControl>
                 </Box>
                 <Box>
-                <FormControl id="lastName">
+                <FormControl id="lastName" onChange={handleChange}>
                     <FormLabel>Last Name</FormLabel>
                     <Input 
-                    id="lastName"
+                    name="lastname"
                     type="text" 
-                    readonly={{lastname}}
-                    placeholder={lastname}/>
+                    placeholder={lastnameph}/>
                 </FormControl>
                 </Box>
             </HStack>
-            <FormControl id="username">
+            <FormControl id="username" onChange={handleChange}>
                 <FormLabel>Username</FormLabel>
                 <Input
-                id="username"
+                name="username"
                 type="text" 
-                onChange={(event) => setUsername(event.target.value)}
-                value={username}
                 placeholder={usernameph}
                 />
             </FormControl>
-            <FormControl id="email">
+            <FormControl id="email" >
                 <FormLabel>Email address</FormLabel>
                 <Input 
                 id="email"
                 type="email" 
-                onChange={(event) => setEmail(event.target.value)}
-                value={email}
                 placeholder={emailph}
+                readonly={emailph}
                 />
             </FormControl>
-            <Stack spacing={10} pt={2}>
+
+            <FormControl id="oldpassword" onChange={handleChange}>
+                <FormLabel>Old Password</FormLabel>
+                <InputGroup size='md'>
+                <Input 
+                type={show ? 'text' : 'password'}
+                name="oldpassword"
+                />
+                <InputRightElement width='4.5rem'>
+                    <Button h='1.75rem' size='sm' onClick={handleClick}>
+                    {show ? 'Hide' : 'Show'}
+                    </Button>
+                </InputRightElement>
+                </InputGroup>
+            </FormControl>
+
+            <FormControl id="newpassword" onChange={handleChange}>
+                <FormLabel>New Password</FormLabel>
+                <InputGroup size='md'>
+                    <Input 
+                    type={show ? 'text' : 'password'}
+                    name="newpassword"
+                    />
+                    <InputRightElement width='4.5rem'>
+                        <Button h='1.75rem' size='sm' onClick={handleClick}>
+                        {show ? 'Hide' : 'Show'}
+                        </Button>
+                    </InputRightElement>
+                    </InputGroup>
+            </FormControl>
+            {/* <Stack spacing={10} pt={2}>
                 <Button
                 loadingText="Submitting"
                 size="lg"
@@ -127,7 +189,7 @@ export default function SignupCard() {
                 }}>
                 Change Password
                 </Button>
-            </Stack>
+            </Stack> */}
             <Stack spacing={10} pt={2}>
                 <Button
                 type="submit"

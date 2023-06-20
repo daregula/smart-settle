@@ -16,7 +16,7 @@ export const MySearches = () => {
     useEffect(() => {
         
         if (!cookies.access_token){
-            navigate("*")
+            navigate("/login");
         }
         
         //Fetches all data from mongoDB where the userID is found
@@ -31,6 +31,7 @@ export const MySearches = () => {
 
         fetchSavedResponses();
     }, [userOwner]);
+    
     return (
         
         <div>
