@@ -1,0 +1,62 @@
+[
+    {
+       "city_name":"Los Angeles",
+       "state":"California",
+       "cost_of_living":4163.644,
+       "city_id":7892
+    },
+    {
+       "city_name":"San Francisco",
+       "state":"California",
+       "cost_of_living":5678.123,
+       "city_id":5678
+    },
+    {
+       "city_name":"San Diego",
+       "state":"California",
+       "cost_of_living":3750.987,
+       "city_id":3456
+    },
+    {
+       "city_name":"Sacramento",
+       "state":"California",
+       "cost_of_living":3210.876,
+       "city_id":2345
+    },
+    {
+       "city_name":"San Jose",
+       "state":"California",
+       "cost_of_living":4567.345,
+       "city_id":1234
+    },
+    {
+       "city_name":"Oakland",
+       "state":"California",
+       "cost_of_living":3890.234,
+       "city_id":6789
+    },
+    {
+       "city_name":"Santa Monica",
+       "state":"California",
+       "cost_of_living":5123.789,
+       "city_id":8901
+    },
+    {
+       "city_name":"Berkeley",
+       "state":"California",
+       "cost_of_living":2999.567,
+       "city_id":5678
+    },
+    {
+       "city_name":"Long Beach",
+       "state":"California",
+       "cost_of_living":3456.901,
+       "city_id":1234
+    },
+    {
+       "city_name":"Palm Springs",
+       "state":"California",
+       "cost_of_living":2901.234,
+       "city_id":4567
+    }
+ ]
