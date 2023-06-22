@@ -93,83 +93,68 @@ export default function SignupCard() {
 
 
     return (
-    <form onSubmit={onSubmit}>
-    <Flex
-        minH={'75vh'}
-        align={'center'}
-        justify={'center'}
-        bg={useColorModeValue('gray.50', 'gray.800')}>
-        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
-        <Stack align={'center'}>
-            <Heading fontSize={'4xl'} textAlign={'center'}>
-            Edit Profile
-            </Heading>
-        </Stack>
-        <Box
-            rounded={'lg'}
-            bg={useColorModeValue('white', 'gray.700')}
-            boxShadow={'lg'}
-            p={8}>
-            <Stack spacing={4}>
-            <HStack>
-                <Box>
-                <FormControl id="firstName" onChange={handleChange}>
-                    <FormLabel>First Name</FormLabel>
+    <FormControl onSubmit={onSubmit}>
+        <Flex
+            minH={'75vh'}
+            align={'center'}
+            justify={'center'}
+            bg={useColorModeValue('gray.50', 'gray.800')}>
+            <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+            <Stack align={'center'}>
+                <Heading fontSize={'4xl'} textAlign={'center'}>
+                Edit Profile
+                </Heading>
+            </Stack>
+            <Box
+                rounded={'lg'}
+                bg={useColorModeValue('white', 'gray.700')}
+                boxShadow={'lg'}
+                p={8}>
+                <Stack spacing={4}>
+                <HStack>
+                    <Box>
+                    <FormControl id="firstName" onChange={handleChange}>
+                        <FormLabel>First Name</FormLabel>
+                        <Input
+                        name="firstname"
+                        type="text"
+                        placeholder={firstnameph}/>
+                    </FormControl>
+                    </Box>
+                    <Box>
+                    <FormControl id="lastName" onChange={handleChange}>
+                        <FormLabel>Last Name</FormLabel>
+                        <Input 
+                        name="lastname"
+                        type="text" 
+                        placeholder={lastnameph}/>
+                    </FormControl>
+                    </Box>
+                </HStack>
+                <FormControl id="username" onChange={handleChange}>
+                    <FormLabel>Username</FormLabel>
                     <Input
-                    name="firstname"
-                    type="text"
-                    placeholder={firstnameph}/>
-                </FormControl>
-                </Box>
-                <Box>
-                <FormControl id="lastName" onChange={handleChange}>
-                    <FormLabel>Last Name</FormLabel>
-                    <Input 
-                    name="lastname"
+                    name="username"
                     type="text" 
-                    placeholder={lastnameph}/>
+                    placeholder={usernameph}
+                    />
                 </FormControl>
-                </Box>
-            </HStack>
-            <FormControl id="username" onChange={handleChange}>
-                <FormLabel>Username</FormLabel>
-                <Input
-                name="username"
-                type="text" 
-                placeholder={usernameph}
-                />
-            </FormControl>
-            <FormControl id="email" >
-                <FormLabel>Email address</FormLabel>
-                <Input 
-                id="email"
-                type="email" 
-                placeholder={emailph}
-                readonly={emailph}
-                />
-            </FormControl>
+                <FormControl id="email" >
+                    <FormLabel>Email address</FormLabel>
+                    <Input 
+                    id="email"
+                    type="email" 
+                    placeholder={emailph}
+                    readonly={emailph}
+                    />
+                </FormControl>
 
-            <FormControl id="oldpassword" onChange={handleChange}>
-                <FormLabel>Old Password</FormLabel>
-                <InputGroup size='md'>
-                <Input 
-                type={show ? 'text' : 'password'}
-                name="oldpassword"
-                />
-                <InputRightElement width='4.5rem'>
-                    <Button h='1.75rem' size='sm' onClick={handleClick}>
-                    {show ? 'Hide' : 'Show'}
-                    </Button>
-                </InputRightElement>
-                </InputGroup>
-            </FormControl>
-
-            <FormControl id="newpassword" onChange={handleChange}>
-                <FormLabel>New Password</FormLabel>
-                <InputGroup size='md'>
+                <FormControl id="oldpassword" onChange={handleChange}>
+                    <FormLabel>Old Password</FormLabel>
+                    <InputGroup size='md'>
                     <Input 
                     type={show ? 'text' : 'password'}
-                    name="newpassword"
+                    name="oldpassword"
                     />
                     <InputRightElement width='4.5rem'>
                         <Button h='1.75rem' size='sm' onClick={handleClick}>
@@ -177,36 +162,51 @@ export default function SignupCard() {
                         </Button>
                     </InputRightElement>
                     </InputGroup>
-            </FormControl>
-            {/* <Stack spacing={10} pt={2}>
-                <Button
-                loadingText="Submitting"
-                size="lg"
-                bg={'purple.400'}
-                color={'white'}
-                _hover={{
-                    bg: 'purple.300',
-                }}>
-                Change Password
-                </Button>
-            </Stack> */}
-            <Stack spacing={10} pt={2}>
-                <Button
-                type="submit"
-                loadingText="Submitting"
-                size="lg"
-                bg={'purple.400'}
-                color={'white'}
-                _hover={{
-                    bg: 'purple.300',
-                }}>
-                Save
-                </Button>
+                </FormControl>
+
+                <FormControl id="newpassword" onChange={handleChange}>
+                    <FormLabel>New Password</FormLabel>
+                    <InputGroup size='md'>
+                        <Input 
+                        type={show ? 'text' : 'password'}
+                        name="newpassword"
+                        />
+                        <InputRightElement width='4.5rem'>
+                            <Button h='1.75rem' size='sm' onClick={handleClick}>
+                            {show ? 'Hide' : 'Show'}
+                            </Button>
+                        </InputRightElement>
+                        </InputGroup>
+                </FormControl>
+                {/* <Stack spacing={10} pt={2}>
+                    <Button
+                    loadingText="Submitting"
+                    size="lg"
+                    bg={'purple.400'}
+                    color={'white'}
+                    _hover={{
+                        bg: 'purple.300',
+                    }}>
+                    Change Password
+                    </Button>
+                </Stack> */}
+                <Stack spacing={10} pt={2}>
+                    <Button
+                    type="submit"
+                    loadingText="Submitting"
+                    size="lg"
+                    bg={'purple.400'}
+                    color={'white'}
+                    _hover={{
+                        bg: 'purple.300',
+                    }}>
+                    Save
+                    </Button>
+                </Stack>
+                </Stack>
+            </Box>
             </Stack>
-            </Stack>
-        </Box>
-        </Stack>
-    </Flex>
-    </form>
+        </Flex>
+    </FormControl>
     );
 }

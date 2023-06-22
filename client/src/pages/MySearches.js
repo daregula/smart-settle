@@ -33,7 +33,6 @@ export const MySearches = () => {
     }, [userOwner]);
     
     return (
-        
         <div>
             <Heading
             fontWeight={600}
