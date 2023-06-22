@@ -80,7 +80,7 @@ export function SimpleCard() {
 
     loginStat = window.localStorage.getItem("loginStat")
     return (
-    <div>
+    <div bg={useColorModeValue('gray.50', 'gray.800')}>
     <form onSubmit={onSubmit}>
     <Flex
         minH={'75vh'}

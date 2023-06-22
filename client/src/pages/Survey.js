@@ -41,14 +41,14 @@ export const Survey = () => {
     const Form1 = (props) => {
     return (
         <>
-        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-        Enter your yearly salary
-        </Heading>
-        <Flex>
-            <FormControl mr="5%">
-            <Input name='salary' placeholder="40000" onChange={props.handleChange}/>
-            </FormControl>
-        </Flex>
+            <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+            Enter your yearly salary
+            </Heading>
+            <Flex>
+                <FormControl mr="5%">
+                <Input name='salary' placeholder="40000" onChange={props.handleChange}/>
+                </FormControl>
+            </Flex>
         </>
     );
     };
@@ -57,32 +57,32 @@ export const Survey = () => {
     
     return (
         <>
-        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-            Survey
-        </Heading>
-        <Flex>
-            <FormControl as='fieldset'>
-            <FormLabel as='legend'>
-                How much importance do you attribute to education?
-                </FormLabel>
-                <RadioGroup name='employment'  >
-                    <HStack spacing='24px' onChange={props.handleChange}>
-                    <p>Not Important</p>
-                    <Radio value='1'>1</Radio>
-                    <Radio value='2'>2</Radio>
-                    <Radio value='3'>3</Radio>
-                    <Radio value='4'>4</Radio>
-                    <Radio value='5'>5</Radio>
-                    <Radio value='6'>6</Radio>
-                    <Radio value='7'>7</Radio>
-                    <Radio value='8'>8</Radio>
-                    <Radio value='9'>9</Radio>
-                    <Radio value='10'>10</Radio>
-                    <p>Very Important</p>
-                    </HStack>
-                </RadioGroup>
-            </FormControl>
-        </Flex>
+            <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+                Survey
+            </Heading>
+            <Flex>
+                <FormControl as='fieldset'>
+                <FormLabel as='legend'>
+                    How much importance do you attribute to education?
+                    </FormLabel>
+                    <RadioGroup name='employment'  >
+                        <HStack spacing='24px' onChange={props.handleChange}>
+                        <p>Not Important</p>
+                        <Radio value='1'>1</Radio>
+                        <Radio value='2'>2</Radio>
+                        <Radio value='3'>3</Radio>
+                        <Radio value='4'>4</Radio>
+                        <Radio value='5'>5</Radio>
+                        <Radio value='6'>6</Radio>
+                        <Radio value='7'>7</Radio>
+                        <Radio value='8'>8</Radio>
+                        <Radio value='9'>9</Radio>
+                        <Radio value='10'>10</Radio>
+                        <p>Very Important</p>
+                        </HStack>
+                    </RadioGroup>
+                </FormControl>
+            </Flex>
         </>
     );
     };
