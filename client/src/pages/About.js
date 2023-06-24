@@ -59,3 +59,5 @@ export const Temp = () => {
                 </SimpleGrid>
             </Center>
         </Box>
+    )
+}
