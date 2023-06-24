@@ -7,6 +7,7 @@ export const About = () => {
     return (
         <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div>
             This is the about page
             </div>
@@ -19,10 +20,15 @@ export const About = () => {
             <Temp />
         </body>
 >>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
+=======
+            <Temp />
+        </body>
+>>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
     )
 }
 
 export const Temp = () => {
+<<<<<<< HEAD
 <<<<<<< HEAD
     return (
         <div>
@@ -31,6 +37,8 @@ export const Temp = () => {
             </image>
         </div>
 =======
+=======
+>>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
     const navigate = useNavigate()
     return (
         <Box position='relative' h='100px'>
@@ -78,6 +86,9 @@ export const Temp = () => {
                 </SimpleGrid>
             </Center>
         </Box>       
+<<<<<<< HEAD
+>>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
+=======
 >>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
     )
 }
