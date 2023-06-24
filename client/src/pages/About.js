@@ -9,6 +9,7 @@ export const About = () => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <div>
             This is the about page
             </div>
@@ -29,10 +30,15 @@ export const About = () => {
             <Temp />
         </body>
 >>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
+=======
+            <Temp />
+        </body>
+>>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
     )
 }
 
 export const Temp = () => {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -43,6 +49,8 @@ export const Temp = () => {
             </image>
         </div>
 =======
+=======
+>>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
 =======
 >>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
 =======
@@ -96,6 +104,9 @@ export const Temp = () => {
         </Box>       
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
+=======
 >>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
 =======
 >>>>>>> a308b35a296593af2322f319dca6e4d87be8bfd8
