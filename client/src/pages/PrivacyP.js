@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Center, Text, Heading } from '@chakra-ui/react'
+import { Box, Center, Text } from '@chakra-ui/react'
 
 export const Privacy = () => {
     return (
