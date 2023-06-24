@@ -14,6 +14,9 @@ import { PageNotFound } from "./pages/PageNotFound"
 import { WithSubnavigation } from "./Navbar"
 import { ResetPassword } from "./pages/ResetPassword"
 import { Profile } from "./pages/Profile"
+import { Terms } from "./pages/Terms"
+import { Legal } from "./pages/Legal"
+import { Privacy } from "./pages/PrivacyP"
 
 function App() {
   
@@ -37,6 +40,9 @@ function App() {
           <Route path='*' element={<PageNotFound />} />
           <Route path='/resetpassword' element={<ResetPassword />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/terms' element={<Terms />} />
+          <Route path='/legal' element={<Legal />} />
+          <Route path='/privacy' element={<Privacy />} />
         </Routes>
         <Footer></Footer>
       </Router>
