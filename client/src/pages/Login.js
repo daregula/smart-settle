@@ -35,8 +35,10 @@ export const Login = () => {
 export function SimpleCard() {
     
     const [showPassword, setShowPassword] = useState(false);
+    const [temp, setTemp] = useState("")
     const [password, setPassword] = useState("")
     const [username, setUsername] = useState("")
+    
     let loginStat = ""
     let isInvalid = false
     let userNotFound = false
@@ -53,12 +55,13 @@ export function SimpleCard() {
                 username,
                 password
             })
-            
+            setTemp(response.data.message)
+
             if (response.data.message === "password" || response.data.message === "username" ){
                 response.data.message === "password" ? 
                 window.localStorage.setItem("loginStat", "password") : 
                 window.localStorage.setItem("loginStat", "username")
-                window.location.reload()
+                
             }
             else{
                 // using cookies to authenticate if the user is signed in
@@ -77,11 +80,15 @@ export function SimpleCard() {
             console.error(err);
         }
     }
-
+    
+    
     loginStat = window.localStorage.getItem("loginStat")
     return (
     <div bg={useColorModeValue('gray.50', 'gray.800')}>
     <form onSubmit={onSubmit}>
+        <div>
+            {"variable: "+temp}
+        </div>
     <Flex
         minH={'75vh'}
         align={'center'}
