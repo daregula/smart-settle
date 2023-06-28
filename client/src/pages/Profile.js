@@ -11,7 +11,8 @@ import {
     Heading,
     useColorModeValue,
     InputRightElement,
-    InputGroup
+    InputGroup,
+    useToast
 } from '@chakra-ui/react';
 import axios from "axios"
 import { useState } from 'react';
@@ -44,13 +45,14 @@ export default function SignupCard() {
     const usernameph = window.localStorage.getItem("username")
     const [show, setShow] = React.useState(false)
     const handleClick = () => setShow(!show)
+    const toast = useToast();
 
     const userID = useGetUserID();
 
     const [updatedProfile, setUpdatedProfile] = useState({
-        firstname: "",
-        lastname: "",
-        username: "",
+        firstname: firstnameph,
+        lastname: lastnameph,
+        username: usernameph,
         oldpassword: "",
         newpassword: "",
         userID: userID
@@ -70,8 +72,10 @@ export default function SignupCard() {
         e.preventDefault();
 
         try {
-            await axios.post("http://localhost:3001/edit-profile", updatedProfile);
-            alert("Changes complete")
+            const res = await axios.post("http://localhost:3001/edit-profile", updatedProfile);
+            if(res.data.message === "Invalid Password"){
+                alert("Invalid Password")
+            }
         } catch (err) {
             console.log(err);
         }
@@ -93,7 +97,7 @@ export default function SignupCard() {
 
 
     return (
-    <FormControl onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
         <Flex
             minH={'75vh'}
             align={'center'}
@@ -178,18 +182,6 @@ export default function SignupCard() {
                         </InputRightElement>
                         </InputGroup>
                 </FormControl>
-                {/* <Stack spacing={10} pt={2}>
-                    <Button
-                    loadingText="Submitting"
-                    size="lg"
-                    bg={'purple.400'}
-                    color={'white'}
-                    _hover={{
-                        bg: 'purple.300',
-                    }}>
-                    Change Password
-                    </Button>
-                </Stack> */}
                 <Stack spacing={10} pt={2}>
                     <Button
                     type="submit"
@@ -199,7 +191,18 @@ export default function SignupCard() {
                     color={'white'}
                     _hover={{
                         bg: 'purple.300',
-                    }}>
+                        
+                    }}
+                    onClick={() => {
+                        toast({
+                            title: 'Profile Updated!',
+                            description: "You've successfuly changed your profile.",
+                            status: 'success',
+                            duration: 3000,
+                            isClosable: true,
+                        });
+                        }}
+                        >
                     Save
                     </Button>
                 </Stack>
@@ -207,6 +210,6 @@ export default function SignupCard() {
             </Box>
             </Stack>
         </Flex>
-    </FormControl>
+    </form>
     );
 }
