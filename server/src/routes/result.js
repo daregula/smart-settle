@@ -8,37 +8,43 @@ const router = express.Router();
 router.post("/", async (req, res) => {
     const data = req.body;
     const COLArray = filterCostOfLiving(data.salary)
-    console.log(COLArray)
-    // filterWeather([COLArray], data.temperature)
+    
+    const filteredWeatherArray = filterWeather(COLArray, data.weather)
     
 })
 
 //Take out filter Weather logic from post request and make into its own function
-async function filterCostOfLiving(salaryResponse) {
+function filterCostOfLiving(salaryResponse) {
     
     const result = fs.readFileSync("../server/src/sample-data/cost_of_living.json", "utf8", (err, res) => {
         if (err) {
             console.log("File read failed:", err);
             return;
         }
-        // const resultData = JSON.parse(res)
-        const monthlyIncome = (parseInt(salaryResponse) * 0.3) / 12;
-        const resultArray = []
-        for (const entry of resultData) {
-            const { state, city, cost_of_living } = entry;
-            if(monthlyIncome > cost_of_living) {
-                resultArray.push(entry);
-            }
-        }
+        
     });
-    return JSON.parse(result);
+    const resultData = JSON.parse(result)
+    
+    const monthlyIncome = (parseInt(salaryResponse) * 0.3) / 12;
+    
+    const resultArray = []
+    for (const entry of resultData) {
+        const { state, city, cost_of_living } = entry;
+        
+        if(monthlyIncome > cost_of_living) {
+            resultArray.push(entry);
+        }
+    }
+    return resultArray;
 }
-
+// figure out why this shit is only getting a few responses
 async function filterWeather(resultArray, temperatureResponse) {
     const apiKey = "b79a512b714a48f6ba315103232806"
     const filteredWeatherArray = []
+    // its stopping after the first element dont know why too late sleep time
     for (const entry of resultArray) {
         const { city_name, state, cost_of_living } = entry;
+        
         try{
             const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city_name}&aqi=no`
             const response = await axios.get(url);
@@ -62,11 +68,12 @@ async function filterWeather(resultArray, temperatureResponse) {
                 }
                 filteredWeatherArray.push(updatedObject);
             }
+            return filteredWeatherArray
         } catch (err) {
             console.error(err);
         }   
     }
-    console.log(filteredWeatherArray);
+    
 }
 
 async function filterInfrastructure(resultArray, infrastructureResponse) {
