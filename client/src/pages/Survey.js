@@ -121,6 +121,8 @@ export const Survey = () => {
     };
 
     const Form4 = (props) => {
+        const text = "Cool Weather <70"
+        const text2 = "Warm Weather >70"
     return (
         <>
         <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
@@ -129,22 +131,12 @@ export const Survey = () => {
         <Flex>
             <FormControl as='fieldset'>
             <FormLabel as='legend'>
-                How much importance do you attribute to education?
+                Select your weather preference. 
                 </FormLabel>
                 <RadioGroup name='weather' >
                     <HStack spacing='24px' onChange={props.handleChange}>
-                    <p>Not Important</p>
-                    <Radio value='1'>1</Radio>
-                    <Radio value='2'>2</Radio>
-                    <Radio value='3'>3</Radio>
-                    <Radio value='4'>4</Radio>
-                    <Radio value='5'>5</Radio>
-                    <Radio value='6'>6</Radio>
-                    <Radio value='7'>7</Radio>
-                    <Radio value='8'>8</Radio>
-                    <Radio value='9'>9</Radio>
-                    <Radio value='10'>10</Radio>
-                    <p>Very Important</p>
+                    <Radio value='cool'>{text}</Radio>
+                    <Radio value='warm'>{text2}</Radio>
                     </HStack>
                 </RadioGroup>
             </FormControl>
@@ -186,7 +178,7 @@ export const Survey = () => {
     );
     };
 
-    const Form6 = () => {
+    const Form6 = (props) => {
     return (
         <>
         <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
@@ -197,20 +189,11 @@ export const Survey = () => {
             <FormLabel as='legend'>
                 How much importance do you attribute to weather?
                 </FormLabel>
-                <RadioGroup defaultValue='Itachi'>
-                    <HStack spacing='24px'>
-                    <p>Not Important</p>
-                    <Radio value='1'>1</Radio>
-                    <Radio value='2'>2</Radio>
-                    <Radio value='3'>3</Radio>
-                    <Radio value='4'>4</Radio>
-                    <Radio value='5'>5</Radio>
-                    <Radio value='6'>6</Radio>
-                    <Radio value='7'>7</Radio>
-                    <Radio value='8'>8</Radio>
-                    <Radio value='9'>9</Radio>
-                    <Radio value='10'>10</Radio>
-                    <p>Very Important</p>
+                <RadioGroup name='infrastructure'>
+                    <HStack spacing='24px' onChange={props.handleChange}>
+                    <Radio value='rural'>rural</Radio>
+                    <Radio value='urban'>urban</Radio>
+                    <Radio value='suburban'>suburban</Radio>
                     </HStack>
                 </RadioGroup>
             </FormControl>
@@ -232,6 +215,7 @@ export const Survey = () => {
         education: "1",
         weather: "1",
         transportation: "1",
+        infrastructure: "1",
         userOwner: userID
     });
 
@@ -259,8 +243,8 @@ export const Survey = () => {
 
     //Parent component that utilizes all previous components and submits all responses that were recorded
     return (
-        <>
-            <form onSubmit={onSubmit}>
+        <div>
+            <FormControl onSubmit={onSubmit}>
                 <FormControl>
                     <Box
                         borderWidth="1px"
@@ -331,7 +315,7 @@ export const Survey = () => {
                         </ButtonGroup>
                     </Box>
                 </FormControl>
-            </form>
-        </>
+            </FormControl>
+        </div>
     );
     }
