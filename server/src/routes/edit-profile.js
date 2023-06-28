@@ -15,21 +15,36 @@ router.post("/", async (req, res) => {
     const hashedPassword = await bcrypt.hash(data.newpassword, 10)
 
     const filter = { _id: data.userID };
-    const update = {
-        $set: {
-            firstname: data.firstname,
-            lastname: data.lastname,
-            username: data.username,
-            password: hashedPassword
-        },
-    };
-
+    
     const user = await UserModel.findOne({_id: data.userID})
     const isPasswordValid = await bcrypt.compare(data.oldpassword, user.password)
 
-    if(isPasswordValid) {
+    if(data.oldpassword === "") {
+        const update = {
+            $set: {
+                firstname: data.firstname,
+                lastname: data.lastname,
+                username: data.username,
+            },
+        };
         
         await UserModel.updateOne(filter, update)
+    }
+    else {
+        if(isPasswordValid){
+            const update = {
+                $set: {
+                    firstname: data.firstname,
+                    lastname: data.lastname,
+                    username: data.username,
+                    password: hashedPassword
+                },
+            };
+            await UserModel.updateOne(filter, update)
+        }
+        else {
+            return res.json({ message: "Invalid Password"})
+        }
     }
 
     

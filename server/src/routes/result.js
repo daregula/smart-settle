@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
     const data = req.body;
 
     //We need to implement some algorithm using the response data to return some result
-    console.log(data);
+    // console.log(data);
     fs.readFile("../server/src/sample-data/cost_of_living.json", "utf8", (err, res) => {
         if (err) {
             console.log("File read failed:", err);

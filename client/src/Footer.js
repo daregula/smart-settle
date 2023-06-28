@@ -115,28 +115,6 @@ export default function LargeWithNewsletter() {
                 <Link href={'/legal'}>Legal</Link>
                 <Link href={'/privacy'}>Privacy Policy</Link>
                 </Stack>
-                <Stack align={'flex-start'}>
-                <ListHeader>Stay up to date</ListHeader>
-                <Stack direction={'row'}>
-                    <Input
-                    placeholder={'Your email address'}
-                    bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-                    border={0}
-                    _focus={{
-                        bg: 'whiteAlpha.300',
-                    }}
-                    />
-                    <IconButton
-                    bg={useColorModeValue('purple.400', 'purple.800')}
-                    color={useColorModeValue('white', 'gray.800')}
-                    _hover={{
-                        bg: 'purple.300',
-                    }}
-                    aria-label="Subscribe"
-                    icon={<BiMailSend />}
-                    />
-                </Stack>
-                </Stack>
             </SimpleGrid>
             </Container>
         </Box>
