@@ -54,7 +54,7 @@ export const Hero = () => {
                             bg: 'purple.400',
                             zIndex: -1,
                         }}>
-                        Find your next,
+                        Find your next
                         </Text>
                         <br />
                         <Text as={'span'} color={'purple.400'}>
