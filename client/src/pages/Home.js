@@ -62,7 +62,6 @@ export default function CallToActionWithAnnotation() {
             onClick={() => navigate("/survey")}
                 colorScheme={'green'}
                 bg={'purple.400'}
-                rounded={'full'}
                 px={6}
                 _hover={{
                 bg: 'purple.300',
