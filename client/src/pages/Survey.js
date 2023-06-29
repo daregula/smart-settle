@@ -25,8 +25,18 @@ import {
     RadioGroup,
     HStack,
     Radio,
-    useToast 
+    useToast,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider,
+    
 } from '@chakra-ui/react';
+import { ChevronDownIcon } from '@chakra-ui/icons'
 
 
 export const Survey = () => {
@@ -63,24 +73,21 @@ export const Survey = () => {
             <Flex>
                 <FormControl as='fieldset'>
                 <FormLabel as='legend'>
-                    How much importance do you attribute to education?
+                    How much importance do you attribute to industry?
                     </FormLabel>
-                    <RadioGroup name='employment'  >
-                        <HStack spacing='24px' onChange={props.handleChange}>
-                        <p>Not Important</p>
-                        <Radio value='1'>1</Radio>
-                        <Radio value='2'>2</Radio>
-                        <Radio value='3'>3</Radio>
-                        <Radio value='4'>4</Radio>
-                        <Radio value='5'>5</Radio>
-                        <Radio value='6'>6</Radio>
-                        <Radio value='7'>7</Radio>
-                        <Radio value='8'>8</Radio>
-                        <Radio value='9'>9</Radio>
-                        <Radio value='10'>10</Radio>
-                        <p>Very Important</p>
-                        </HStack>
-                    </RadioGroup>
+                    <Menu>
+                        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                            Your Cats
+                        </MenuButton>
+                        <MenuList>
+                            <MenuItem minH='48px'>
+                            <span>Fluffybuns the Destroyer</span>
+                            </MenuItem>
+                            <MenuItem minH='40px'>
+                            <span>Simon the pensive</span>
+                            </MenuItem>
+                        </MenuList>
+                    </Menu>
                 </FormControl>
             </Flex>
         </>
@@ -98,8 +105,8 @@ export const Survey = () => {
             <FormLabel as='legend'>
                 How much importance do you attribute to education?
                 </FormLabel>
-                <RadioGroup name='education' >
-                    <HStack spacing='24px' onChange={props.handleChange}>
+                <RadioGroup>
+                    <HStack spacing='24px' >
                     <p>Not Important</p>
                     <Radio value='1'>1</Radio>
                     <Radio value='2'>2</Radio>
@@ -156,8 +163,8 @@ export const Survey = () => {
             <FormLabel as='legend'>
                 How much importance do you attribute to education?
                 </FormLabel>
-                <RadioGroup name='transportation'>
-                    <HStack spacing='24px' onChange={props.handleChange}>
+                <RadioGroup>
+                    <HStack spacing='24px' >
                     <p>Not Important</p>
                     <Radio value='1'>1</Radio>
                     <Radio value='2'>2</Radio>
@@ -187,11 +194,10 @@ export const Survey = () => {
         <Flex>
             <FormControl as='fieldset'>
             <FormLabel as='legend'>
-                How much importance do you attribute to weather?
+                How much importance do you attribute to infrastructure?
                 </FormLabel>
                 <RadioGroup name='infrastructure'>
                     <HStack spacing='24px' onChange={props.handleChange}>
-                    <Radio value='rural'>rural</Radio>
                     <Radio value='urban'>urban</Radio>
                     <Radio value='suburban'>suburban</Radio>
                     </HStack>
@@ -210,12 +216,10 @@ export const Survey = () => {
     //Used custom hook to fetch userID and created useState for recording responses with default values
     const userID = useGetUserID();
     const [response, setResponse] = useState({
-        salary: "1",
-        employment: "1",
-        education: "1",
-        weather: "1",
-        transportation: "1",
-        infrastructure: "1",
+        salary: 0,
+        weather: "",
+        infrastructure: "",
+        industry: "",
         userOwner: userID
     });
 

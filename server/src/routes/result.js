@@ -7,15 +7,17 @@ const router = express.Router();
 // Data is retrieved in JSON format (e.g. data.salary)
 router.post("/", async (req, res) => {
     const data = req.body;
-    const COLArray = filterCostOfLiving(data.salary)
-    
-    const filteredWeatherArray = filterWeather(COLArray, data.weather)
+    const costOfLivingArray = filterCostOfLiving(data.salary);
+    const filteredWeatherArray = await filterWeather(costOfLivingArray, data.weather);
+    const filteredInfrastructureArray = await filterInfrastructure(costOfLivingArray, data.infrastructure);
+    const filteredIndustryArray = await filterIndustry(costOfLivingArray, data.industry);
+    // console.log("SOF")
+    // console.log(filteredInfrastructureArray)
+    // console.log("EOF")
     
 })
 
-//Take out filter Weather logic from post request and make into its own function
 function filterCostOfLiving(salaryResponse) {
-    
     const result = fs.readFileSync("../server/src/sample-data/cost_of_living.json", "utf8", (err, res) => {
         if (err) {
             console.log("File read failed:", err);
@@ -24,10 +26,9 @@ function filterCostOfLiving(salaryResponse) {
         
     });
     const resultData = JSON.parse(result)
-    
-    const monthlyIncome = (parseInt(salaryResponse) * 0.3) / 12;
-    
+    const monthlyIncome = (salaryResponse * 0.3) / 12;
     const resultArray = []
+
     for (const entry of resultData) {
         const { state, city, cost_of_living } = entry;
         
@@ -37,14 +38,14 @@ function filterCostOfLiving(salaryResponse) {
     }
     return resultArray;
 }
-// figure out why this shit is only getting a few responses
+
+
 async function filterWeather(resultArray, temperatureResponse) {
     const apiKey = "b79a512b714a48f6ba315103232806"
     const filteredWeatherArray = []
-    // its stopping after the first element dont know why too late sleep time
+    
     for (const entry of resultArray) {
         const { city_name, state, cost_of_living } = entry;
-        
         try{
             const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city_name}&aqi=no`
             const response = await axios.get(url);
@@ -57,8 +58,7 @@ async function filterWeather(resultArray, temperatureResponse) {
                     averageTemperature: averageTemperature,
                 }
                 filteredWeatherArray.push(updatedObject);
-                } 
-            
+                }
             else if (temperatureResponse === "cool" && averageTemperature < 70){
                 const updatedObject = {
                     city_name: city_name,
@@ -68,19 +68,19 @@ async function filterWeather(resultArray, temperatureResponse) {
                 }
                 filteredWeatherArray.push(updatedObject);
             }
-            return filteredWeatherArray
         } catch (err) {
             console.error(err);
         }   
     }
-    
+    return filteredWeatherArray
 }
-
+// this applies a filter to our current result of locations and narrows it down specificly to what the user declares for their response
 async function filterInfrastructure(resultArray, infrastructureResponse) {
     const apiKey = "L5dbnJGEdnS8+UWvD10svQ==xRs3OJjB7PMEEIPm";
-    const filteredInfrastructureArray = []
+    const filteredInfrastructureArray = [];
+
     for (const entry of resultArray) {
-        const { city_name, state, cost_of_living } = entry;
+        const { city_name, state, cost_of_living, averageTemperature } = entry;
         try{
             const url = `https://api.api-ninjas.com/v1/city?name=${city_name}`;
             const response = await axios.get(url, {
@@ -88,11 +88,33 @@ async function filterInfrastructure(resultArray, infrastructureResponse) {
                     'X-Api-Key': apiKey
                 }
             });
-            cityPopulation = response["data"][0]["population"];
+            const cityPopulation = response["data"][0]["population"];
+            if (infrastructureResponse === "suburban" && cityPopulation <= 35000){
+                const updatedObject = {
+                    city_name: city_name,
+                    state: state,
+                    cost_of_living: cost_of_living,
+                    averageTemperature: averageTemperature,
+                    population: cityPopulation
+                }
+                filteredInfrastructureArray.push(updatedObject);
+            }
+            else if (infrastructureResponse === "urban" && cityPopulation > 35000){
+                const updatedObject = {
+                    city_name: city_name,
+                    state: state,
+                    cost_of_living: cost_of_living,
+                    averageTemperature: averageTemperature,
+                    population: cityPopulation
+                }
+                filteredInfrastructureArray.push(updatedObject);
+            }
+
         } catch (err) {
             console.error(err);
         }   
     }
+    return filteredInfrastructureArray;
 }
 
 

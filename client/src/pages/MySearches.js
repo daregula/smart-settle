@@ -46,10 +46,9 @@ export const MySearches = () => {
                     <li key={response._id}>
                         <div className="mySearches">
                             <h2>Salary: {response.salary}</h2>
-                            <h2>Employment: {response.employment}</h2>
-                            <h2>Education: {response.education}</h2>
                             <h2>Weather: {response.weather}</h2>
-                            <h2>Transportation: {response.transportation}</h2>
+                            <h2>Infrastructure: {response.infrastructure}</h2>
+                            <h2>Industry: {response.industry}</h2>
                             <Button bg={'purple.400'} color={'white'} 
                             _hover={{bg: 'purple.300'}}> View Result </Button>
                             <br></br>
