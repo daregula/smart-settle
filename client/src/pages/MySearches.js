@@ -4,7 +4,25 @@ import axios from 'axios';
 import { useGetUserID } from '../hooks/useGetUserID'
 import '../styles/MySearches.css'
 import { useNavigate } from 'react-router-dom'
-import { Heading, Button } from '@chakra-ui/react'
+import {
+    Heading,
+    Box,
+    Center,
+    Text,
+    Stack,
+    List,
+    ListItem,
+    ListIcon,
+    Button,
+    useColorModeValue,
+    SimpleGrid,
+    Flex,
+    Stat
+} from '@chakra-ui/react';
+import { CheckIcon } from '@chakra-ui/icons';
+
+
+
 
 export const MySearches = (props) => {
     const [responses, setResponses] = useState([]);
@@ -29,31 +47,85 @@ export const MySearches = (props) => {
 
         fetchSavedResponses();
     }, [props.cookie.access_token, navigate, userOwner]);
-    
+
     return (
         <div>
-            <Heading
-            fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}>
-            My Previous Searches
-            </Heading><br></br>
-            <ul>
-                {/* Maps through responses and displays each category on the front end */}
-                {responses.map((response) => (
-                    <li key={response._id}>
-                        <div className="mySearches">
-                            <h2>Salary: {response.salary}</h2>
-                            <h2>Weather: {response.weather}</h2>
-                            <h2>Infrastructure: {response.infrastructure}</h2>
-                            <h2>Industry: {response.industry}</h2>
-                            <Button bg={'purple.400'} color={'white'} 
-                            _hover={{bg: 'purple.300'}}> View Result </Button>
-                            <br></br>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+            {responses.map((response) => (
+                <Pricing cookie={props.cookie} salary={response.salary} weather={response.weather} infrastructure={response.infrastructure} industry={response.industry}/>
+            ))}
         </div>
     )
+}
+
+export default function Pricing(props) {
+    
+    
+    return (
+        <Center py={6}>
+            <Box
+            maxW={'330px'}
+            w={'full'}
+            bg={useColorModeValue('white', 'gray.800')}
+            boxShadow={'2xl'}
+            rounded={'md'}
+            overflow={'hidden'}>
+            <Stack
+                textAlign={'center'}
+                p={6}
+                color={useColorModeValue('gray.800', 'white')}
+                align={'center'}>
+                <Text
+                fontSize={'sm'}
+                fontWeight={500}
+                bg={useColorModeValue('green.50', 'green.900')}
+                p={2}
+                px={3}
+                color={'green.500'}
+                rounded={'full'}>
+                01-01-2023
+                </Text>
+                <Stack direction={'row'} align={'center'} justify={'center'}>
+                </Stack>
+            </Stack>
+            {/* {responses.map((response) => ( */}
+                <Box  px={6} py={10} >
+                    <List spacing={3}>
+                    <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        {props.salary}
+                    </ListItem>
+                    <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        {props.weather}
+                    </ListItem>
+                    <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        {props.infrastructure}
+                    </ListItem>
+                    <ListItem>
+                        <ListIcon as={CheckIcon} color="green.400" />
+                        {props.industry}
+                    </ListItem>
+                    </List>
+        
+                    <Button
+                    mt={10}
+                    w={'full'}
+                    bg={'green.400'}
+                    color={'white'}
+                    rounded={'xl'}
+                    boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+                    _hover={{
+                        bg: 'green.500',
+                    }}
+                    _focus={{
+                        bg: 'green.500',
+                    }}>
+                    View Result!
+                    </Button>
+                </Box>
+            {/* ))} */}
+            </Box>
+        </Center >
+    );
 }
