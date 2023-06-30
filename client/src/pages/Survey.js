@@ -34,6 +34,7 @@ import {
     MenuGroup,
     MenuOptionGroup,
     MenuDivider,
+    Text
     
 } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons'
@@ -48,170 +49,204 @@ export const Survey = () => {
 }
 
     //Created Forms that will later be called and displayed individually in the parent component
-    const Form1 = (props) => {
-    return (
-        <>
-            <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-            Enter your yearly salary
-            </Heading>
-            <Flex>
-                <FormControl mr="5%">
-                <Input name='salary' placeholder="40000" onChange={props.handleChange}/>
-                </FormControl>
-            </Flex>
-        </>
-    );
-    };
-    
-    const Form2 = (props) => {
-    
-    return (
-        <>
-            <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-                Survey
-            </Heading>
-            <Flex>
-                <FormControl as='fieldset'>
-                <FormLabel as='legend'>
-                    How much importance do you attribute to industry?
-                    </FormLabel>
-                    <Menu>
-                        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                            Your Cats
-                        </MenuButton>
-                        <MenuList>
-                            <MenuItem minH='48px'>
-                            <span>Fluffybuns the Destroyer</span>
-                            </MenuItem>
-                            <MenuItem minH='40px'>
-                            <span>Simon the pensive</span>
-                            </MenuItem>
-                        </MenuList>
-                    </Menu>
-                </FormControl>
-            </Flex>
-        </>
-    );
-    };
-    
-    const Form3 = (props) => {
-    return (
-        <>
-        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-            Survey
-        </Heading>
-        <Flex>
-            <FormControl as='fieldset'>
-            <FormLabel as='legend'>
-                How much importance do you attribute to education?
-                </FormLabel>
-                <RadioGroup>
-                    <HStack spacing='24px' >
-                    <p>Not Important</p>
-                    <Radio value='1'>1</Radio>
-                    <Radio value='2'>2</Radio>
-                    <Radio value='3'>3</Radio>
-                    <Radio value='4'>4</Radio>
-                    <Radio value='5'>5</Radio>
-                    <Radio value='6'>6</Radio>
-                    <Radio value='7'>7</Radio>
-                    <Radio value='8'>8</Radio>
-                    <Radio value='9'>9</Radio>
-                    <Radio value='10'>10</Radio>
-                    <p>Very Important</p>
-                    </HStack>
-                </RadioGroup>
-            </FormControl>
-        </Flex>
-        </>
-    );
+    const Introduction = (props) => {
+        return (
+            <>
+                <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+                    Survey
+                </Heading>
+                <Text
+                    fontSize={{ base: 'xl', md: '2xl' }}
+                    textAlign={'center'}
+                    maxW={'3xl'}>
+                    Welcome to our survey on finding the best city to live in! 
+                    We value your input and would like to gather some essential details from you. 
+                    Your responses will play a crucial role in helping us understand your preferences and expectations, enabling us to identify the city that suits your needs best. 
+                    So, let's begin exploring your ideal living environment! Please take a few minutes to answer the following questions to the best of your ability.
+                </Text>
+            </>
+        );
     };
 
-    const Form4 = (props) => {
-        const text = "Cool Weather <70"
-        const text2 = "Warm Weather >70"
-    return (
-        <>
-        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-            Survey
-        </Heading>
-        <Flex>
-            <FormControl as='fieldset'>
-            <FormLabel as='legend'>
-                Select your weather preference. 
-                </FormLabel>
-                <RadioGroup name='weather' >
-                    <HStack spacing='24px' onChange={props.handleChange}>
-                    <Radio value='cool'>{text}</Radio>
-                    <Radio value='warm'>{text2}</Radio>
-                    </HStack>
-                </RadioGroup>
-            </FormControl>
-        </Flex>
-        </>
-    );
+    const Priorities = (props) => {
+        return (
+            <>
+                <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+                    Priorities
+                </Heading>
+                <Flex>
+                    <FormControl as='fieldset'>
+                        <Text
+                            fontSize={{ base: 'xl', md: '2xl' }}
+                            textAlign={'center'}
+                            maxW={'3xl'}>
+                            Rate these categories from lowest to highest priority
+                            <br />
+                            (1: Highest, 3: Lowest)
+                        </Text>
+                        <FormLabel>Weather</FormLabel>
+                            <Select placeholder='Select priority' name="weatherPriority" onChange={props.handleChange}>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </Select>
+                        <br />
+                        <FormLabel>Infrastructure</FormLabel>
+                            <Select placeholder='Select priority' name="infrastructurePriority" onChange={props.handleChange}>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </Select>
+                        <br />
+                        <FormLabel>Industry</FormLabel>
+                            <Select placeholder='Select priority' name="industryPriority" onChange={props.handleChange}>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </Select>
+                    </FormControl>
+                </Flex>
+            </>
+        );
     };
 
-    const Form5 = (props) => {
-    return (
-        <>
-        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-            Survey
-        </Heading>
-        <Flex>
-            <FormControl as='fieldset'>
-            <FormLabel as='legend'>
-                How much importance do you attribute to education?
-                </FormLabel>
-                <RadioGroup>
-                    <HStack spacing='24px' >
-                    <p>Not Important</p>
-                    <Radio value='1'>1</Radio>
-                    <Radio value='2'>2</Radio>
-                    <Radio value='3'>3</Radio>
-                    <Radio value='4'>4</Radio>
-                    <Radio value='5'>5</Radio>
-                    <Radio value='6'>6</Radio>
-                    <Radio value='7'>7</Radio>
-                    <Radio value='8'>8</Radio>
-                    <Radio value='9'>9</Radio>
-                    <Radio value='10'>10</Radio>
-                    <p>Very Important</p>
-                    </HStack>
-                </RadioGroup>
-            </FormControl>
-        </Flex>
-        </>
-    );
+    const Salary = (props) => {
+        return (
+            <>
+                <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+                Enter your yearly salary
+                </Heading>
+                <Flex>
+                    <FormControl mr="5%">
+                    <Input name='salary' placeholder="40000" onChange={props.handleChange}/>
+                    </FormControl>
+                </Flex>
+            </>
+        );
     };
 
-    const Form6 = (props) => {
-    return (
-        <>
-        <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-            Survey
-        </Heading>
-        <Flex>
-            <FormControl as='fieldset'>
-            <FormLabel as='legend'>
-                How much importance do you attribute to infrastructure?
-                </FormLabel>
-                <RadioGroup name='infrastructure'>
-                    <HStack spacing='24px' onChange={props.handleChange}>
-                    <Radio value='urban'>urban</Radio>
-                    <Radio value='suburban'>suburban</Radio>
-                    </HStack>
-                </RadioGroup>
-            </FormControl>
-        </Flex>
-        </>
-    );
+    const Weather = (props) => {
+        const cool = "<70"
+        const warm = ">70"
+        return (
+            <>
+                <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+                    Weather
+                </Heading>
+                <Text
+                    fontSize={{ base: 'xl', md: '2xl' }}
+                    textAlign={'center'}
+                    maxW={'3xl'}>
+                    Do you prefer cooler or warmer weather?
+                    <br />
+                    (Cooler: {cool} | Warmer: {warm})
+                </Text>
+                <br />
+                <Flex>
+                    <FormControl as='fieldset'>
+                        <RadioGroup name='weather' >
+                            <HStack spacing='24px' onChange={props.handleChange}>
+                            <Radio value='cool'>Cooler</Radio>
+                            <Radio value='warm'>Warmer</Radio>
+                            </HStack>
+                        </RadioGroup>
+                    </FormControl>
+                </Flex>
+            </>
+        );
+    };
+    
+    
+    const Infrastructure = (props) => {
+        const urban = ">35000";
+        const suburban = "<35000";
+        return (
+            <>
+                <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+                    Infrastructure
+                </Heading>
+                <Flex>
+                    <FormControl as='fieldset'>
+                        <Text
+                        fontSize={{ base: 'xl', md: '2xl' }}
+                        textAlign={'center'}
+                        maxW={'3xl'}>
+                            Do you prefer an urban or suburban setting?
+                            <br />
+                            (Urban: {urban} | Suburban: {suburban})
+                        </Text>
+                        <br />
+                        <RadioGroup name='infrastructure'>
+                            <HStack spacing='24px' onChange={props.handleChange}>
+                            <Radio value='urban'>Urban</Radio>
+                            <Radio value='suburban'>Suburban</Radio>
+                            </HStack>
+                        </RadioGroup>
+                    </FormControl>
+                </Flex>
+            </>
+        );
+    };
+
+    const Industry = (props) => {
+        return (
+            <>
+                <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+                    Industry
+                </Heading>
+                <Flex>
+                    <FormControl as='fieldset'>
+                    <Text
+                            fontSize={{ base: 'xl', md: '2xl' }}
+                            textAlign={'center'}
+                            maxW={'3xl'}>
+                            Select the industry that you plan to work in.
+                        </Text>
+                        <br />
+                        <Menu >
+                            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} >
+                                Industries
+                            </MenuButton>
+                            <MenuList onClick={props.handleChange}>
+                                <MenuItem minH='48px' name="industry" value="tech">
+                                    <span>Tech</span>
+                                </MenuItem >
+                                <MenuItem minH='40px' name="industry" value="education">
+                                    <span>Education</span>
+                                </MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </FormControl>
+                </Flex>
+            </>
+        );
+    };
+
+    const Submit = (props) => {
+        return (
+            <>
+                <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+                    Thank you!
+                </Heading>
+                <Text
+                    fontSize={{ base: 'xl', md: '2xl' }}
+                    textAlign={'center'}
+                    maxW={'3xl'}>
+                    Thank you for taking the time to complete the survey!
+                    <br />
+                    We will record your answers and process your information to give you the best city to live in based off your answers.
+                    <br />
+                    Click "Submit" and give us a couple of seconds to return your result!
+                </Text>
+            </>
+        );
     };
     
     export default function Multistep() {
     const toast = useToast();
     const [step, setStep] = useState(1);
     const [progress, setProgress] = useState(16.66);
+    const [prioritiesArr, setPrioritiesArr] = useState([]);
 
     //Used custom hook to fetch userID and created useState for recording responses with default values
     const userID = useGetUserID();
@@ -220,7 +255,8 @@ export const Survey = () => {
         weather: "",
         infrastructure: "",
         industry: "",
-        userOwner: userID
+        priorities: [],
+        userOwner: userID,
     });
 
     //Allows us to navigate when needed
@@ -228,9 +264,28 @@ export const Survey = () => {
 
     //Uses onChange to grab what the user responded and sets the response based off the name : value
     const handleChange = (e) => {
-        const {name, value} = e.target || {};
-        setResponse({...response, [name] : value})
+        let {name, value} = e.target || {};
+        if(name === "weatherPriority") {
+            console.log("hi");
+            prioritiesArr.push({weatherPriority: value})
+            setPrioritiesArr(prioritiesArr)
+        }
+        else if(name === "infrastructurePriority"){
+            prioritiesArr.push({infrastructurePriority: value})
+            setPrioritiesArr(prioritiesArr)
+        }
+        else if(name === "industryPriority"){
+            prioritiesArr.push({industryPriority: value})
+            setPrioritiesArr(prioritiesArr)
+            setResponse({...response, priorities : prioritiesArr})
+        }
+        else {
+            setResponse({...response, [name] : value})
+        }
+        
     }
+
+    console.log(response);
 
     //On submit, we make to API requests, one for handling previous searches, and one for sending data to backend in order to generate a result
     const onSubmit = async (e) => {
@@ -264,14 +319,14 @@ export const Survey = () => {
                         mb="5%"
                         mx="5%"
                         isAnimated></Progress>
-                        {step === 1 ? <Form1 handleChange={handleChange}/> : step === 2 ? <Form2 handleChange={handleChange}/> : step === 3 ? <Form3 handleChange={handleChange}/> : step === 4 ? <Form4 handleChange={handleChange}/> : step === 5 ? <Form5 handleChange={handleChange}/> : <Form6 handleChange={handleChange}/>}
+                        {step === 1 ? <Introduction handleChange={handleChange}/> : step === 2 ? <Priorities handleChange={handleChange}/> : step === 3 ? <Salary handleChange={handleChange}/> : step === 4 ? <Weather handleChange={handleChange}/> : step === 5 ? <Infrastructure handleChange={handleChange}/> : step === 6 ? <Industry handleChange={handleChange}/> : <Submit handleChange={handleChange}/>}
                         <ButtonGroup mt="5%" w="100%">
                         <Flex w="100%" justifyContent="space-between">
                             <Flex>
                             <Button
                                 onClick={() => {
                                 setStep(step - 1);
-                                setProgress(progress - 16.66);
+                                setProgress(progress - 14.285);
                                 }}
                                 isDisabled={step === 1}
                                 colorScheme="teal"
@@ -282,13 +337,13 @@ export const Survey = () => {
                             </Button>
                             <Button
                                 w="7rem"
-                                isDisabled={step === 6}
+                                isDisabled={step === 7}
                                 onClick={() => {
                                 setStep(step + 1);
                                 if (step === 6) {
                                     setProgress(100);
                                 } else {
-                                    setProgress(progress + 16.66);
+                                    setProgress(progress + 14.285);
                                 }
                                 }}
                                 colorScheme="teal"
@@ -296,7 +351,7 @@ export const Survey = () => {
                                 Next
                             </Button>
                             </Flex>
-                            {step === 6 ? (
+                            {step === 7 ? (
                             <Button
                                 type="submit"
                                 w="7rem"
