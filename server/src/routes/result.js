@@ -9,11 +9,9 @@ router.post("/", async (req, res) => {
     const data = req.body;
     const costOfLivingArray = filterCostOfLiving(data.salary);
     const filteredWeatherArray = await filterWeather(costOfLivingArray, data.weather);
-    const filteredInfrastructureArray = await filterInfrastructure(costOfLivingArray, data.infrastructure);
-    const filteredIndustryArray = await filterIndustry(costOfLivingArray, data.industry);
-    // console.log("SOF")
-    // console.log(filteredInfrastructureArray)
-    // console.log("EOF")
+    const filteredInfrastructureArray = await filterInfrastructure(filteredWeatherArray, data.infrastructure);
+    const filteredIndustryArray = await filterIndustry(filteredInfrastructureArray, data.industry);
+    
     
 })
 
@@ -74,6 +72,7 @@ async function filterWeather(resultArray, temperatureResponse) {
     }
     return filteredWeatherArray
 }
+
 // this applies a filter to our current result of locations and narrows it down specificly to what the user declares for their response
 async function filterInfrastructure(resultArray, infrastructureResponse) {
     const apiKey = "L5dbnJGEdnS8+UWvD10svQ==xRs3OJjB7PMEEIPm";
@@ -115,6 +114,42 @@ async function filterInfrastructure(resultArray, infrastructureResponse) {
         }   
     }
     return filteredInfrastructureArray;
+}
+
+
+async function filterIndustry(resultArray, industryResponse){
+    const apiKey = 'uxRfZen++2Q+O5+azM0KdmriwlNbNLLOtvjy8/8H6Lg='
+    const userAgent = 'tedverdecia@gmail.com'
+    const filteredIndustryArray = []
+    for (const entry of resultArray){
+        const { city_name, state, cost_of_living, averageTemperature, population } = entry;
+        
+        try {
+        const url = `https://data.usajobs.gov/api/search?Keyword=Tech&LocationName=${city_name}, ${state}`;
+        const response = await axios.get(url, {
+            headers: {
+                'User-Agent': userAgent,
+                'Authorization-Key': apiKey,
+                'Host': 'data.usajobs.gov'
+            }
+        });
+        
+        const availableJobs = response['data']['SearchResult']['SearchResultCountAll']
+        
+        const updatedObject = {
+            city_name: city_name,
+            state: state,
+            cost_of_living: cost_of_living,
+            averageTemperature: averageTemperature,
+            population: population,
+            availableJobs: availableJobs
+        }
+        filteredIndustryArray.push(updatedObject)
+    } catch (err) {
+        console.error(err);
+    }
+    }
+    return filteredIndustryArray
 }
 
 
