@@ -11,22 +11,14 @@ import {
     Link,
     Text,
     VisuallyHidden,
-    Input,
-    IconButton,
     useColorModeValue,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { BiMailSend } from 'react-icons/bi';
 
 export const Footer = () => {
     return (
-        <div className='footer'>
-            <ListHeader>
-                <LargeWithNewsletter></LargeWithNewsletter>
-            </ListHeader>
-        </div>
-        
+        <LargeWithNewsletter />
     )
 }
 
@@ -77,46 +69,48 @@ const SocialButton = ({
 
 export default function LargeWithNewsletter() {
     return (
-        <Box
-            style={{position: "fixed", bottom: "0", width: "100%"}}
-            bg={useColorModeValue('gray.50', 'gray.900')}
-            color={useColorModeValue('gray.700', 'gray.200')}>
-            <Container as={Stack} maxW={'6xl'} py={10}>
-            <SimpleGrid
-                templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
-                spacing={8}>
-                <Stack spacing={6}>
-                <Box>
-                    <Logo color={useColorModeValue('gray.700', 'white')} />
-                </Box>
-                <Text fontSize={'sm'}>
-                    © 2023 Smart Settle. All rights reserved
-                </Text>
-                <Stack direction={'row'} spacing={6}>
-                    <SocialButton label={'Twitter'} href={'#'}>
-                    <FaTwitter />
-                    </SocialButton>
-                    <SocialButton label={'YouTube'} href={'#'}>
-                    <FaYoutube />
-                    </SocialButton>
-                    <SocialButton label={'Instagram'} href={'#'}>
-                    <FaInstagram />
-                    </SocialButton>
-                </Stack>
-                </Stack>
-                <Stack align={'flex-start'}>
-                <ListHeader>Company</ListHeader>
-                <Link href={'/about'}>About us</Link>
-                <Link href={'/contact'}>Contact us</Link>
-                </Stack>
-                <Stack align={'flex-start'}>
-                <ListHeader>Support</ListHeader>
-                <Link href={'/terms'}>Terms of Service</Link>
-                <Link href={'/legal'}>Legal</Link>
-                <Link href={'/privacy'}>Privacy Policy</Link>
-                </Stack>
-            </SimpleGrid>
-            </Container>
-        </Box>
+        <div>
+            <Box
+                style={{position: "fixed", bottom: "0", width: "100%"}}
+                bg={useColorModeValue('gray.50', 'gray.900')}
+                color={useColorModeValue('gray.700', 'gray.200')}>
+                <Container as={Stack} maxW={'6xl'} py={10}>
+                    <SimpleGrid
+                        templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
+                        spacing={8}>
+                        <Stack spacing={6}>
+                        <Box>
+                            <Logo color={useColorModeValue('gray.700', 'white')} />
+                        </Box>
+                        <Text fontSize={'sm'}>
+                            © 2023 Smart Settle. All rights reserved
+                        </Text>
+                        <Stack direction={'row'} spacing={6}>
+                            <SocialButton label={'Twitter'} href={'#'}>
+                            <FaTwitter />
+                            </SocialButton>
+                            <SocialButton label={'YouTube'} href={'#'}>
+                            <FaYoutube />
+                            </SocialButton>
+                            <SocialButton label={'Instagram'} href={'#'}>
+                            <FaInstagram />
+                            </SocialButton>
+                        </Stack>
+                        </Stack>
+                        <Stack align={'flex-start'}>
+                        <ListHeader>Company</ListHeader>
+                        <Link href={'/about'}>About us</Link>
+                        <Link href={'/contact'}>Contact us</Link>
+                        </Stack>
+                        <Stack align={'flex-start'}>
+                        <ListHeader>Support</ListHeader>
+                        <Link href={'/terms'}>Terms of Service</Link>
+                        <Link href={'/legal'}>Legal</Link>
+                        <Link href={'/privacy'}>Privacy Policy</Link>
+                        </Stack>
+                    </SimpleGrid>
+                </Container>
+            </Box>
+        </div>
     );
 }

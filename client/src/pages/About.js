@@ -10,19 +10,16 @@ import {
     Button,
     Image
     } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom'
-
 
 export const About = () => {
     return (
-        <body>
+        <div>
             <Hero />
-        </body>
+        </div>
     )
 }
 
 export const Hero = () => {
-    const navigate = useNavigate()
     return (
         <div>
             <Container maxW={'7xl'}>
@@ -68,6 +65,7 @@ export const Hero = () => {
                         Begin your journey to find your perfect home now!
                     </Text>
                     <Button
+                        as={'a'}
                         size={'lg'}
                         fontWeight={'normal'}
                         px={6}
@@ -76,7 +74,8 @@ export const Hero = () => {
                         _hover={{ bg: 'purple.300' }}
                         w={'sm'}
                         m ='auto'
-                        onClick={() => navigate("/survey")}>
+                        href={"/survey"}
+                        >
                         Get started
                     </Button>
                     </Stack>

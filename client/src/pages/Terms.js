@@ -1,12 +1,12 @@
 import React from 'react'
-import { Box, Center, Text, Heading } from '@chakra-ui/react'
+import { Box, Center, Text } from '@chakra-ui/react'
 
 export const Terms = () => {
 
     return (
-        <body>
+        <div>
             <TermsContent />
-        </body>
+        </div>
     )
 }
 

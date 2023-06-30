@@ -16,9 +16,7 @@ import {
 
 export const Home = () => {
     return (
-        <div className='container'>
-            <CallToActionWithAnnotation />
-        </div>
+        <CallToActionWithAnnotation />
     )
 }
 
@@ -26,68 +24,70 @@ export default function CallToActionWithAnnotation() {
     const navigate = useNavigate()
     return (
         <>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
-            rel="stylesheet"
-        />
+            <div>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
+                    rel="stylesheet"
+                />
+            </div>
 
         <Container maxW={'3xl'}>
-        <Stack
-            as={Box}
-            textAlign={'center'}
-            spacing={{ base: 8, md: 20 }}
-            py={{ base: 20, md: 30 }}>
+            <Stack
+                as={Box}
+                textAlign={'center'}
+                spacing={{ base: 8, md: 20 }}
+                py={{ base: 20, md: 30 }}>
             <Heading
-            fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}>
-            Find your <br />
-            <Text as={'span'} color={'purple.400'}>
-                dream location now!
-            </Text>
-        </Heading>
+                fontWeight={600}
+                fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+                lineHeight={'110%'}>
+                Find your <br />
+                <Text as={'span'} color={'purple.400'}>
+                    dream location now!
+                </Text>
+            </Heading>
             <Text color={'gray.500'}>
                 <b style={{color:"black"}}>Ready to find your dream location?</b>
                 <br></br>
                 <br></br> 
                 SmartSettle has you covered! We take into account your unique preferences, priorities, and lifestyle requirements to deliver personalized recommendations that match your vision of an ideal home.
             </Text>
-        <Stack
-            direction={'column'}
-            spacing={3}
-            align={'center'}
-            alignSelf={'center'}
-            position={'relative'}>
-            <Button
-            onClick={() => navigate("/survey")}
-                colorScheme={'green'}
-                bg={'purple.400'}
-                px={6}
-                _hover={{
-                bg: 'purple.300',
-            }}>
-            Get Started
-            </Button>
-            <Box>
-            <Icon
-                as={Arrow}
-                color={useColorModeValue('gray.800', 'gray.300')}
-                w={71}
-                position={'absolute'}
-                right={-71}
-                top={'10px'}
-            />
-            <Text
-                fontSize={'lg'}
-                fontFamily={'Caveat'}
-                position={'absolute'}
-                right={'-95px'}
-                top={'-15px'}
-                transform={'rotate(10deg)'}>
-                Click here!
-            </Text>
-            </Box>
-        </Stack>
+            <Stack
+                direction={'column'}
+                spacing={3}
+                align={'center'}
+                alignSelf={'center'}
+                position={'relative'}>
+                <Button
+                onClick={() => navigate("/survey")}
+                    colorScheme={'green'}
+                    bg={'purple.400'}
+                    px={6}
+                    _hover={{
+                    bg: 'purple.300',
+                }}>
+                Get Started
+                </Button>
+                <Box>
+                    <Icon
+                        as={Arrow}
+                        color={useColorModeValue('gray.800', 'gray.300')}
+                        w={71}
+                        position={'absolute'}
+                        right={-71}
+                        top={'10px'}
+                    />
+                    <Text
+                        fontSize={'lg'}
+                        fontFamily={'Caveat'}
+                        position={'absolute'}
+                        right={'-95px'}
+                        top={'-15px'}
+                        transform={'rotate(10deg)'}>
+                        Click here!
+                    </Text>
+                </Box>
+            </Stack>
         </Stack>
     </Container>
     </>

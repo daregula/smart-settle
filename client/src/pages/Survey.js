@@ -11,17 +11,9 @@ import {
     Heading,
     Flex,
     FormControl,
-    GridItem,
     FormLabel,
     Input,
     Select,
-    SimpleGrid,
-    InputLeftAddon,
-    InputGroup,
-    Textarea,
-    FormHelperText,
-    InputRightElement,
-    FormErrorMessage,
     RadioGroup,
     HStack,
     Radio,
@@ -30,12 +22,7 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
     Text
-    
 } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
@@ -465,7 +452,6 @@ export const Survey = () => {
     //On submit, we make to API requests, one for handling previous searches, and one for sending data to backend in order to generate a result
     const onSubmit = async (e) => {
         e.preventDefault();
-
         try {
             await axios.post("http://localhost:3001/responses", response);
             await axios.post("http://localhost:3001/result", response);

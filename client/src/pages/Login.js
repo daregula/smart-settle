@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 import axios from "axios"
-import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom'
 import {
     Flex,
@@ -22,16 +21,16 @@ import {
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
 
-export const Login = () => {
+export const Login = (props) => {
     return (
         <div className="auth">
-            <SimpleCard />
+            <SimpleCard setCookies={props.setCookies}/>
         </div>
         
     )
 }
 
-export function SimpleCard() {
+export function SimpleCard(props) {
     const [showPassword, setShowPassword] = useState(false);
     const [loginStat, setloginStat] = useState("")
     const [password, setPassword] = useState("")
@@ -39,8 +38,6 @@ export function SimpleCard() {
     
     let isInvalid = false
     let userNotFound = false
-
-    const [_, setCookies] = useCookies(["access_token"])
 
     const navigate = useNavigate()
 
@@ -57,7 +54,7 @@ export function SimpleCard() {
 
             if (!(response.data.message === "password" || response.data.message === "username") ){
                 // using cookies to authenticate if the user is signed in
-                setCookies("access_token", response.data.token)
+                props.setCookies("access_token", response.data.token)
                 // grabbing the unique userID from the db to use as an identifier for the user that is currently signed in
                 window.localStorage.setItem("userID", response.data.userID)
                 window.localStorage.setItem("username", response.data.username)

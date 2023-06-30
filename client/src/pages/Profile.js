@@ -18,20 +18,18 @@ import axios from "axios"
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
 import { useGetUserID } from '../hooks/useGetUserID';
 
 
-export const Profile = () => {
+export const Profile = (props) => {
     const navigate = useNavigate()
-    const [cookies, setCookies] = useCookies(["access_token"])
 
     useEffect(() => {
-        if (!cookies.access_token){
+        if (!props.cookie.access_token){
             navigate("/login");
             // alert("Must be logged into access this page");
         }
-    }, [navigate, cookies.access_token])
+    }, [navigate, props.cookie.access_token])
 
     return (
         <SignupCard />
@@ -58,9 +56,6 @@ export default function SignupCard() {
         userID: userID
     });
 
-    //Allows us to navigate when needed
-    const navigate = useNavigate()
-
     //Uses onChange to grab what the user responded and sets the response based off the name : value
     const handleChange = (e) => {
         const {name, value} = e.target || {};
@@ -80,20 +75,6 @@ export default function SignupCard() {
             console.log(err);
         }
     }
-
-
-    // const onSubmit = async (event) => {
-    //     event.preventDefault()
-    //     try {
-    //         await axios.post("http://localhost:3001/auth/register", {
-    //             username,
-    //             email
-    //         })
-    //         alert("Update successful")
-    //     } catch(err){
-    //         console.error(err);
-    //     }
-    // }
 
 
     return (
@@ -149,7 +130,7 @@ export default function SignupCard() {
                     id="email"
                     type="email" 
                     placeholder={emailph}
-                    readonly={emailph}
+                    readOnly={emailph}
                     />
                 </FormControl>
 

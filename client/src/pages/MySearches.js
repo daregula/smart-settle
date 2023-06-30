@@ -4,18 +4,16 @@ import axios from 'axios';
 import { useGetUserID } from '../hooks/useGetUserID'
 import '../styles/MySearches.css'
 import { useNavigate } from 'react-router-dom'
-import { useCookies } from 'react-cookie'
-import { Text, Heading, Button } from '@chakra-ui/react'
+import { Heading, Button } from '@chakra-ui/react'
 
-export const MySearches = () => {
-    const [responses, setResponses] = useState([])
-    const userOwner = useGetUserID()
-    const [cookies, setCookies] = useCookies(["access_token"])
-    const navigate = useNavigate()
+export const MySearches = (props) => {
+    const [responses, setResponses] = useState([]);
+    const userOwner = useGetUserID();
+    const navigate = useNavigate();
 
     useEffect(() => {
         
-        if (!cookies.access_token){
+        if (!props.cookie.access_token){
             navigate("/login");
         }
         
@@ -30,7 +28,7 @@ export const MySearches = () => {
         };
 
         fetchSavedResponses();
-    }, [userOwner]);
+    }, [props.cookie.access_token, navigate, userOwner]);
     
     return (
         <div>
@@ -38,7 +36,7 @@ export const MySearches = () => {
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}>
-            <h1> My Previous Searches </h1>
+            My Previous Searches
             </Heading><br></br>
             <ul>
                 {/* Maps through responses and displays each category on the front end */}

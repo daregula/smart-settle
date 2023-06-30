@@ -28,11 +28,11 @@ import {
 } from '@chakra-ui/icons';
 
 export const Navbar = () => {
-  
   return (
-    <div className='navbar' />
+    <WithSubnavigation />
   )
 }
+
 export const WithSubnavigation = () => {
   const { isOpen, onToggle } = useDisclosure();
   const [cookies, setCookies] = useCookies(["access_token"])
