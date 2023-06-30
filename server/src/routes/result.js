@@ -7,10 +7,11 @@ const router = express.Router();
 // Data is retrieved in JSON format (e.g. data.salary)
 router.post("/", async (req, res) => {
     const data = req.body;
-    const costOfLivingArray = filterCostOfLiving(data.salary);
-    const filteredWeatherArray = await filterWeather(costOfLivingArray, data.weather);
-    const filteredInfrastructureArray = await filterInfrastructure(filteredWeatherArray, data.infrastructure);
-    const filteredIndustryArray = await filterIndustry(filteredInfrastructureArray, data.industry);
+    console.log(data)
+    // const costOfLivingArray = filterCostOfLiving(data.salary);
+    // const filteredWeatherArray = await filterWeather(costOfLivingArray, data.weather);
+    // const filteredInfrastructureArray = await filterInfrastructure(filteredWeatherArray, data.infrastructure);
+    // const filteredIndustryArray = await filterIndustry(filteredInfrastructureArray, data.industry);
     
     
 })

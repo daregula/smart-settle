@@ -68,9 +68,14 @@ export const Survey = () => {
         );
     };
 
-    const Priorities = (props) => {
+        const Priorities = (props) => {
+        console.log("start")
+        console.log(props.one)
+        console.log(props.two)
+        console.log(props.three)
+        console.log("end")
         return (
-            <>
+            <>  
                 <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
                     Priorities
                 </Heading>
@@ -85,24 +90,45 @@ export const Survey = () => {
                             (1: Highest, 3: Lowest)
                         </Text>
                         <FormLabel>Weather</FormLabel>
-                            <Select placeholder='Select priority' name="weatherPriority" onChange={props.handleChange}>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                            <Select name="weatherPriority" onChange={props.handleChange}>
+                                <option>Select priority</option>
+
+                                {!props.one ? <option disabled>1</option> 
+                                :<option>1</option>}
+
+                                {!props.two ? <option disabled>2</option> 
+                                :<option>2</option>}
+
+                                {!props.three ? <option disabled>3</option> 
+                                :<option>3</option>}
                             </Select>
                         <br />
                         <FormLabel>Infrastructure</FormLabel>
-                            <Select placeholder='Select priority' name="infrastructurePriority" onChange={props.handleChange}>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                            <Select name="infrastructurePriority" onChange={props.handleChange}>
+                                <option>Select priority</option>
+
+                                {!props.one ? <option disabled>1</option> 
+                                :<option>1</option>}
+
+                                {!props.two ? <option disabled>2</option> 
+                                :<option>2</option>}
+
+                                {!props.three ? <option disabled>3</option> 
+                                :<option>3</option>}
                             </Select>
                         <br />
                         <FormLabel>Industry</FormLabel>
-                            <Select placeholder='Select priority' name="industryPriority" onChange={props.handleChange}>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                            <Select name="industryPriority" onChange={props.handleChange}>
+                                <option>Select priority</option>
+
+                                {!props.one ? <option disabled>1</option> 
+                                :<option>1</option>}
+
+                                {!props.two ? <option disabled>2</option> 
+                                :<option>2</option>}
+
+                                {!props.three ? <option disabled>3</option> 
+                                :<option>3</option>}
                             </Select>
                     </FormControl>
                 </Flex>
@@ -246,8 +272,8 @@ export const Survey = () => {
     const toast = useToast();
     const [step, setStep] = useState(1);
     const [progress, setProgress] = useState(16.66);
-    const [prioritiesArr, setPrioritiesArr] = useState([]);
 
+    
     //Used custom hook to fetch userID and created useState for recording responses with default values
     const userID = useGetUserID();
     const [response, setResponse] = useState({
@@ -255,37 +281,186 @@ export const Survey = () => {
         weather: "",
         infrastructure: "",
         industry: "",
-        priorities: [],
+        priorities: [{
+            weatherPriority: "",
+            infrastructurePriority: "",
+            industryPriority: ""
+        }],
         userOwner: userID,
     });
 
     //Allows us to navigate when needed
     const navigate = useNavigate()
 
+    const [one, setOne] = useState(true); 
+    const [two, setTwo] = useState(true); 
+    const [three, setThree] = useState(true); 
+    
+
     //Uses onChange to grab what the user responded and sets the response based off the name : value
     const handleChange = (e) => {
         let {name, value} = e.target || {};
         if(name === "weatherPriority") {
-            console.log("hi");
-            prioritiesArr.push({weatherPriority: value})
-            setPrioritiesArr(prioritiesArr)
+            // dict[weatherp] = value
+            if (value === "1"){
+                if (response.priorities[0]['weatherPriority'] === "2"){
+                    setTwo(true)
+                }
+                if (response.priorities[0]['weatherPriority'] === "3"){
+                    setThree(true)
+                }
+                setOne(false);
+                
+                
+            }
+            if (value === "2"){
+                if (response.priorities[0]['weatherPriority'] === "1"){
+                    setOne(true)
+                }
+                if (response.priorities[0]['weatherPriority'] === "3"){
+                    setThree(true)
+                }
+                setTwo(false);
+                
+                
+            }
+            if (value === "3"){
+                if (response.priorities[0]['weatherPriority'] === "1"){
+                    console.log("trig")
+                    setOne(true)
+                }
+                if (response.priorities[0]['weatherPriority'] === "2"){
+                    setTwo(true)
+                }
+                setThree(false);
+                
+            }
+            if (value === "Select priority"){
+                if (response.priorities[0]['weatherPriority'] === "1"){
+                    setOne(true)
+                }
+                if (response.priorities[0]['weatherPriority'] === "2"){
+                    setTwo(true)
+                }
+                if (response.priorities[0]['weatherPriority'] === "3"){
+                    setThree(true)
+                }
+                
+                // response.priorities[0]['weatherPriority'] === "1" ? setOne(true) :
+                // response.priorities[0]['weatherPriority'] === "2" ? setTwo(true) :
+                // response.priorities[0]['weatherPriority'] === "3" ? setThree(true) :
+                // console.log()
+
+            }
+
+            setResponse({...response, priorities: [{ ...response.priorities[0], weatherPriority: value }]});
+            
         }
         else if(name === "infrastructurePriority"){
-            prioritiesArr.push({infrastructurePriority: value})
-            setPrioritiesArr(prioritiesArr)
+            if (value === "1"){
+                if (response.priorities[0]['infrastructurePriority'] === "2"){
+                    setTwo(true)
+                }
+                if (response.priorities[0]['infrastructurePriority'] === "3"){
+                    setThree(true)
+                }
+                setOne(false);
+                
+            }
+            if (value === "2"){
+                if (response.priorities[0]['infrastructurePriority'] === "1"){
+                    setOne(true)
+                }
+                if (response.priorities[0]['infrastructurePriority'] === "3"){
+                    setThree(true)
+                }
+                setTwo(false);
+                
+                
+            }
+            if (value === "3"){
+                if (response.priorities[0]['infrastructurePriority'] === "1"){
+                    setOne(true)
+                }
+                if (response.priorities[0]['infrastructurePriority'] === "2"){
+                    setTwo(true)
+                }
+                setThree(false);
+                
+            }
+            if (value === "Select priority"){
+                if (response.priorities[0]['infrastructurePriority'] === "1"){
+                    setOne(true)
+                }
+                if (response.priorities[0]['infrastructurePriority'] === "2"){
+                    setTwo(true)
+                }
+                else if (response.priorities[0]['infrastructurePriority'] === "3"){
+                    setThree(true)
+                }
+            // response.priorities[0]['infrastructurePriority'] === "1" ? setOne(true) :
+            // response.priorities[0]['infrastructurePriority'] === "2" ? setTwo(true) :
+            // response.priorities[0]['infrastructurePriority'] === "3" ? setThree(true) :
+            // console.log()
+            }
+            setResponse({...response, priorities: [{ ...response.priorities[0], infrastructurePriority: value }]});
+            
         }
         else if(name === "industryPriority"){
-            prioritiesArr.push({industryPriority: value})
-            setPrioritiesArr(prioritiesArr)
-            setResponse({...response, priorities : prioritiesArr})
+            if (value === "1"){
+                if (response.priorities[0]['industryPriority'] === "2"){
+                    setTwo(true)
+                }
+                if (response.priorities[0]['industryPriority'] === "3"){
+                    setThree(true)
+                }
+                setOne(false);
+                
+                
+            }
+            if (value === "2"){
+                if (response.priorities[0]['industryPriority'] === "1"){
+                    setOne(true)
+                }
+                if (response.priorities[0]['industryPriority'] === "3"){
+                    setThree(true)
+                }
+                setTwo(false);
+                
+                
+            }
+            if (value === "3"){
+                if (response.priorities[0]['industryPriority'] === "1"){
+                    setOne(true)
+                }
+                if (response.priorities[0]['industryPriority'] === "2"){
+                    setTwo(true)
+                }
+                setThree(false);
+                
+            }
+            if (value === "Select priority"){
+                if (response.priorities[0]['industryPriority'] === "1"){
+                    setOne(true)
+                }
+                if (response.priorities[0]['industryPriority'] === "2"){
+                    setTwo(true)
+                }
+                if (response.priorities[0]['industryPriority'] === "3"){
+                    setThree(true)
+                }
+            // response.priorities[0]['industryPriority'] === "1" ? setOne(true) :
+            // response.priorities[0]['industryPriority'] === "2" ? setTwo(true) :
+            // response.priorities[0]['industryPriority'] === "3" ? setThree(true) :
+            // console.log()
+            }
+            setResponse({...response, priorities: [{ ...response.priorities[0], industryPriority: value }]});
         }
         else {
             setResponse({...response, [name] : value})
         }
         
     }
-
-    console.log(response);
 
     //On submit, we make to API requests, one for handling previous searches, and one for sending data to backend in order to generate a result
     const onSubmit = async (e) => {
@@ -319,7 +494,7 @@ export const Survey = () => {
                         mb="5%"
                         mx="5%"
                         isAnimated></Progress>
-                        {step === 1 ? <Introduction handleChange={handleChange}/> : step === 2 ? <Priorities handleChange={handleChange}/> : step === 3 ? <Salary handleChange={handleChange}/> : step === 4 ? <Weather handleChange={handleChange}/> : step === 5 ? <Infrastructure handleChange={handleChange}/> : step === 6 ? <Industry handleChange={handleChange}/> : <Submit handleChange={handleChange}/>}
+                        {step === 1 ? <Introduction handleChange={handleChange}/> : step === 2 ? <Priorities handleChange={handleChange} one={one} two={two} three={three}/> : step === 3 ? <Salary handleChange={handleChange}/> : step === 4 ? <Weather handleChange={handleChange}/> : step === 5 ? <Infrastructure handleChange={handleChange}/> : step === 6 ? <Industry handleChange={handleChange}/> : <Submit handleChange={handleChange}/>}
                         <ButtonGroup mt="5%" w="100%">
                         <Flex w="100%" justifyContent="space-between">
                             <Flex>
