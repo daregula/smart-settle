@@ -56,71 +56,66 @@ export const Survey = () => {
     };
 
         const Priorities = (props) => {
-        console.log("start")
-        console.log(props.one)
-        console.log(props.two)
-        console.log(props.three)
-        console.log("end")
-        return (
-            <>  
-                <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
-                    Priorities
-                </Heading>
-                <Flex>
-                    <FormControl as='fieldset'>
-                        <Text
-                            fontSize={{ base: 'xl', md: '2xl' }}
-                            textAlign={'center'}
-                            maxW={'3xl'}>
-                            Rate these categories from lowest to highest priority
+            return (
+                <>  
+                    <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
+                        Priorities
+                    </Heading>
+                    <Flex>
+                        <FormControl as='fieldset'>
+                            <Text
+                                fontSize={{ base: 'xl', md: '2xl' }}
+                                textAlign={'center'}
+                                maxW={'3xl'}>
+                                Rate these categories from lowest to highest priority
+                                <br />
+                                (1: Highest, 3: Lowest)
+                            </Text>
+                            <FormLabel>Weather</FormLabel>
+                                <Select name="weatherPriority" onChange={props.handleChange}>
+                                    <option>Select priority</option>
+
+                                    {!props.one ? <option disabled>1</option> 
+                                    :<option>1</option>}
+
+                                    {!props.two ? <option disabled>2</option> 
+                                    :<option>2</option>}
+
+                                    {!props.three ? <option disabled>3</option> 
+                                    :<option>3</option>}
+                                </Select>
                             <br />
-                            (1: Highest, 3: Lowest)
-                        </Text>
-                        <FormLabel>Weather</FormLabel>
-                            <Select name="weatherPriority" onChange={props.handleChange}>
-                                <option>Select priority</option>
+                            <FormLabel>Infrastructure</FormLabel>
+                                <Select name="infrastructurePriority" onChange={props.handleChange}>
+                                    <option>Select priority</option>
 
-                                {!props.one ? <option disabled>1</option> 
-                                :<option>1</option>}
+                                    {!props.one ? <option disabled>1</option> 
+                                    :<option>1</option>}
 
-                                {!props.two ? <option disabled>2</option> 
-                                :<option>2</option>}
+                                    {!props.two ? <option disabled>2</option> 
+                                    :<option>2</option>}
 
-                                {!props.three ? <option disabled>3</option> 
-                                :<option>3</option>}
-                            </Select>
-                        <br />
-                        <FormLabel>Infrastructure</FormLabel>
-                            <Select name="infrastructurePriority" onChange={props.handleChange}>
-                                <option>Select priority</option>
+                                    {!props.three ? <option disabled>3</option> 
+                                    :<option>3</option>}
+                                </Select>
+                            <br />
+                            <FormLabel>Industry</FormLabel>
+                                <Select name="industryPriority" onChange={props.handleChange}>
+                                    <option>Select priority</option>
 
-                                {!props.one ? <option disabled>1</option> 
-                                :<option>1</option>}
+                                    {!props.one ? <option disabled>1</option> 
+                                    :<option>1</option>}
 
-                                {!props.two ? <option disabled>2</option> 
-                                :<option>2</option>}
+                                    {!props.two ? <option disabled>2</option> 
+                                    :<option>2</option>}
 
-                                {!props.three ? <option disabled>3</option> 
-                                :<option>3</option>}
-                            </Select>
-                        <br />
-                        <FormLabel>Industry</FormLabel>
-                            <Select name="industryPriority" onChange={props.handleChange}>
-                                <option>Select priority</option>
-
-                                {!props.one ? <option disabled>1</option> 
-                                :<option>1</option>}
-
-                                {!props.two ? <option disabled>2</option> 
-                                :<option>2</option>}
-
-                                {!props.three ? <option disabled>3</option> 
-                                :<option>3</option>}
-                            </Select>
-                    </FormControl>
-                </Flex>
-            </>
-        );
+                                    {!props.three ? <option disabled>3</option> 
+                                    :<option>3</option>}
+                                </Select>
+                        </FormControl>
+                    </Flex>
+                </>
+            );
     };
 
     const Salary = (props) => {
@@ -446,8 +441,10 @@ export const Survey = () => {
         else {
             setResponse({...response, [name] : value})
         }
+
         
     }
+    console.log(response);
 
     //On submit, we make to API requests, one for handling previous searches, and one for sending data to backend in order to generate a result
     const onSubmit = async (e) => {

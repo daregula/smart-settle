@@ -50,16 +50,16 @@ export const MySearches = (props) => {
 
     return (
         <div>
-            {responses.map((response) => (
-                <Pricing cookie={props.cookie} salary={response.salary} weather={response.weather} infrastructure={response.infrastructure} industry={response.industry}/>
-            ))}
+            <SimpleGrid columns={3}>
+                {responses.map((response) => (
+                    <Pricing cookie={props.cookie} salary={response.salary} weather={response.weather} infrastructure={response.infrastructure} industry={response.industry}/>
+                ))}
+            </SimpleGrid>
         </div>
     )
 }
 
 export default function Pricing(props) {
-    
-    
     return (
         <Center py={6}>
             <Box
@@ -87,27 +87,25 @@ export default function Pricing(props) {
                 <Stack direction={'row'} align={'center'} justify={'center'}>
                 </Stack>
             </Stack>
-            {/* {responses.map((response) => ( */}
-                <Box  px={6} py={10} >
+                <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10} >
                     <List spacing={3}>
                     <ListItem>
                         <ListIcon as={CheckIcon} color="green.400" />
-                        {props.salary}
+                        Salary: {props.salary}
                     </ListItem>
                     <ListItem>
                         <ListIcon as={CheckIcon} color="green.400" />
-                        {props.weather}
+                        Weather: {props.weather}
                     </ListItem>
                     <ListItem>
                         <ListIcon as={CheckIcon} color="green.400" />
-                        {props.infrastructure}
+                        Infrastrucutre: {props.infrastructure}
                     </ListItem>
                     <ListItem>
                         <ListIcon as={CheckIcon} color="green.400" />
-                        {props.industry}
+                        Industry: {props.industry}
                     </ListItem>
                     </List>
-        
                     <Button
                     mt={10}
                     w={'full'}
@@ -124,7 +122,6 @@ export default function Pricing(props) {
                     View Result!
                     </Button>
                 </Box>
-            {/* ))} */}
             </Box>
         </Center >
     );
