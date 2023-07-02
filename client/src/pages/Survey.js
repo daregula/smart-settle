@@ -215,18 +215,87 @@ export const Survey = () => {
                             <MenuButton as={Button} rightIcon={<ChevronDownIcon />} >
                                 Industries
                             </MenuButton>
-                            <MenuList onClick={props.handleChange}>
+                            <MenuList onClick={props.handleChange} sx={{overflow:"scroll"}} maxH='300px'>
                                 <MenuItem maxH='38px' name="industry" value="tech">
                                     Tech
                                 </MenuItem >
                                 <MenuItem maxH='38px' name="industry" value="education">
                                     Education
                                 </MenuItem>
-                                <MenuItem maxH='38px' name="industry" value="health">
-                                    Health
+                                <MenuItem maxH='38px' name="industry" value="healthcare">
+                                    Healthcare
                                 </MenuItem>
                                 <MenuItem maxH='38px' name="industry" value="business">
                                     Business
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Administration">
+                                    Administration
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Management">
+                                    Management
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Therapy">
+                                    Therapy
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Environment">
+                                    Environment
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Construction">
+                                    Construction 
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Design">
+                                    Design
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Engineering">
+                                    Engineering
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Financial services">
+                                    Financial services
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Automotive">
+                                    Automotive
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Beauty">
+                                    Beauty
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Hospitality">
+                                    Hospitality
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Languages">
+                                    Languages
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Legal">
+                                    Legal
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Manufacturing">
+                                    Manufacturing
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Media">
+                                    Media
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Publishing">
+                                    Publishing
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Marketing">
+                                    Marketing
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Retail">
+                                    Retail
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Science">
+                                    Science
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Security">
+                                    Security
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Social Sciences">
+                                    Social Sciences
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Sport">
+                                    Sport 
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="Transportation">
+                                    Transportation
                                 </MenuItem>
                             </MenuList>
                         </Menu>
@@ -491,7 +560,7 @@ export const Survey = () => {
                                 setStep(step - 1);
                                 setProgress(progress - 14.285);
                                 }}
-                                isDisabled={step === 1}
+                                isDisabled={step === 1 || step === 7}
                                 colorScheme={'purple'}
                                 bg={'purple.400'}
                                 variant="solid"
@@ -504,7 +573,7 @@ export const Survey = () => {
                             (step === 3 && (response.salary === 0 || response.salary === "")) ||
                             (step === 4 && response.weather === "") ||
                             (step === 5 && response.infrastructure === "") ||
-                            (step === 6 && response.industry === "")?
+                            (step === 6 && response.industry === "") ?
                             (
                                 <Button w="7rem" variant="outline" colorScheme='red'>Next</Button>
                             ) : 
