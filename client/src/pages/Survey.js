@@ -211,16 +211,22 @@ export const Survey = () => {
                             Select the industry that you plan to work in.
                         </Text>
                         <br />
-                        <Menu >
+                        <Menu>
                             <MenuButton as={Button} rightIcon={<ChevronDownIcon />} >
                                 Industries
                             </MenuButton>
                             <MenuList onClick={props.handleChange}>
-                                <MenuItem minH='48px' name="industry" value="tech">
-                                    <span>Tech</span>
+                                <MenuItem maxH='38px' name="industry" value="tech">
+                                    Tech
                                 </MenuItem >
-                                <MenuItem minH='40px' name="industry" value="education">
-                                    <span>Education</span>
+                                <MenuItem maxH='38px' name="industry" value="education">
+                                    Education
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="health">
+                                    Health
+                                </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="business">
+                                    Business
                                 </MenuItem>
                             </MenuList>
                         </Menu>
@@ -444,8 +450,8 @@ export const Survey = () => {
 
         
     }
-    console.log(response);
-
+    // console.log(response);
+    
     //On submit, we make to API requests, one for handling previous searches, and one for sending data to backend in order to generate a result
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -457,7 +463,6 @@ export const Survey = () => {
             console.log(err);
         }
     }
-
     //Parent component that utilizes all previous components and submits all responses that were recorded
     return (
         <div>
@@ -487,13 +492,24 @@ export const Survey = () => {
                                 setProgress(progress - 14.285);
                                 }}
                                 isDisabled={step === 1}
-                                colorScheme="teal"
+                                colorScheme={'purple'}
+                                bg={'purple.400'}
                                 variant="solid"
                                 w="7rem"
                                 mr="5%">
                                 Back
                             </Button>
-                            <Button
+                            {
+                            ((one || two || three) && step === 2) || 
+                            (step === 3 && (response.salary === 0 || response.salary === "")) ||
+                            (step === 4 && response.weather === "") ||
+                            (step === 5 && response.infrastructure === "") ||
+                            (step === 6 && response.industry === "")?
+                            (
+                                <Button w="7rem" variant="outline" colorScheme='red'>Next</Button>
+                            ) : 
+                            (
+                                <Button
                                 w="7rem"
                                 isDisabled={step === 7}
                                 onClick={() => {
@@ -504,10 +520,14 @@ export const Survey = () => {
                                     setProgress(progress + 14.285);
                                 }
                                 }}
-                                colorScheme="teal"
+                                colorScheme={'purple'}
+                                color={'purple.600'}
                                 variant="outline">
                                 Next
                             </Button>
+                            )}
+                            
+
                             </Flex>
                             {step === 7 ? (
                             <Button
