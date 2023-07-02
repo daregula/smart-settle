@@ -119,6 +119,7 @@ export const Survey = () => {
     };
 
     const Salary = (props) => {
+        
         return (
             <>
                 <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
@@ -126,7 +127,7 @@ export const Survey = () => {
                 </Heading>
                 <Flex>
                     <FormControl mr="5%">
-                    <Input name='salary' placeholder="40000" onChange={props.handleChange}/>
+                    <Input name='salary' type="number" placeholder="40000" min="40000" onChange={props.handleChange}/>
                     </FormControl>
                 </Flex>
             </>
@@ -353,171 +354,43 @@ export const Survey = () => {
     const [two, setTwo] = useState(true); 
     const [three, setThree] = useState(true); 
     
-
     //Uses onChange to grab what the user responded and sets the response based off the name : value
     const handleChange = (e) => {
-        let {name, value} = e.target || {};
-        if(name === "weatherPriority") {
-            // dict[weatherp] = value
-            if (value === "1"){
-                if (response.priorities[0]['weatherPriority'] === "2"){
-                    setTwo(true)
-                }
-                if (response.priorities[0]['weatherPriority'] === "3"){
-                    setThree(true)
-                }
-                setOne(false);
-                
-                
-            }
-            if (value === "2"){
-                if (response.priorities[0]['weatherPriority'] === "1"){
-                    setOne(true)
-                }
-                if (response.priorities[0]['weatherPriority'] === "3"){
-                    setThree(true)
-                }
-                setTwo(false);
-                
-                
-            }
-            if (value === "3"){
-                if (response.priorities[0]['weatherPriority'] === "1"){
-                    console.log("trig")
-                    setOne(true)
-                }
-                if (response.priorities[0]['weatherPriority'] === "2"){
-                    setTwo(true)
-                }
-                setThree(false);
-                
-            }
-            if (value === "Select priority"){
-                if (response.priorities[0]['weatherPriority'] === "1"){
-                    setOne(true)
-                }
-                if (response.priorities[0]['weatherPriority'] === "2"){
-                    setTwo(true)
-                }
-                if (response.priorities[0]['weatherPriority'] === "3"){
-                    setThree(true)
-                }
-                
-                // response.priorities[0]['weatherPriority'] === "1" ? setOne(true) :
-                // response.priorities[0]['weatherPriority'] === "2" ? setTwo(true) :
-                // response.priorities[0]['weatherPriority'] === "3" ? setThree(true) :
-                // console.log()
+        const { name, value } = e.target || {};
 
-            }
-
-            setResponse({...response, priorities: [{ ...response.priorities[0], weatherPriority: value }]});
-            
-        }
-        else if(name === "infrastructurePriority"){
-            if (value === "1"){
-                if (response.priorities[0]['infrastructurePriority'] === "2"){
-                    setTwo(true)
-                }
-                if (response.priorities[0]['infrastructurePriority'] === "3"){
-                    setThree(true)
-                }
+        const updatePriority = (key) => {
+            const currentPriority = response.priorities[0][key];
+            if (value === "1") {
+                if (currentPriority === "2") setTwo(true);
+                if (currentPriority === "3") setThree(true);
                 setOne(false);
-                
-            }
-            if (value === "2"){
-                if (response.priorities[0]['infrastructurePriority'] === "1"){
-                    setOne(true)
-                }
-                if (response.priorities[0]['infrastructurePriority'] === "3"){
-                    setThree(true)
-                }
+            } else if (value === "2") {
+                if (currentPriority === "1") setOne(true);
+                if (currentPriority === "3") setThree(true);
                 setTwo(false);
-                
-                
-            }
-            if (value === "3"){
-                if (response.priorities[0]['infrastructurePriority'] === "1"){
-                    setOne(true)
-                }
-                if (response.priorities[0]['infrastructurePriority'] === "2"){
-                    setTwo(true)
-                }
+            } else if (value === "3") {
+                if (currentPriority === "1") setOne(true);
+                if (currentPriority === "2") setTwo(true);
                 setThree(false);
-                
+            } else if (value === "Select priority") {
+                if (currentPriority === "1") setOne(true);
+                if (currentPriority === "2") setTwo(true);
+                if (currentPriority === "3") setThree(true);
             }
-            if (value === "Select priority"){
-                if (response.priorities[0]['infrastructurePriority'] === "1"){
-                    setOne(true)
-                }
-                if (response.priorities[0]['infrastructurePriority'] === "2"){
-                    setTwo(true)
-                }
-                else if (response.priorities[0]['infrastructurePriority'] === "3"){
-                    setThree(true)
-                }
-            // response.priorities[0]['infrastructurePriority'] === "1" ? setOne(true) :
-            // response.priorities[0]['infrastructurePriority'] === "2" ? setTwo(true) :
-            // response.priorities[0]['infrastructurePriority'] === "3" ? setThree(true) :
-            // console.log()
-            }
-            setResponse({...response, priorities: [{ ...response.priorities[0], infrastructurePriority: value }]});
-            
-        }
-        else if(name === "industryPriority"){
-            if (value === "1"){
-                if (response.priorities[0]['industryPriority'] === "2"){
-                    setTwo(true)
-                }
-                if (response.priorities[0]['industryPriority'] === "3"){
-                    setThree(true)
-                }
-                setOne(false);
-                
-                
-            }
-            if (value === "2"){
-                if (response.priorities[0]['industryPriority'] === "1"){
-                    setOne(true)
-                }
-                if (response.priorities[0]['industryPriority'] === "3"){
-                    setThree(true)
-                }
-                setTwo(false);
-                
-                
-            }
-            if (value === "3"){
-                if (response.priorities[0]['industryPriority'] === "1"){
-                    setOne(true)
-                }
-                if (response.priorities[0]['industryPriority'] === "2"){
-                    setTwo(true)
-                }
-                setThree(false);
-                
-            }
-            if (value === "Select priority"){
-                if (response.priorities[0]['industryPriority'] === "1"){
-                    setOne(true)
-                }
-                if (response.priorities[0]['industryPriority'] === "2"){
-                    setTwo(true)
-                }
-                if (response.priorities[0]['industryPriority'] === "3"){
-                    setThree(true)
-                }
-            // response.priorities[0]['industryPriority'] === "1" ? setOne(true) :
-            // response.priorities[0]['industryPriority'] === "2" ? setTwo(true) :
-            // response.priorities[0]['industryPriority'] === "3" ? setThree(true) :
-            // console.log()
-            }
-            setResponse({...response, priorities: [{ ...response.priorities[0], industryPriority: value }]});
-        }
-        else {
-            setResponse({...response, [name] : value})
-        }
-
+            };
         
+            if (name === "weatherPriority") {
+            updatePriority("weatherPriority");
+            setResponse({ ...response, priorities: [{ ...response.priorities[0], weatherPriority: value }] });
+            } else if (name === "infrastructurePriority") {
+            updatePriority("infrastructurePriority");
+            setResponse({ ...response, priorities: [{ ...response.priorities[0], infrastructurePriority: value }] });
+            } else if (name === "industryPriority") {
+            updatePriority("industryPriority");
+            setResponse({ ...response, priorities: [{ ...response.priorities[0], industryPriority: value }] });
+            } else {
+            setResponse({ ...response, [name]: value });
+            }
     }
     // console.log(response);
     

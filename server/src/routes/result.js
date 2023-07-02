@@ -17,44 +17,65 @@ router.post("/", async (req, res) => {
     let filteredTwoArray;
     let filteredThreeArray;
 
-    // for (let i = 0; i < sortedPrioritiesArray.length; i++){
-    //     if (i === 0){
-    //         if (sortedPrioritiesArray[i][0] === "weatherPriority"){
-    //         filteredOneArray = await filterWeather(costOfLivingArray, data.weather);
-    //         }
-    //         else if (sortedPrioritiesArray[i][0] === "infrastructurePriority"){
-    //         filteredOneArray = await filterInfrastructure(costOfLivingArray, data.infrastructure);
-    //         }
-    //         else if (sortedPrioritiesArray[i][0] === "industryPriority"){
-    //         filteredOneArray = await filterIndustry(costOfLivingArray, data.industry);
-    //         }
-    //     }
-    //     else if (i === 1){
-    //         if (sortedPrioritiesArray[i][0] === "weatherPriority"){
-    //         filteredTwoArray = await filterWeather(filteredOneArray, data.weather);
-    //         }
-    //         else if (sortedPrioritiesArray[i][0] === "infrastructurePriority"){
-    //         filteredTwoArray = await filterInfrastructure(filteredOneArray, data.infrastructure);
-    //         }
-    //         else if (sortedPrioritiesArray[i][0] === "industryPriority"){
-    //         filteredTwoArray = await filterIndustry(filteredOneArray, data.industry);
-    //         }
-    //     }
-    //     else if (i === 2){
-    //         if (sortedPrioritiesArray[i][0] === "weatherPriority"){
-    //             filteredThreeArray = await filterWeather(filteredTwoArray, data.weather);
-    //             }
-    //         else if (sortedPrioritiesArray[i][0] === "infrastructurePriority"){
-    //         filteredThreeArray = await filterInfrastructure(filteredTwoArray, data.infrastructure);
-    //         }
-    //         else if (sortedPrioritiesArray[i][0] === "industryPriority"){
-    //         filteredThreeArray = await filterIndustry(filteredTwoArray, data.industry);
-    //         }
-    //     }
-    // }
-
-    // console.log(filteredThreeArray)
+    for (let i = 0; i < sortedPrioritiesArray.length; i++){
+        if (i === 0){
+            if (sortedPrioritiesArray[i][0] === "weatherPriority"){
+            filteredOneArray = await filterWeather(costOfLivingArray, data.weather);
+            }
+            else if (sortedPrioritiesArray[i][0] === "infrastructurePriority"){
+            filteredOneArray = await filterInfrastructure(costOfLivingArray, data.infrastructure);
+            }
+            else if (sortedPrioritiesArray[i][0] === "industryPriority"){
+            filteredOneArray = await filterIndustry(costOfLivingArray, data.industry);
+            }
+        }
+        else if (i === 1){
+            if (sortedPrioritiesArray[i][0] === "weatherPriority"){
+            filteredTwoArray = await filterWeather(filteredOneArray, data.weather);
+            }
+            else if (sortedPrioritiesArray[i][0] === "infrastructurePriority"){
+            filteredTwoArray = await filterInfrastructure(filteredOneArray, data.infrastructure);
+            }
+            else if (sortedPrioritiesArray[i][0] === "industryPriority"){
+            filteredTwoArray = await filterIndustry(filteredOneArray, data.industry);
+            }
+        }
+        else if (i === 2){
+            if (sortedPrioritiesArray[i][0] === "weatherPriority"){
+                filteredThreeArray = await filterWeather(filteredTwoArray, data.weather);
+                }
+            else if (sortedPrioritiesArray[i][0] === "infrastructurePriority"){
+            filteredThreeArray = await filterInfrastructure(filteredTwoArray, data.infrastructure);
+            }
+            else if (sortedPrioritiesArray[i][0] === "industryPriority"){
+            filteredThreeArray = await filterIndustry(filteredTwoArray, data.industry);
+            }
+        }
+    }
+    console.log("SOF");
+    console.log(filteredThreeArray)
+    console.log("EOF");
 })
+
+// let finalArray = costOfLivingArray;
+
+//     for (let i = 0; i < sortedPrioritiesArray.length; i++) {
+//     const priority = sortedPrioritiesArray[i][0];
+
+//     if (priority === "weatherPriority") {
+//         finalArray = await filterWeather(finalArray, data.weather);
+//     } else if (priority === "infrastructurePriority") {
+//         finalArray = await filterInfrastructure(finalArray, data.infrastructure);
+//     } else if (priority === "industryPriority") {
+//         finalArray = await filterIndustry(finalArray, data.industry);
+//     }
+//     }
+
+//     console.log(finalArray);
+
+// })
+
+// Wait for all promises to resolve
 
 
 function filterCostOfLiving(salaryResponse) {
@@ -168,6 +189,8 @@ async function filterInfrastructure(resultArray, infrastructureResponse) {
 
         } catch (err) {
             console.error(err);
+            console.log(city_name);
+            console.log(state);
         }   
     }
     return filteredInfrastructureArray;
