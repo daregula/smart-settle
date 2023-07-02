@@ -117,23 +117,28 @@ export const Survey = () => {
                 </>
             );
     };
-
+    
     const Salary = (props) => {
-        
         return (
             <>
                 <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
                 Enter your yearly salary
                 </Heading>
+                <Text>Enter a minimum salary of $55,000</Text>
                 <Flex>
                     <FormControl mr="5%">
-                    <Input name='salary' type="number" placeholder="40000" min="40000" onChange={props.handleChange}/>
+                    <Input
+                    name='salary' 
+                    type="number" 
+                    placeholder="55000" 
+                    min="55000" 
+                    onChange={props.handleChange}/>
                     </FormControl>
                 </Flex>
             </>
         );
     };
-
+    
     const Weather = (props) => {
         const cool = "<70"
         const warm = ">70"
@@ -298,6 +303,9 @@ export const Survey = () => {
                                 <MenuItem maxH='38px' name="industry" value="Transportation">
                                     Transportation
                                 </MenuItem>
+                                <MenuItem maxH='38px' name="industry" value="fast food">
+                                    Fast Food
+                                </MenuItem>
                             </MenuList>
                         </Menu>
                     </FormControl>
@@ -392,6 +400,7 @@ export const Survey = () => {
             setResponse({ ...response, [name]: value });
             }
     }
+    
     // console.log(response);
     
     //On submit, we make to API requests, one for handling previous searches, and one for sending data to backend in order to generate a result
@@ -443,7 +452,7 @@ export const Survey = () => {
                             </Button>
                             {
                             ((one || two || three) && step === 2) || 
-                            (step === 3 && (response.salary === 0 || response.salary === "")) ||
+                            (step === 3 && (response.salary < 55000 || response.salary === "")) ||
                             (step === 4 && response.weather === "") ||
                             (step === 5 && response.infrastructure === "") ||
                             (step === 6 && response.industry === "") ?
