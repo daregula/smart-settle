@@ -1,33 +1,41 @@
 import  express  from "express";
 import fs from "fs";
 import axios from "axios";
+import env from "dotenv";
+import  { ResultModel }  from "../models/Results.js";
+
+env.config()
 const router = express.Router();
 
 // Created an API endpoint to recieve survey response data
 // Data is retrieved in JSON format (e.g. data.salary)
+// results/ids/:userOwner
 router.post("/", async (req, res) => {
     const data = req.body;
+    // console.log(data);
 
     const sortedPrioritiesArray = Object.entries(data.priorities[0])
     sortedPrioritiesArray.sort((a,b) => a[1] - b[1])
-
+    
     const costOfLivingArray = filterCostOfLiving(data.salary);
     
     let finalArray = costOfLivingArray;
-
+    
     for (let i = 0; i < sortedPrioritiesArray.length; i++) {
-    const priority = sortedPrioritiesArray[i][0];
+        const priority = sortedPrioritiesArray[i][0];
 
-    if (priority === "weatherPriority") {
-        finalArray = await filterWeather(finalArray, data.weather);
-    } else if (priority === "infrastructurePriority") {
-        finalArray = await filterInfrastructure(finalArray, data.infrastructure);
-    } else if (priority === "industryPriority") {
-        finalArray = await filterIndustry(finalArray, data.industry);
-    }
+        if (priority === "weatherPriority") {
+            finalArray = await filterWeather(finalArray, data.weather);
+        } else if (priority === "infrastructurePriority") {
+            finalArray = await filterInfrastructure(finalArray, data.infrastructure);
+        } else if (priority === "industryPriority") {
+            finalArray = await filterIndustry(finalArray, data.industry);
+        }
     }
 
-    console.log(finalArray);
+    const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
+    await newResult.save();
+
 })
 
 
@@ -65,7 +73,7 @@ function filterCostOfLiving(salaryResponse) {
 
 
 async function filterWeather(resultArray, temperatureResponse) {
-    const apiKey = "b79a512b714a48f6ba315103232806"
+    const apiKey = process.env.REACT_APP_WEATHERAPI
     const filteredWeatherArray = []
     
     for (const entry of resultArray) {
@@ -105,7 +113,7 @@ async function filterWeather(resultArray, temperatureResponse) {
 
 // this applies a filter to our current result of locations and narrows it down specificly to what the user declares for their response
 async function filterInfrastructure(resultArray, infrastructureResponse) {
-    const apiKey = "L5dbnJGEdnS8+UWvD10svQ==xRs3OJjB7PMEEIPm";
+    const apiKey = process.env.REACT_APP_INFRASTRUCTUREAPI;
     const filteredInfrastructureArray = [];
 
     for (const entry of resultArray) {
@@ -152,8 +160,8 @@ async function filterInfrastructure(resultArray, infrastructureResponse) {
 
 
 async function filterIndustry(resultArray, industryResponse){
-    const apiKey = 'uxRfZen++2Q+O5+azM0KdmriwlNbNLLOtvjy8/8H6Lg='
-    const userAgent = 'tedverdecia@gmail.com'
+    const apiKey = process.env.REACT_APP_INDUSTRYAPI;
+    const userAgent = process.env.REACT_APP_EMAIL;
     const filteredIndustryArray = []
     for (const entry of resultArray){
         const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = entry;
@@ -188,6 +196,21 @@ async function filterIndustry(resultArray, industryResponse){
     }
     return filteredIndustryArray
 }
+
+
+router.get("/savedResults", async (req, res) => {
+    const responseID = req.body.responseID;
+    console.log(responseID);
+    try {
+        const userResults = await ResultModel.find({
+            responseID,
+        });
+        console.log(userResults);
+        res.json(userResults)
+    } catch (err) {
+        res.json(err);
+    }
+})
 
 
 export { router as resultRouter }

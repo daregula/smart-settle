@@ -338,6 +338,7 @@ export const Survey = () => {
     const toast = useToast();
     const [step, setStep] = useState(1);
     const [progress, setProgress] = useState(16.66);
+    const responseID = generateUniqueID();
 
     
     //Used custom hook to fetch userID and created useState for recording responses with default values
@@ -353,6 +354,7 @@ export const Survey = () => {
             industryPriority: ""
         }],
         userOwner: userID,
+        responseID: responseID,
     });
 
     //Allows us to navigate when needed
@@ -408,7 +410,8 @@ export const Survey = () => {
         e.preventDefault();
         try {
             await axios.post("http://localhost:3001/responses", response);
-            await axios.post("http://localhost:3001/result", response);
+            // await axios.post("http://localhost:3001/result", response);
+            await axios.post("http://localhost:3001/result/savedResults", response);
             navigate("/results")
         } catch (err) {
             console.log(err);
@@ -452,7 +455,7 @@ export const Survey = () => {
                             </Button>
                             {
                             ((one || two || three) && step === 2) || 
-                            (step === 3 && (response.salary < 55000 || response.salary === "")) ||
+                            (step === 3 && (response.salary < 55000 || response.salary === "" || response.salary >= 1000000)) ||
                             (step === 4 && response.weather === "") ||
                             (step === 5 && response.infrastructure === "") ||
                             (step === 6 && response.industry === "") ?
@@ -506,4 +509,17 @@ export const Survey = () => {
             </FormControl>
         </div>
     );
+
     }
+
+const generateUniqueID = () => {
+    const timestamp = Date.now();
+
+    // Generate a random number between 0 and 9999
+    const randomNum = Math.floor(Math.random() * 10000);
+
+    // Combine the timestamp and random number
+    const uniqueNum = ('0000' + (timestamp + randomNum)).slice(-4);
+
+    return uniqueNum;
+}

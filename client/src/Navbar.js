@@ -29,7 +29,9 @@ import {
 
 export const Navbar = () => {
   return (
-    <WithSubnavigation />
+    <div>
+      <WithSubnavigation />
+    </div>
   )
 }
 
