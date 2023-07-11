@@ -33,9 +33,12 @@ router.post("/", async (req, res) => {
         }
     }
 
+    finalArray.sort((a, b) => a.cost_of_living - b.cost_of_living);
+
     const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
     await newResult.save();
 
+    // console.log(finalArray);
 
     
 })
@@ -200,9 +203,9 @@ async function filterIndustry(resultArray, industryResponse){
 }
 
 
-router.get("/savedResults", async (req, res) => {
+router.post("/savedResults", async (req, res) => {
     const responseID = req.body.responseID;
-    console.log(responseID);
+    console.log(responseID, "bs");
     try {
         const userResults = await ResultModel.find({
             responseID,

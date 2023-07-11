@@ -410,9 +410,8 @@ export const Survey = () => {
         e.preventDefault();
         try {
             await axios.post("http://localhost:3001/responses", response);
-            // await axios.post("http://localhost:3001/result", response);
             await axios.post("http://localhost:3001/result/savedResults", response);
-            navigate("/results")
+            await axios.post("http://localhost:3001/result", response);
         } catch (err) {
             console.log(err);
         }
@@ -497,7 +496,8 @@ export const Survey = () => {
                                         duration: 3000,
                                         isClosable: true,
                                     });
-                                    }}
+                                    navigate("/results")
+                                }}
                                 >
                                 Submit
                             </Button>
