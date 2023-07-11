@@ -28,6 +28,8 @@ router.post("/", async (req, res) => {
     }
 
     console.log(finalArray);
+
+    
 })
 
 

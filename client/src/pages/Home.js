@@ -23,7 +23,7 @@ export const Home = () => {
 export default function CallToActionWithAnnotation() {
     const navigate = useNavigate()
     return (
-        <>
+        <div style={{'background-color': '#F7FAFC'}}>
             <div>
                 <link
                     href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
@@ -90,7 +90,7 @@ export default function CallToActionWithAnnotation() {
             </Stack>
         </Stack>
     </Container>
-    </>
+    </div>
     );
 }
 

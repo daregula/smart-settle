@@ -70,13 +70,13 @@ export function SimpleCard(props) {
     }
     
     return (
-    <div bg={useColorModeValue('gray.50', 'gray.800')}>
+    <div>
     <form onSubmit={onSubmit}>
     <Flex
-        minH={'75vh'}
+        minH={'50vh'}
         align={'center'}
         justify={'center'}
-        bg={useColorModeValue('gray.50', 'gray.800')}>
+        bg={useColorModeValue('gray.50')}>
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Sign in to your account</Heading>
