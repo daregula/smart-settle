@@ -69,12 +69,23 @@ const SocialButton = ({
 
 export default function LargeWithNewsletter() {
     return (
-        <div>
+        <div style={{
+            'min-height': '50vh',
+            'display': 'flex',
+            'flex-direction': 'column'
+            }}>
             <Box
+<<<<<<< HEAD
                 style={{ position: "fixed", bottom: "0", width: "100%"}}
                 bg={useColorModeValue('gray.50', 'gray.900')}
                 color={useColorModeValue('gray.700', 'gray.200')}>
                 <Container as={Stack} maxW={'6xl'} py={10}>
+=======
+                mt="auto"
+                bg={useColorModeValue('gray.50')}
+                color={useColorModeValue('gray.700')}>
+                <Container as={Stack} maxW={'6xl'} p={10}>
+>>>>>>> ca6097c71b3f74dc958568f10aeb102cd9d21c19
                     <SimpleGrid
                         templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
                         spacing={8}>

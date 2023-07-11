@@ -36,6 +36,8 @@ router.post("/", async (req, res) => {
     const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
     await newResult.save();
 
+
+    
 })
 
 

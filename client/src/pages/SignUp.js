@@ -60,10 +60,10 @@ export default function SignupCard() {
         <div>
             <form onSubmit={onSubmit}>
                 <Flex
-                    minH={'75vh'}
+                    minH={'50vh'}
                     align={'center'}
                     justify={'center'}
-                    bg={useColorModeValue('gray.50', 'gray.800')}>
+                    bg={useColorModeValue('gray.50')}>
                     <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
                     <Stack align={'center'}>
                         <Heading fontSize={'4xl'} textAlign={'center'}>
@@ -75,7 +75,7 @@ export default function SignupCard() {
                     </Stack>
                     <Box
                         rounded={'lg'}
-                        bg={useColorModeValue('white', 'gray.700')}
+                        bg={useColorModeValue('white')}
                         boxShadow={'lg'}
                         p={8}>
                         <Stack spacing={4}>

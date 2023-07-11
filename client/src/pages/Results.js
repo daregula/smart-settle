@@ -39,6 +39,7 @@ export const Results = () => {
     console.log(results);
     return (
         <div>
+<<<<<<< HEAD
             <SimpleGrid columns={3}>
                 {results.map((response) =>
                     response.result.map((resultItem) => {
@@ -47,6 +48,9 @@ export const Results = () => {
                     })
                 )}
             </SimpleGrid>
+=======
+            
+>>>>>>> ca6097c71b3f74dc958568f10aeb102cd9d21c19
         </div>
     )
 }
