@@ -12,6 +12,7 @@ import {
     } from '@chakra-ui/react';
 
 export const About = () => {
+    
     return (
         <div>
             <Hero />
@@ -20,6 +21,7 @@ export const About = () => {
 }
 
 export const Hero = () => {
+    
     return (
         <div>
             <Container maxW={'7xl'}>

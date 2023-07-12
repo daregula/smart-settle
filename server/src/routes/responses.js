@@ -6,29 +6,7 @@ import { UserModel } from "../models/Users.js";
 // Create an Express router
 const router = express.Router();
 
-// GET endpoint to fetch all responses
-// router.get("/", async (req, res) => {
-//     try {
-//         const response = await ResponseModel.find({});
-//         res.json(response)
-//     } catch (err) {
-//         res.json(err); 
-//     }
-// })
-
-// POST endpoint to create a new response
-// router.post("/", async (req, res) => {
-//     console.log(req.body)
-    
-//     try {
-        
-//         res.json(response)
-//     } catch (err) {
-//         res.json(err); 
-//     }
-// })
-
-// PUT endpoint to update a response and associate it with a user
+// post endpoint to update a response and associate it with a user
 router.post("/", async (req, res) => {
     const newResponse = req.body
 

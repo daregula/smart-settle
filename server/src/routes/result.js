@@ -37,10 +37,7 @@ router.post("/", async (req, res) => {
 
     const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
     await newResult.save();
-
-    console.log(finalArray);
-
-    
+    res.send(true)
 })
 
 
@@ -205,11 +202,18 @@ async function filterIndustry(resultArray, industryResponse){
 
 router.post("/savedResults", async (req, res) => {
     const responseID = req.body.responseID;
-    // console.log(responseID, "bs");
+    console.log("resID: ", responseID);
     try {
         const userResults = await ResultModel.find({ responseID });
-        // console.log(userResults);
-        res.json(userResults)
+        console.log("userRes: ", userResults[0].result);
+        res.send([{
+            city_name: 'Montpelier',
+            state: 'Vermont',
+            cost_of_living: 2450.678,
+            averageTemperature: 66,
+            population: 7372,
+            availableJobs: 165
+          }])
     } catch (err) {
         res.json(err);
     }

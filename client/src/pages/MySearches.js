@@ -23,7 +23,6 @@ import { CheckIcon } from '@chakra-ui/icons';
 
 
 
-
 export const MySearches = (props) => {
     const [responses, setResponses] = useState([]);
     const userOwner = useGetUserID();

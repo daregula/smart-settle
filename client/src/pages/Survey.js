@@ -339,7 +339,7 @@ export const Survey = () => {
     const [step, setStep] = useState(1);
     const [progress, setProgress] = useState(16.66);
     const responseID = generateUniqueID();
-
+    const [finish, setFinish] = useState(false)
     
     //Used custom hook to fetch userID and created useState for recording responses with default values
     const userID = useGetUserID();
@@ -363,6 +363,7 @@ export const Survey = () => {
     const [one, setOne] = useState(true); 
     const [two, setTwo] = useState(true); 
     const [three, setThree] = useState(true); 
+    
     
     //Uses onChange to grab what the user responded and sets the response based off the name : value
     const handleChange = (e) => {
@@ -407,15 +408,26 @@ export const Survey = () => {
     
     //On submit, we make to API requests, one for handling previous searches, and one for sending data to backend in order to generate a result
     const onSubmit = async (e) => {
+        
         e.preventDefault();
         try {
             await axios.post("http://localhost:3001/responses", response);
-            await axios.post("http://localhost:3001/result/savedResults", response);
-            await axios.post("http://localhost:3001/result", response);
+            const test = await axios.post("http://localhost:3001/result", response);
+            console.log(test.data)
+            if (test.data){
+                await axios.post("http://localhost:3001/result/savedResults", response);
+                navigate("/results")
+            }
         } catch (err) {
             console.log(err);
         }
+
     }
+
+    if (finish){
+        navigate("/results")
+    }
+
     //Parent component that utilizes all previous components and submits all responses that were recorded
     return (
         <div>
@@ -496,7 +508,7 @@ export const Survey = () => {
                                         duration: 3000,
                                         isClosable: true,
                                     });
-                                    navigate("/results")
+                                    
                                 }}
                                 >
                                 Submit

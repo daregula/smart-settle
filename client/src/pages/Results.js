@@ -27,16 +27,17 @@ export const Results = () => {
         //Fetches all data from mongoDB where the resultID is found
         const fetchSavedResults = async () => {
             try {
-                const response = await axios.get("http://localhost:3001/result/savedResults");
-                setResults(response.data);
+                const response = await axios.post("http://localhost:3001/result/savedResults") 
+                setResults(response.data)
+                console.log("Results here -> ", results)
+                console.log(typeof results)
             } catch (err) {
                 console.log(err);
             }
         };
-
         fetchSavedResults();
     }, []);
-    console.log(results);
+
     return (
         <div>
             <SimpleGrid columns={3}>
