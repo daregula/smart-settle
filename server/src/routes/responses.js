@@ -7,36 +7,43 @@ import { UserModel } from "../models/Users.js";
 const router = express.Router();
 
 // GET endpoint to fetch all responses
-router.get("/", async (req, res) => {
-    try {
-        const response = await ResponseModel.find({});
-        res.json(response)
-    } catch (err) {
-        res.json(err); 
-    }
-})
+// router.get("/", async (req, res) => {
+//     try {
+//         const response = await ResponseModel.find({});
+//         res.json(response)
+//     } catch (err) {
+//         res.json(err); 
+//     }
+// })
 
 // POST endpoint to create a new response
-router.post("/", async (req, res) => {
-    const responses = new ResponseModel(req.body);
-    try {
-        const response = await responses.save();
-        res.json(response)
-    } catch (err) {
-        res.json(err); 
-    }
-})
+// router.post("/", async (req, res) => {
+//     console.log(req.body)
+    
+//     try {
+        
+//         res.json(response)
+//     } catch (err) {
+//         res.json(err); 
+//     }
+// })
 
 // PUT endpoint to update a response and associate it with a user
-router.put("/", async (req, res) => {
+router.post("/", async (req, res) => {
+    const newResponse = req.body
+
+    console.log(req.body)
     try {
-        const responses = await ResponseModel.findById(req.body.responseID)
-        const user = await UserModel.findById(req.body.userID)
-        user.savedResponses.push(responses)
+        const responses = new ResponseModel(newResponse);
+        await responses.save()
+
+        const user = await UserModel.findById(req.body.userOwner)
+        user.savedResponses.push(req.body.responseID)
         await user.save()
+        // using put we dont need the res
         res.json({savedResponses: user.savedResponses})
     } catch (err) {
-        res.json(err); 
+        console.log(err); 
     }
 })
 

@@ -38,7 +38,7 @@ router.post("/", async (req, res) => {
     const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
     await newResult.save();
 
-    // console.log(finalArray);
+    console.log(finalArray);
 
     
 })
@@ -205,12 +205,10 @@ async function filterIndustry(resultArray, industryResponse){
 
 router.post("/savedResults", async (req, res) => {
     const responseID = req.body.responseID;
-    console.log(responseID, "bs");
+    // console.log(responseID, "bs");
     try {
-        const userResults = await ResultModel.find({
-            responseID,
-        });
-        console.log(userResults);
+        const userResults = await ResultModel.find({ responseID });
+        // console.log(userResults);
         res.json(userResults)
     } catch (err) {
         res.json(err);

@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
     firstname: { type: String },
     lastname: { type: String },
     email: { type: String },
-    savedResponses: [{type: mongoose.Schema.Types.ObjectId, ref: "responses"}]
+    savedResponses: [{type: mongoose.Schema.Types.String, ref: "responses"}]
 })
 
 export const UserModel = mongoose.model("users", UserSchema)
