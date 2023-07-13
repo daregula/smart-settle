@@ -1,4 +1,5 @@
 import { ResponseModel } from "../models/Responses.js";
+import { ResultModel } from "../models/Results.js";
 import  express  from "express";
 import mongoose from "mongoose";
 import { UserModel } from "../models/Users.js";
@@ -9,8 +10,7 @@ const router = express.Router();
 // post endpoint to update a response and associate it with a user
 router.post("/", async (req, res) => {
     const newResponse = req.body
-
-    console.log(req.body)
+    
     try {
         const responses = new ResponseModel(newResponse);
         await responses.save()
@@ -33,6 +33,21 @@ router.get("/savedResponses/ids/:userOwner", async (req, res) => {
             userOwner,
         });
         res.json(userResponses)
+    } catch (err) {
+        res.json(err);
+    }
+})
+
+router.delete("/deleteResponse/ids/:responseID", async (req, res) => {
+    try {
+        const responseIDToDelete = req.params.responseID;
+        await ResponseModel.deleteMany({
+            responseID: responseIDToDelete,
+        });
+        await ResultModel.deleteMany({
+            responseID: responseIDToDelete,
+        });
+        // res.json(userResponses)
     } catch (err) {
         res.json(err);
     }

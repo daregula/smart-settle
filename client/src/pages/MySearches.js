@@ -24,25 +24,37 @@ export const MySearches = (props) => {
     const userOwner = useGetUserID();
     const navigate = useNavigate();
 
+    //Fetches all data from mongoDB where the userID is found
     useEffect(() => {
-        
         if (!props.cookie.access_token){
             navigate("/login");
+        } else {
+            fetchSavedResponses();
+            deleteResponse();
         }
         
-        //Fetches all data from mongoDB where the userID is found
-        const fetchSavedResponses = async () => {
-            try {
-                const response = await axios.get(`http://localhost:3001/responses/savedResponses/ids/${userOwner}`);
-                setResponses(response.data);
-            } catch (err) {
-                console.log(err);
-            }
-        };
-        fetchSavedResponses();
     }, [props.cookie.access_token, navigate, userOwner]);
-    
 
+    const fetchSavedResponses = async () => {
+        try {
+            const response = await axios.get(`http://localhost:3001/responses/savedResponses/ids/${userOwner}`);
+            setResponses(response.data);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const deleteResponse = async (RID) => {
+        try {
+            console.log(RID);
+            await axios.delete(`http://localhost:3001/responses/deleteResponse/ids/${RID}`).then(() => {
+                setResponses(prevResponses => prevResponses.filter(response => response.responseID !== RID))
+            })
+        } catch (err) {
+            console.log(err);
+        }
+    };
+    
     return (
         <div>
             <SimpleGrid columns={3}>
@@ -55,6 +67,10 @@ export const MySearches = (props) => {
                         infrastructure={response.infrastructure} 
                         industry={response.industry} 
                         responseID={response.responseID}
+                        setResponses={setResponses}
+                        userOwner={userOwner}
+                        fetchSavedResponses={fetchSavedResponses}
+                        onDeleteResponse={deleteResponse}
                     />
                 ))}
             </SimpleGrid>
@@ -63,6 +79,7 @@ export const MySearches = (props) => {
 }
 
 export default function Pricing(props) {
+    
     const navigate = useNavigate()
     const fetchSavedResults = async (responseID) => {
         try {
@@ -137,6 +154,25 @@ export default function Pricing(props) {
                             fetchSavedResults(props.responseID)
                         }}>
                         View Result!
+                    </Button>
+                    <Button
+                        mt={10}
+                        w={'full'}
+                        bg={'red.400'}
+                        color={'white'}
+                        rounded={'xl'}
+                        boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+                        _hover={{
+                            bg: 'red.500',
+                        }}
+                        _focus={{
+                            bg: 'red.500',
+                        }}
+                        onClick={() => {
+                            props.onDeleteResponse(props.responseID)
+                        }}>
+                            
+                        Delete Response
                     </Button>
                 </Box>
             </Box>

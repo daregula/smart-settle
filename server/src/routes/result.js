@@ -12,7 +12,6 @@ const router = express.Router();
 // results/ids/:userOwner
 router.post("/", async (req, res) => {
     const data = req.body;
-    // console.log(data);
 
     const sortedPrioritiesArray = Object.entries(data.priorities[0])
     sortedPrioritiesArray.sort((a,b) => a[1] - b[1])
