@@ -17,36 +17,46 @@ import {
 export const Results = () => {
     const [results, setResults] = useState([]);
     const userOwner = useGetUserID();
-
-    useEffect(() => {
+    console.log()
+    // useEffect(() => {
         
-        // if (!props.cookie.access_token){
-        //     navigate("/login");
-        // }
+    //     // if (!props.cookie.access_token){
+    //     //     navigate("/login");
+    //     // }
         
-        //Fetches all data from mongoDB where the resultID is found
-        const fetchSavedResults = async () => {
-            try {
-                const response = await axios.post("http://localhost:3001/result/savedResults") 
-                setResults(response.data)
-                console.log("Results here -> ", results)
-                console.log(typeof results)
-            } catch (err) {
-                console.log(err);
-            }
-        };
-        fetchSavedResults();
-    }, []);
+    //     //Fetches all data from mongoDB where the resultID is found
+    //     const fetchSavedResults = async () => {
+    //         try {
+    //             const response = await axios.post("http://localhost:3001/result/savedResults") 
+    //             setResults(response.data)
+                
+    //         } catch (err) {
+    //             console.log(err);
+    //         }
+    //     };
+    //     fetchSavedResults();
+    // }, []);
 
     return (
         <div>
+            
             <SimpleGrid columns={3}>
-                {results.map((response) =>
-                    response.result.map((resultItem) => {
-                        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = resultItem;
-                        return <BlogPostWithImage city_name={city_name} state={state} cost_of_living={cost_of_living} averageTemperature={averageTemperature} population={population} availableJobs={availableJobs}/>;
-                    })
-                )}
+                
+                {results.map((resultItem) => {
+                    const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = resultItem;
+                    return (
+                        
+                        <BlogPostWithImage
+                            key={resultItem.city_name} // Add a unique key prop
+                            city_name={city_name}
+                            state={state}
+                            cost_of_living={cost_of_living}
+                            averageTemperature={averageTemperature}
+                            population={population}
+                            availableJobs={availableJobs}
+                        />
+                    );
+                })}
             </SimpleGrid>
         </div>
     )
@@ -54,6 +64,7 @@ export const Results = () => {
 
 export default function BlogPostWithImage(props) {
         return (
+        
         <Center py={6}>
             <Box
             maxW={'445px'}
@@ -84,6 +95,7 @@ export default function BlogPostWithImage(props) {
                 fontWeight={800}
                 fontSize={'sm'}
                 letterSpacing={1.1}>
+                
                 01-01-2023
                 </Text>
                 <Heading

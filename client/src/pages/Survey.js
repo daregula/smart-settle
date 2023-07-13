@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+
+import ReactDOM from 'react-dom';
 import axios from "axios";
 import { useGetUserID } from '../hooks/useGetUserID';
 import { useNavigate } from 'react-router-dom';
-
+import { Results } from './Results.js'
 import {
     Progress,
     Box,
@@ -407,6 +409,8 @@ export const Survey = () => {
     // console.log(response);
     
     //On submit, we make to API requests, one for handling previous searches, and one for sending data to backend in order to generate a result
+
+    
     const onSubmit = async (e) => {
         
         e.preventDefault();
@@ -415,18 +419,17 @@ export const Survey = () => {
             const test = await axios.post("http://localhost:3001/result", response);
             console.log(test.data)
             if (test.data){
-                await axios.post("http://localhost:3001/result/savedResults", response);
-                navigate("/results")
+                const finalResult = await axios.post("http://localhost:3001/result/savedResults", response);
+                
+                navigate("/results");
+                }
+            } catch (err) {
+                console.log(err);
             }
-        } catch (err) {
-            console.log(err);
-        }
+}
 
-    }
+    // then do that props shit right here with the results
 
-    if (finish){
-        navigate("/results")
-    }
 
     //Parent component that utilizes all previous components and submits all responses that were recorded
     return (

@@ -206,14 +206,7 @@ router.post("/savedResults", async (req, res) => {
     try {
         const userResults = await ResultModel.find({ responseID });
         console.log("userRes: ", userResults[0].result);
-        res.send([{
-            city_name: 'Montpelier',
-            state: 'Vermont',
-            cost_of_living: 2450.678,
-            averageTemperature: 66,
-            population: 7372,
-            availableJobs: 165
-          }])
+        res.send(userResults[0].result)
     } catch (err) {
         res.json(err);
     }
