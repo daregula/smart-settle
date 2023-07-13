@@ -17,25 +17,23 @@ import {
 export const Results = () => {
     const [results, setResults] = useState([]);
     const userOwner = useGetUserID();
-    console.log()
-    // useEffect(() => {
-        
-    //     // if (!props.cookie.access_token){
-    //     //     navigate("/login");
-    //     // }
-        
-    //     //Fetches all data from mongoDB where the resultID is found
-    //     const fetchSavedResults = async () => {
-    //         try {
-    //             const response = await axios.post("http://localhost:3001/result/savedResults") 
-    //             setResults(response.data)
-                
-    //         } catch (err) {
-    //             console.log(err);
-    //         }
-    //     };
-    //     fetchSavedResults();
-    // }, []);
+    const responseID = { responseID: window.localStorage.getItem("responseID") }
+    console.log("bs")
+    useEffect(() => {
+
+    const fetchSavedResults = async () => {
+        try {
+            const response = await axios.post("http://localhost:3001/result/getResults", responseID)
+            console.log(response.data)
+            setResults(response.data)
+            
+        } catch (err) {
+            console.log(err);
+        }
+    };
+    fetchSavedResults();
+
+    }, []);
 
     return (
         <div>

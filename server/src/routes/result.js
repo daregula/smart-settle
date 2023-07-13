@@ -202,10 +202,19 @@ async function filterIndustry(resultArray, industryResponse){
 
 router.post("/savedResults", async (req, res) => {
     const responseID = req.body.responseID;
-    console.log("resID: ", responseID);
     try {
         const userResults = await ResultModel.find({ responseID });
-        console.log("userRes: ", userResults[0].result);
+        res.send(userResults[0].responseID)
+    } catch (err) {
+        res.json(err);
+    }
+})
+
+router.post("/getResults", async (req, res) => {
+    const responseID = req.body.responseID;
+    
+    try {
+        const userResults = await ResultModel.find({ responseID });
         res.send(userResults[0].result)
     } catch (err) {
         res.json(err);

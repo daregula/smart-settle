@@ -420,7 +420,7 @@ export const Survey = () => {
             console.log(test.data)
             if (test.data){
                 const finalResult = await axios.post("http://localhost:3001/result/savedResults", response);
-                
+                window.localStorage.setItem("responseID", finalResult.data)
                 navigate("/results");
                 }
             } catch (err) {
