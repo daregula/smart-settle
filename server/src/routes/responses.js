@@ -47,7 +47,7 @@ router.delete("/deleteResponse/ids/:responseID", async (req, res) => {
         await ResultModel.deleteMany({
             responseID: responseIDToDelete,
         });
-        // res.json(userResponses)
+        res.json("true")
     } catch (err) {
         res.json(err);
     }
