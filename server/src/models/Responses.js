@@ -8,7 +8,7 @@ const ResponseSchema = new mongoose.Schema({
     industry: { type: String, required: true },
     priorities: { type: mongoose.Schema.Types.Array, required: true },
     userOwner: { type: mongoose.Schema.Types.ObjectId, ref: "users", required: true },
-    responseID: { type: mongoose.Schema.Types.String, required: true }
+    responseID: { type: mongoose.Schema.Types.String, ref: "users", required: true }
 })
-
+// added ref to responseID to users
 export const ResponseModel = mongoose.model("responses", ResponseSchema)

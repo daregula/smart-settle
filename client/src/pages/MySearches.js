@@ -5,7 +5,6 @@ import { useGetUserID } from '../hooks/useGetUserID'
 import '../styles/MySearches.css'
 import { useNavigate } from 'react-router-dom'
 import {
-    Heading,
     Box,
     Center,
     Text,
@@ -15,12 +14,9 @@ import {
     ListIcon,
     Button,
     useColorModeValue,
-    SimpleGrid,
-    Flex,
-    Stat
+    SimpleGrid
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
-
 
 
 export const MySearches = (props) => {
@@ -43,15 +39,23 @@ export const MySearches = (props) => {
                 console.log(err);
             }
         };
-
         fetchSavedResponses();
     }, [props.cookie.access_token, navigate, userOwner]);
+    
 
     return (
         <div>
             <SimpleGrid columns={3}>
                 {responses.map((response) => (
-                    <Pricing cookie={props.cookie} salary={response.salary} weather={response.weather} infrastructure={response.infrastructure} industry={response.industry}/>
+                    <Pricing 
+                        key={response.responseID}
+                        cookie={props.cookie} 
+                        salary={response.salary} 
+                        weather={response.weather} 
+                        infrastructure={response.infrastructure} 
+                        industry={response.industry} 
+                        responseID={response.responseID}
+                    />
                 ))}
             </SimpleGrid>
         </div>
@@ -59,6 +63,17 @@ export const MySearches = (props) => {
 }
 
 export default function Pricing(props) {
+    const navigate = useNavigate()
+    const fetchSavedResults = async (responseID) => {
+        try {
+            window.localStorage.setItem("responseID", responseID)
+            navigate("/results");
+            
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return (
         <Center py={6}>
             <Box
@@ -106,19 +121,22 @@ export default function Pricing(props) {
                     </ListItem>
                     </List>
                     <Button
-                    mt={10}
-                    w={'full'}
-                    bg={'green.400'}
-                    color={'white'}
-                    rounded={'xl'}
-                    boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
-                    _hover={{
-                        bg: 'green.500',
-                    }}
-                    _focus={{
-                        bg: 'green.500',
-                    }}>
-                    View Result!
+                        mt={10}
+                        w={'full'}
+                        bg={'green.400'}
+                        color={'white'}
+                        rounded={'xl'}
+                        boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+                        _hover={{
+                            bg: 'green.500',
+                        }}
+                        _focus={{
+                            bg: 'green.500',
+                        }}
+                        onClick={() => {
+                            fetchSavedResults(props.responseID)
+                        }}>
+                        View Result!
                     </Button>
                 </Box>
             </Box>

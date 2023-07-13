@@ -210,9 +210,9 @@ router.post("/savedResults", async (req, res) => {
     }
 })
 
-router.post("/getResults", async (req, res) => {
+
+router.post("/getResults/", async (req, res) => {
     const responseID = req.body.responseID;
-    
     try {
         const userResults = await ResultModel.find({ responseID });
         res.send(userResults[0].result)
@@ -220,6 +220,7 @@ router.post("/getResults", async (req, res) => {
         res.json(err);
     }
 })
+
 
 
 export { router as resultRouter }

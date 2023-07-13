@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
-
-import ReactDOM from 'react-dom';
 import axios from "axios";
 import { useGetUserID } from '../hooks/useGetUserID';
 import { useNavigate } from 'react-router-dom';
-import { Results } from './Results.js'
 import {
     Progress,
     Box,
@@ -27,7 +24,6 @@ import {
     Text
 } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons'
-
 
 export const Survey = () => {
     return (
@@ -172,7 +168,6 @@ export const Survey = () => {
         );
     };
     
-    
     const Infrastructure = (props) => {
         const urban = ">35000";
         const suburban = "<35000";
@@ -213,11 +208,11 @@ export const Survey = () => {
                 <Flex>
                     <FormControl as='fieldset'>
                     <Text
-                            fontSize={{ base: 'xl', md: '2xl' }}
-                            textAlign={'center'}
-                            maxW={'3xl'}>
-                            Select the industry that you plan to work in.
-                        </Text>
+                        fontSize={{ base: 'xl', md: '2xl' }}
+                        textAlign={'center'}
+                        maxW={'3xl'}>
+                        Select the industry that you plan to work in.
+                    </Text>
                         <br />
                         <Menu>
                             <MenuButton as={Button} rightIcon={<ChevronDownIcon />} >
@@ -341,7 +336,6 @@ export const Survey = () => {
     const [step, setStep] = useState(1);
     const [progress, setProgress] = useState(16.66);
     const responseID = generateUniqueID();
-    const [finish, setFinish] = useState(false)
     
     //Used custom hook to fetch userID and created useState for recording responses with default values
     const userID = useGetUserID();
@@ -406,18 +400,12 @@ export const Survey = () => {
             }
     }
     
-    // console.log(response);
-    
-    //On submit, we make to API requests, one for handling previous searches, and one for sending data to backend in order to generate a result
-
-    
     const onSubmit = async (e) => {
         
         e.preventDefault();
         try {
             await axios.post("http://localhost:3001/responses", response);
             const test = await axios.post("http://localhost:3001/result", response);
-            console.log(test.data)
             if (test.data){
                 const finalResult = await axios.post("http://localhost:3001/result/savedResults", response);
                 window.localStorage.setItem("responseID", finalResult.data)
@@ -426,10 +414,7 @@ export const Survey = () => {
             } catch (err) {
                 console.log(err);
             }
-}
-
-    // then do that props shit right here with the results
-
+    }
 
     //Parent component that utilizes all previous components and submits all responses that were recorded
     return (
@@ -524,7 +509,6 @@ export const Survey = () => {
             </FormControl>
         </div>
     );
-
     }
 
 const generateUniqueID = () => {

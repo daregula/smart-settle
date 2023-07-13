@@ -1,7 +1,5 @@
-import React,{useEffect, useState} from 'react'
-import { useGetUserID } from '../hooks/useGetUserID'
+import React, {useEffect, useState, useMemo} from 'react'
 import axios from 'axios';
-// import Image from 'react/image';
 import {
     Box,
     Center,
@@ -16,15 +14,12 @@ import {
 
 export const Results = () => {
     const [results, setResults] = useState([]);
-    const userOwner = useGetUserID();
-    const responseID = { responseID: window.localStorage.getItem("responseID") }
-    console.log("bs")
-    useEffect(() => {
+    const responseID = useMemo(() => ({ responseID: window.localStorage.getItem("responseID") }), []);
 
+    useEffect(() => {
     const fetchSavedResults = async () => {
         try {
             const response = await axios.post("http://localhost:3001/result/getResults", responseID)
-            console.log(response.data)
             setResults(response.data)
             
         } catch (err) {
@@ -32,20 +27,19 @@ export const Results = () => {
         }
     };
     fetchSavedResults();
-
-    }, []);
-
+    }, [responseID]);
+    
     return (
         <div>
             
             <SimpleGrid columns={3}>
                 
-                {results.map((resultItem) => {
+                {results.map((resultItem, index) => {
                     const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = resultItem;
                     return (
                         
                         <BlogPostWithImage
-                            key={resultItem.city_name} // Add a unique key prop
+                            key={`${resultItem.city_name}-${index}`} // Add a unique key prop
                             city_name={city_name}
                             state={state}
                             cost_of_living={cost_of_living}
@@ -79,12 +73,14 @@ export default function BlogPostWithImage(props) {
                 mx={-6}
                 mb={6}
                 pos={'relative'}>
-                {/* <Image
+                <Image
+                h = '230px'
+                w = '500px'
                 src={
                     'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
                 }
                 layout={'fill'}
-                /> */}
+                />
             </Box>
             <Stack>
                 <Text
