@@ -69,11 +69,7 @@ const SocialButton = ({
 
 export default function LargeWithNewsletter() {
     return (
-        <div style={{
-            'minHeight': '50vh',
-            'display': 'flex',
-            'flexDirection': 'column'
-            }}>
+        <div>
             <Box
                 mt="auto"
                 bg={useColorModeValue('gray.50')}

@@ -6,11 +6,13 @@ import {
     Heading,
     Text,
     Stack,
-    Avatar,
     useColorModeValue,
     Image,
-    SimpleGrid
+    SimpleGrid,
+    Button
 } from '@chakra-ui/react';
+import { WarningTwoIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
 
 export const Results = () => {
     const [results, setResults] = useState([]);
@@ -21,37 +23,42 @@ export const Results = () => {
         try {
             const response = await axios.post("http://localhost:3001/result/getResults", responseID)
             setResults(response.data)
-            
         } catch (err) {
             console.log(err);
         }
     };
     fetchSavedResults();
-    }, [responseID]);
-    
-    return (
-        <div>
-            
-            <SimpleGrid columns={3}>
+}, [responseID]);
+
+    console.log(results.length);
+    if(results.length > 0){
+        return (
+            <div style={{ flexGrow: "1"}}>
                 
-                {results.map((resultItem, index) => {
-                    const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = resultItem;
-                    return (
-                        
-                        <BlogPostWithImage
-                            key={`${resultItem.city_name}-${index}`} // Add a unique key prop
-                            city_name={city_name}
-                            state={state}
-                            cost_of_living={cost_of_living}
-                            averageTemperature={averageTemperature}
-                            population={population}
-                            availableJobs={availableJobs}
-                        />
-                    );
-                })}
-            </SimpleGrid>
-        </div>
-    )
+                <SimpleGrid columns={3}>
+                    
+                    {results.map((resultItem, index) => {
+                        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = resultItem;
+                        return (
+                            <BlogPostWithImage
+                                key={`${resultItem.city_name}-${index}`} // Add a unique key prop
+                                city_name={city_name}
+                                state={state}
+                                cost_of_living={cost_of_living}
+                                averageTemperature={averageTemperature}
+                                population={population}
+                                availableJobs={availableJobs}
+                            />
+                        );
+                    })
+                    }
+                </SimpleGrid>
+            </div>
+        )
+    }
+    else {
+        return <Warning />
+    }
 }
 
 export default function BlogPostWithImage(props) {
@@ -83,15 +90,6 @@ export default function BlogPostWithImage(props) {
                 />
             </Box>
             <Stack>
-                <Text
-                color={'green.500'}
-                textTransform={'uppercase'}
-                fontWeight={800}
-                fontSize={'sm'}
-                letterSpacing={1.1}>
-                
-                01-01-2023
-                </Text>
                 <Heading
                 color={useColorModeValue('gray.700', 'white')}
                 fontSize={'2xl'}
@@ -108,17 +106,37 @@ export default function BlogPostWithImage(props) {
                 Number of Jobs: {props.availableJobs}
                 </Text>
             </Stack>
-            <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
-                <Avatar
-                src={'https://avatars0.githubusercontent.com/u/1164541?v=4'}
-                alt={'Author'}
-                />
-                <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-                <Text fontWeight={600}>Achim Rolle</Text>
-                <Text color={'gray.500'}>Feb 08, 2021 · 6min read</Text>
-                </Stack>
-            </Stack>
             </Box>
         </Center>
         );
+}
+
+function Warning() {
+    const navigate = useNavigate()
+    return (
+    <Box textAlign="center" py={10} px={6}>
+        <WarningTwoIcon boxSize={'50px'} color={'purple.300'} />
+        <Heading as="h2" size="xl" mt={6} mb={2}>
+        No results
+        </Heading>
+        <Text color={'black.500'}>
+        Sorry, your combination of choices filtered 0 results. Submit the Survey with another combination of choices
+        </Text>
+        <br />
+    <Button
+        color="white"
+        variant="solid"
+        colorScheme={'green'}
+                    bg={'purple.400'}
+                    px={6}
+                    _hover={{
+                    bg: 'purple.300',
+                }}
+        onClick={() => {
+            navigate("/survey")
+        }}>
+        Go to Survey
+    </Button>
+    </Box>
+    );
 }

@@ -23,7 +23,7 @@ export const Home = () => {
 export default function CallToActionWithAnnotation() {
     const navigate = useNavigate()
     return (
-        <div style={{backgroundColor: '#F7FAFC'}}>
+        <div style={{flexGrow: "1"}}>
             <div>
                 <link
                     href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"

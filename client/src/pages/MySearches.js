@@ -54,7 +54,7 @@ export const MySearches = (props) => {
     };
     
     return (
-        <div>
+        <div style={{flexGrow: "1"}}>
             <SimpleGrid columns={3}>
                 {responses.map((response) => (
                     <Pricing 
@@ -69,6 +69,7 @@ export const MySearches = (props) => {
                         userOwner={userOwner}
                         fetchSavedResponses={fetchSavedResponses}
                         onDeleteResponse={deleteResponse}
+                        date={response.createdAt}
                     />
                 ))}
             </SimpleGrid>
@@ -111,7 +112,7 @@ export default function Pricing(props) {
                 px={3}
                 color={'green.500'}
                 rounded={'full'}>
-                01-01-2023
+                {props.date.slice(0, 10)}
                 </Text>
                 <Stack direction={'row'} align={'center'} justify={'center'}>
                 </Stack>
@@ -159,7 +160,7 @@ export default function Pricing(props) {
                         bg={'red.400'}
                         color={'white'}
                         rounded={'xl'}
-                        boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+                        boxShadow={'0 5px 20px 0px rgb(245 101 101 / 43%)'}
                         _hover={{
                             bg: 'red.500',
                         }}

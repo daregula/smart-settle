@@ -27,7 +27,7 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 
 export const Survey = () => {
     return (
-        <div className='survey'>
+        <div className='survey' style={{ flexGrow: "1"}}>
             <Multistep />
         </div>
     )
@@ -336,6 +336,12 @@ export const Survey = () => {
     const [step, setStep] = useState(1);
     const [progress, setProgress] = useState(16.66);
     const responseID = generateUniqueID();
+
+    //date
+    // const date = new Date();
+    // let day = date.getDate();
+    // let month = date.getMonth() + 1;
+    // let year = date.getFullYear();
     
     //Used custom hook to fetch userID and created useState for recording responses with default values
     const userID = useGetUserID();
@@ -486,7 +492,7 @@ export const Survey = () => {
                             <Button
                                 type="submit"
                                 w="7rem"
-                                colorScheme="red"
+                                colorScheme="green"
                                 variant="solid"
                                 onClick={() => {
                                     toast({

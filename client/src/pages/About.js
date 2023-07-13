@@ -14,7 +14,7 @@ import {
 export const About = () => {
     
     return (
-        <div>
+        <div style={{ flexGrow: "1"}}>
             <Hero />
         </div>
     )
@@ -23,7 +23,7 @@ export const About = () => {
 export const Hero = () => {
     
     return (
-        <div>
+        <div >
             <Container maxW={'7xl'}>
                 <Stack
                     align={'center'}

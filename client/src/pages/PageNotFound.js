@@ -9,7 +9,7 @@ export const PageNotFound = () => {
 
 export default function NotFound() {
     return (
-        <Box textAlign="center" py={10} px={6}>
+        <Box textAlign="center" py={10} px={6} style={{ flexGrow: "1"}}>
             <Heading
                 display="inline-block"
                 as="h2"

@@ -55,7 +55,7 @@ export function Reset() {
         }
 
     return (
-        <div>
+        <div style={{ flexGrow: "1"}}>
             <FormControl onSubmit={onSubmit}>
                 <Flex
                     minH={'75vh'}

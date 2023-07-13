@@ -58,13 +58,14 @@ export function ContactForm() {
     }
 
     return (
-    <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden">
+    <Container bg="white" maxW="full" mt={0} centerContent overflow="hidden" style={{ flexGrow: "1"}}>
     <form onSubmit={onSubmit}>
     <Flex>
         <Box
-        bg="gray.100"
+        bg="white.100"
         color="#0B0E3F"
         borderRadius="lg"
+        boxShadow={'lg'}
         m={{ sm: 4, md: 16, lg: 10 }}
         p={{ sm: 5, md: 5, lg: 16 }}>
         <Box p={4}>

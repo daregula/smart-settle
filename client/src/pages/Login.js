@@ -23,7 +23,7 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
 export const Login = (props) => {
     return (
-        <div className="auth">
+        <div className="auth" style={{ flexGrow: "1"}}>
             <SimpleCard setCookies={props.setCookies}/>
         </div>
         
@@ -76,7 +76,7 @@ export function SimpleCard(props) {
         minH={'50vh'}
         align={'center'}
         justify={'center'}
-        bg={useColorModeValue('gray.50')}>
+    >
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Sign in to your account</Heading>

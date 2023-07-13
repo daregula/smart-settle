@@ -22,7 +22,7 @@ import { useCookies } from 'react-cookie'
 function App() {
   const [cookie, setCookies] = useCookies(["access_token"])
   return (
-    <div className="App" style={{'backgroundColor': '#F7FAFC'}}>
+    <div className="App">
       <Router>
         <Navbar></Navbar>
         <Routes>

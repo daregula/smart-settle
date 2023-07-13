@@ -23,7 +23,7 @@ import axios from "axios"
 export const SignUp = () => {
     
     return (
-        <div className="auth">
+        <div className="auth" style={{ flexGrow: "1"}}>
             <SignupCard />
         </div>
         
@@ -63,7 +63,7 @@ export default function SignupCard() {
                     minH={'50vh'}
                     align={'center'}
                     justify={'center'}
-                    bg={useColorModeValue('gray.50')}>
+                >
                     <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
                     <Stack align={'center'}>
                         <Heading fontSize={'4xl'} textAlign={'center'}>

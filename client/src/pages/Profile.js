@@ -78,12 +78,12 @@ export default function SignupCard() {
 
 
     return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} style={{flexGrow: "1"}}>
         <Flex
             minH={'75vh'}
             align={'center'}
             justify={'center'}
-            bg={useColorModeValue('gray.50', 'gray.800')}>
+        >
             <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
             <Stack align={'center'}>
                 <Heading fontSize={'4xl'} textAlign={'center'}>

@@ -5,7 +5,7 @@ import { Box, Center, Text } from '@chakra-ui/react'
 export const Legal = () => {
 
     return (
-        <div>
+        <div style={{ flexGrow: "1"}}>
             < LegalContent/>
         </div>
     )
