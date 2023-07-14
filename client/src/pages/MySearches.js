@@ -95,7 +95,7 @@ export default function Pricing(props) {
             <Box
             maxW={'330px'}
             w={'full'}
-            bg={useColorModeValue('white', 'gray.800')}
+            bg={useColorModeValue('gray.50', 'gray.800')}
             boxShadow={'2xl'}
             rounded={'md'}
             overflow={'hidden'}>

@@ -3,10 +3,10 @@ import fs from "fs";
 import axios from "axios";
 import env from "dotenv";
 import  { ResultModel }  from "../models/Results.js";
+import states from "us-state-converter"
 
 env.config()
 const router = express.Router();
-
 // Created an API endpoint to recieve survey response data
 // Data is retrieved in JSON format (e.g. data.salary)
 // results/ids/:userOwner
@@ -34,11 +34,66 @@ router.post("/", async (req, res) => {
 
     finalArray.sort((a, b) => a.cost_of_living - b.cost_of_living);
 
+    // loop through the function with the final array and just like the other functions create and updated object with the additional data attatched to it
+    
+    // finalArray.map((val, idx) => {
+    //     const {state} = val
+    //     console.log(states.abbr(state))
+    // })
+    finalArray[0] ? additionalData(finalArray[0]) : console.log("no results")
     const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
     await newResult.save();
     res.send(true)
 })
 
+// function that will attach additional data to the final array and we will be calling multiple apis inside this function
+
+// we are going to be returning:
+// number of schools within 50 miles of the city
+// entertainment stuff like name and category for each entry
+// crime is gonna be by state we are gonna return the number of crimes for the past years
+
+async function additionalData(result) {
+    // api to get the lat and long for each city from the array so we need to grab the city name and the state name
+    const location_API_KEY = process.env.REACT_APP_INFRASTRUCTUREAPI;
+    const crime_API_KEY = process.env.REACT_APP_CRIMEAPI
+    // grabbing the city name path is result.city_name
+    let city_name = result.city_name;
+    // grabbing the state name path is result.state
+    let state_name = result.state;
+    
+    // make api call to get the lat and long for the city and state
+    try {
+        const location_URL_API = `https://api.api-ninjas.com/v1/geocoding?city=${city_name}&country=United States&state=${state_name}`;
+        const response = await axios.get(location_URL_API, {
+            headers: {
+                'X-Api-Key': location_API_KEY
+            }
+        });
+        const lat = response["data"][0].latitude
+        const long = response["data"][0].longitude
+    } catch (error) {
+        console.log(error)
+    }
+
+    const state_abbr = states.abbr(state_name)
+    try {
+        const crime_URL_API = `https://api.usa.gov/crime/fbi/cde/estimate/state/${state_abbr}/violent-crime?from=2015&to=2020&API_KEY=${crime_API_KEY}`;
+        const response = await axios.get(crime_URL_API)
+
+        const crimeObj = response.data.results
+
+        const values = Object.values(crimeObj[Object.keys(response.data.results)[0]]);
+        const sum = values.reduce((acc, curr) => acc + curr, 0);
+        const integerSum = parseInt(sum);
+        console.log(integerSum)
+    } catch (error) {
+        console.log(error)
+    }
+    
+    const entertainment_URL_API = ""
+    
+}
 
 
 function filterCostOfLiving(salaryResponse) {
@@ -219,7 +274,6 @@ router.post("/getResults/", async (req, res) => {
         res.json(err);
     }
 })
-
 
 
 export { router as resultRouter }

@@ -64,8 +64,9 @@ export function ContactForm() {
         <Box
         bg="white.100"
         color="#0B0E3F"
-        borderRadius="lg"
-        boxShadow={'lg'}
+        borderWidth="1px"
+        rounded="lg"
+        shadow="1px 1px 3px rgba(0,0,0,0.3)"
         m={{ sm: 4, md: 16, lg: 10 }}
         p={{ sm: 5, md: 5, lg: 16 }}>
         <Box p={4}>
