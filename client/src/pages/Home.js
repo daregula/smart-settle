@@ -12,6 +12,7 @@ import {
     Icon,
     useColorModeValue,
     createIcon,
+    Center
     } from '@chakra-ui/react';
 
 export const Home = () => {
@@ -30,8 +31,7 @@ export default function CallToActionWithAnnotation() {
                     rel="stylesheet"
                 />
             </div>
-
-        <Container maxW={'3xl'}>
+        <Container maxW={'3xl'} style={{position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)"}}>
             <Stack
                 as={Box}
                 textAlign={'center'}

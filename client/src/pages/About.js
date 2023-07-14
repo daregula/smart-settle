@@ -24,7 +24,7 @@ export const Hero = () => {
     
     return (
         <div >
-            <Container maxW={'7xl'}>
+            <Container maxW={'7xl'} style={{position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)"}}>
                 <Stack
                     align={'center'}
                     spacing={{ base: 8, md: 10 }}
