@@ -51,18 +51,39 @@ router.post("/", async (req, res) => {
 // we are going to be returning:
 // number of schools within 50 miles of the city
 // entertainment stuff like name and category for each entry
-// crime is gonna be by state we are gonna return the number of crimes for the past years
 
 async function additionalData(result) {
-    // api to get the lat and long for each city from the array so we need to grab the city name and the state name
-    const location_API_KEY = process.env.REACT_APP_INFRASTRUCTUREAPI;
-    const crime_API_KEY = process.env.REACT_APP_CRIMEAPI
-    // grabbing the city name path is result.city_name
-    let city_name = result.city_name;
-    // grabbing the state name path is result.state
-    let state_name = result.state;
-    
     // make api call to get the lat and long for the city and state
+    const locationData = await getlocation(result.city_name, result.state)
+    const crimeCount = await getCrimeCount(result.state)
+    const schoolCount = await getSchoolCount(locationData.lat, locationData.long)
+    // console.log(locationData, crimeCount, schoolCount)
+    const entertainment_URL_API = ""
+    
+}
+async function getSchools(lat, long){
+    return true
+}
+async function getCrimeSum(state_name){
+    const crime_API_KEY = process.env.REACT_APP_CRIMEAPI
+    const state_abbr = states.abbr(state_name)
+
+    try {
+        const response = await axios.get(`https://api.usa.gov/crime/fbi/cde/estimate/state/${state_abbr}/violent-crime?from=2015&to=2020&API_KEY=${crime_API_KEY}`)
+        const crimeObj = response.data.results
+        const values = Object.values(crimeObj[Object.keys(response.data.results)[0]]);
+        const sum = values.reduce((acc, curr) => acc + curr, 0);
+
+        return parseInt(sum)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// api to get the lat and long for each city
+async function getlocation(city_name, state_name) {
+    const location_API_KEY = process.env.REACT_APP_INFRASTRUCTUREAPI;
+
     try {
         const location_URL_API = `https://api.api-ninjas.com/v1/geocoding?city=${city_name}&country=United States&state=${state_name}`;
         const response = await axios.get(location_URL_API, {
@@ -72,27 +93,10 @@ async function additionalData(result) {
         });
         const lat = response["data"][0].latitude
         const long = response["data"][0].longitude
+        return { lat, long }
     } catch (error) {
         console.log(error)
     }
-
-    const state_abbr = states.abbr(state_name)
-    try {
-        const crime_URL_API = `https://api.usa.gov/crime/fbi/cde/estimate/state/${state_abbr}/violent-crime?from=2015&to=2020&API_KEY=${crime_API_KEY}`;
-        const response = await axios.get(crime_URL_API)
-
-        const crimeObj = response.data.results
-
-        const values = Object.values(crimeObj[Object.keys(response.data.results)[0]]);
-        const sum = values.reduce((acc, curr) => acc + curr, 0);
-        const integerSum = parseInt(sum);
-        console.log(integerSum)
-    } catch (error) {
-        console.log(error)
-    }
-    
-    const entertainment_URL_API = ""
-    
 }
 
 
