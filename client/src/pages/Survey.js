@@ -425,7 +425,7 @@ export const Survey = () => {
     //Parent component that utilizes all previous components and submits all responses that were recorded
     return (
         <div>
-            <FormControl onSubmit={onSubmit}>
+            <FormControl onSubmit={onSubmit} style={{position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)"}}>
                 <FormControl>
                     <Box
                         borderWidth="1px"

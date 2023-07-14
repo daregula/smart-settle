@@ -58,7 +58,7 @@ export default function SignupCard() {
 
     return (
         <div>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} style={{position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)"}}>
                 <Flex
                     minH={'50vh'}
                     align={'center'}
