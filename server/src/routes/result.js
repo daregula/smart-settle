@@ -18,53 +18,43 @@ router.post("/", async (req, res) => {
     
     const costOfLivingArray = filterCostOfLiving(data.salary);
     
-    let finalArray = costOfLivingArray;
+    let filteredArray = costOfLivingArray;
     
     for (let i = 0; i < sortedPrioritiesArray.length; i++) {
         const priority = sortedPrioritiesArray[i][0];
 
         if (priority === "weatherPriority") {
-            finalArray = await filterWeather(finalArray, data.weather);
+            filteredArray = await filterWeather(filteredArray, data.weather);
         } else if (priority === "infrastructurePriority") {
-            finalArray = await filterInfrastructure(finalArray, data.infrastructure);
+            filteredArray = await filterInfrastructure(filteredArray, data.infrastructure);
         } else if (priority === "industryPriority") {
-            finalArray = await filterIndustry(finalArray, data.industry);
+            filteredArray = await filterIndustry(filteredArray, data.industry);
         }
     }
 
-    finalArray.sort((a, b) => a.cost_of_living - b.cost_of_living);
+    filteredArray.sort((a, b) => a.cost_of_living - b.cost_of_living);
+    const finalArray = []
+    // need to loop through the final array to get all the results this is just going to return the additional information for the first result
+    if (filteredArray[0]){
+        const additionalDataRes = await additionalData(filteredArray[0])
+        console.log(additionalDataRes)
+    }
 
-    // loop through the function with the final array and just like the other functions create and updated object with the additional data attatched to it
-    
-    // finalArray.map((val, idx) => {
-    //     const {state} = val
-    //     console.log(states.abbr(state))
-    // })
-    finalArray[0] ? additionalData(finalArray[0]) : console.log("no results")
     const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
     await newResult.save();
     res.send(true)
 })
 
 // function that will attach additional data to the final array and we will be calling multiple apis inside this function
-
-// we are going to be returning:
-// number of schools within 50 miles of the city
-// entertainment stuff like name and category for each entry
-
 async function additionalData(result) {
     // make api call to get the lat and long for the city and state
-    const locationData = await getlocation(result.city_name, result.state)
     const crimeCount = await getCrimeCount(result.state)
-    const schoolCount = await getSchoolCount(locationData.lat, locationData.long)
-    // console.log(locationData, crimeCount, schoolCount)
-    const entertainment_URL_API = ""
+    const pointsOfInterest = getPointsOfInterest(result.state)
     
+    return { crimeCount, pointsOfInterest }
 }
-async function getSchools(lat, long){
-    return true
-}
-async function getCrimeSum(state_name){
+
+async function getCrimeCount(state_name){
     const crime_API_KEY = process.env.REACT_APP_CRIMEAPI
     const state_abbr = states.abbr(state_name)
 
@@ -80,30 +70,31 @@ async function getCrimeSum(state_name){
     }
 }
 
-// api to get the lat and long for each city
-async function getlocation(city_name, state_name) {
-    const location_API_KEY = process.env.REACT_APP_INFRASTRUCTUREAPI;
+// api to get the points of interest by city and state
+function getPointsOfInterest(state) {
+    const pointsOfInterest = []
+    const result = fs.readFileSync("../server/src/sample-data/points_of_interest.json", "utf8", (err, res) =>{
+        if (err) {
+            console.log("File read failed: ", err);
+            return;
+        }
+    });
 
-    try {
-        const location_URL_API = `https://api.api-ninjas.com/v1/geocoding?city=${city_name}&country=United States&state=${state_name}`;
-        const response = await axios.get(location_URL_API, {
-            headers: {
-                'X-Api-Key': location_API_KEY
-            }
-        });
-        const lat = response["data"][0].latitude
-        const long = response["data"][0].longitude
-        return { lat, long }
-    } catch (error) {
-        console.log(error)
+    const resultData = JSON.parse(result)
+    for (const entry of resultData){
+        if (state === entry.location.state){
+            pointsOfInterest.push(entry.name)
+        }
     }
+
+    return pointsOfInterest
 }
 
 
 function filterCostOfLiving(salaryResponse) {
     const result = fs.readFileSync("../server/src/sample-data/cost_of_living.json", "utf8", (err, res) => {
         if (err) {
-            console.log("File read failed:", err);
+            console.log("File read failed: ", err);
             return;
         }
         
@@ -123,7 +114,8 @@ function filterCostOfLiving(salaryResponse) {
                 cost_of_living: cost_of_living,
                 averageTemperature: "",
                 population: "",
-                availableJobs: ""
+                availableJobs: "",
+                additionalData: {}
             }
             resultArray.push(updatedObject);
         }
@@ -137,7 +129,7 @@ async function filterWeather(resultArray, temperatureResponse) {
     const filteredWeatherArray = []
     
     for (const entry of resultArray) {
-        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = entry;
+        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs, additionalData } = entry;
         try{
             const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city_name}&aqi=no`
             const response = await axios.get(url);
@@ -149,7 +141,8 @@ async function filterWeather(resultArray, temperatureResponse) {
                     cost_of_living: cost_of_living,
                     averageTemperature: averageTemperature,
                     population: population,
-                    availableJobs: availableJobs
+                    availableJobs: availableJobs,
+                    additionalData: additionalData
                 }
                 filteredWeatherArray.push(updatedObject);
                 }
@@ -160,7 +153,8 @@ async function filterWeather(resultArray, temperatureResponse) {
                     cost_of_living: cost_of_living,
                     averageTemperature: averageTemperature,
                     population: population,
-                    availableJobs: availableJobs
+                    availableJobs: availableJobs,
+                    additionalData: additionalData
                 }
                 filteredWeatherArray.push(updatedObject);
             }
@@ -177,7 +171,7 @@ async function filterInfrastructure(resultArray, infrastructureResponse) {
     const filteredInfrastructureArray = [];
 
     for (const entry of resultArray) {
-        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = entry;
+        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs, additionalData } = entry;
         try{
             const url = `https://api.api-ninjas.com/v1/city?name=${city_name}`;
             const response = await axios.get(url, {
@@ -193,7 +187,8 @@ async function filterInfrastructure(resultArray, infrastructureResponse) {
                     cost_of_living: cost_of_living,
                     averageTemperature: averageTemperature,
                     population: cityPopulation,
-                    availableJobs: availableJobs
+                    availableJobs: availableJobs,
+                    additionalData: additionalData
                 }
                 filteredInfrastructureArray.push(updatedObject);
             }
@@ -204,15 +199,14 @@ async function filterInfrastructure(resultArray, infrastructureResponse) {
                     cost_of_living: cost_of_living,
                     averageTemperature: averageTemperature,
                     population: cityPopulation,
-                    availableJobs: availableJobs
+                    availableJobs: availableJobs,
+                    additionalData: additionalData
                 }
                 filteredInfrastructureArray.push(updatedObject);
             }
 
         } catch (err) {
             console.error(err);
-            console.log(city_name);
-            console.log(state);
         }   
     }
     return filteredInfrastructureArray;
@@ -224,7 +218,7 @@ async function filterIndustry(resultArray, industryResponse){
     const userAgent = process.env.REACT_APP_EMAIL;
     const filteredIndustryArray = []
     for (const entry of resultArray){
-        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = entry;
+        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs, additionalData } = entry;
         
         try {
         const url = `https://data.usajobs.gov/api/search?Keyword=${industryResponse}&LocationName=${city_name}, ${state}`;
@@ -245,7 +239,8 @@ async function filterIndustry(resultArray, industryResponse){
                 cost_of_living: cost_of_living,
                 averageTemperature: averageTemperature,
                 population: population,
-                availableJobs: availableJobs
+                availableJobs: availableJobs,
+                additionalData: additionalData
             }
             filteredIndustryArray.push(updatedObject)
         }
