@@ -1,0 +1,3220 @@
+[
+    {
+      "location": {
+        "city": "Spokane",
+        "state": "Washington"
+      },
+      "name": "Cruise Bar",
+      "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Tacoma",
+        "state": "Washington"
+      },
+      "name": "Blue Moon Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Vancouver",
+        "state": "Washington"
+      },
+      "name": "Rustic Tavern",
+      "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Olympia",
+        "state": "Washington"
+      },
+      "name": "Savor Bistro",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Bellingham",
+        "state": "Washington"
+      },
+      "name": "Sunny's Diner",
+      "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Everett",
+        "state": "Washington"
+      },
+      "name": "Casa Grande",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Redmond",
+        "state": "Washington"
+      },
+      "name": "The Roaming Fork",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Renton",
+        "state": "Washington"
+      },
+      "name": "Basil's Kitchen",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Charleston",
+        "state": "West Virginia"
+      },
+      "name": "The Tasting Room",
+      "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Huntington",
+        "state": "West Virginia"
+      },
+      "name": "Riverfront BBQ",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Morgantown",
+        "state": "West Virginia"
+      },
+      "name": "Farmhouse Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Parkersburg",
+        "state": "West Virginia"
+      },
+      "name": "Riverside Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Wheeling",
+        "state": "West Virginia"
+      },
+      "name": "The Silver Spoon",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Martinsburg",
+        "state": "West Virginia"
+      },
+      "name": "The Red Oak Grille",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Fairmont",
+        "state": "West Virginia"
+      },
+      "name": "Sweet Basil Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Clarksburg",
+        "state": "West Virginia"
+      },
+      "name": "The Rail Yard",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "South Charleston",
+        "state": "West Virginia"
+      },
+      "name": "The Spice Rack",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Weirton",
+        "state": "West Virginia"
+      },
+      "name": "Italian Village",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Milwaukee",
+        "state": "Wisconsin"
+      },
+      "name": "Brew City Diner",
+      "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Madison",
+        "state": "Wisconsin"
+      },
+      "name": "Lakefront Bistro",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Green Bay",
+        "state": "Wisconsin"
+      },
+      "name": "The Cheese Shop",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Kenosha",
+        "state": "Wisconsin"
+      },
+      "name": "Harbor View Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Racine",
+        "state": "Wisconsin"
+      },
+      "name": "Ocean Breeze Seafood",
+      "types": ["seafood", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Appleton",
+        "state": "Wisconsin"
+      },
+      "name": "The Orchard",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Eau Claire",
+        "state": "Wisconsin"
+      },
+      "name": "Riverfront Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Oshkosh",
+        "state": "Wisconsin"
+      },
+      "name": "Sunshine Diner",
+      "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Janesville",
+        "state": "Wisconsin"
+      },
+      "name": "Smokey Joe's BBQ",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "La Crosse",
+        "state": "Wisconsin"
+      },
+      "name": "Riverboat Tavern",
+      "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Cheyenne",
+        "state": "Wyoming"
+      },
+      "name": "Wyoming Steakhouse",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Casper",
+        "state": "Wyoming"
+      },
+      "name": "Mountain View Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Laramie",
+        "state": "Wyoming"
+      },
+      "name": "The Plainsman Steakhouse",
+      "types": ["steakhouse", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Gillette",
+        "state": "Wyoming"
+      },
+      "name": "Cowboy Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Rock Springs",
+        "state": "Wyoming"
+      },
+      "name": "Pioneer Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Sheridan",
+        "state": "Wyoming"
+      },
+      "name": "The Blue Boar",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Green River",
+        "state": "Wyoming"
+      },
+      "name": "Riverfront Grille",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Evanston",
+        "state": "Wyoming"
+      },
+      "name": "Sagebrush Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Riverton",
+        "state": "Wyoming"
+      },
+      "name": "The Red Fox",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Jackson",
+        "state": "Wyoming"
+      },
+      "name": "Mountain View Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+
+  {
+      "location": {
+        "city": "Erie",
+        "state": "Pennsylvania"
+      },
+      "name": "Harborview Restaurant",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Reading",
+        "state": "Pennsylvania"
+      },
+      "name": "Riverside Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Scranton",
+        "state": "Pennsylvania"
+      },
+      "name": "The Avenue Diner",
+      "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Lancaster",
+        "state": "Pennsylvania"
+      },
+      "name": "Farm to Table Bistro",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "York",
+        "state": "Pennsylvania"
+      },
+      "name": "Market Street Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Bethlehem",
+        "state": "Pennsylvania"
+      },
+      "name": "Steel City Tavern",
+      "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Providence",
+        "state": "Rhode Island"
+      },
+      "name": "Riverwalk Restaurant",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Warwick",
+        "state": "Rhode Island"
+      },
+      "name": "Coastal Breeze Seafood",
+      "types": ["seafood", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Cranston",
+        "state": "Rhode Island"
+      },
+      "name": "Taste of Italy",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Pawtucket",
+        "state": "Rhode Island"
+      },
+      "name": "Mill Street Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "East Providence",
+        "state": "Rhode Island"
+      },
+      "name": "Riverside Bistro",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Woonsocket",
+        "state": "Rhode Island"
+      },
+      "name": "The Local Tavern",
+      "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Coventry",
+        "state": "Rhode Island"
+      },
+      "name": "Countryside Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "North Providence",
+        "state": "Rhode Island"
+      },
+      "name": "Main Street Diner",
+      "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "West Warwick",
+        "state": "Rhode Island"
+      },
+      "name": "The Rusty Anchor",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Westerly",
+        "state": "Rhode Island"
+      },
+      "name": "Oceanfront Bistro",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Columbia",
+        "state": "South Carolina"
+      },
+      "name": "Southern Comfort Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Charleston",
+        "state": "South Carolina"
+      },
+      "name": "Harborview Restaurant",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Greenville",
+        "state": "South Carolina"
+      },
+      "name": "Downtown Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Myrtle Beach",
+        "state": "South Carolina"
+      },
+      "name": "Beachside Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Spartanburg",
+        "state": "South Carolina"
+      },
+      "name": "The Local Eatery",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Hilton Head Island",
+        "state": "South Carolina"
+      },
+      "name": "Seaside Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Florence",
+        "state": "South Carolina"
+      },
+      "name": "Main Street Bistro",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Rock Hill",
+        "state": "South Carolina"
+      },
+      "name": "Riverfront Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Aiken",
+        "state": "South Carolina"
+      },
+      "name": "The Rusty Spur",
+      "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Anderson",
+        "state": "South Carolina"
+      },
+      "name": "Riverside Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Sioux Falls",
+        "state": "South Dakota"
+      },
+      "name": "Falls View Restaurant",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Rapid City",
+        "state": "South Dakota"
+      },
+      "name": "Black Hills Grill",
+      "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Aberdeen",
+        "state": "South Dakota"
+      },
+      "name": "Dakota Delights",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Brookings",
+        "state": "South Dakota"
+      },
+      "name": "Prairie Grille",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Watertown",
+        "state": "South Dakota"
+      },
+      "name": "Lakeview Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Mitchell",
+        "state": "South Dakota"
+      },
+      "name": "Main Street Diner",
+      "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Yankton",
+        "state": "South Dakota"
+      },
+      "name": "Riverside Bistro",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Pierre",
+        "state": "South Dakota"
+      },
+      "name": "Capitol View Grill",
+      "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Huron",
+        "state": "South Dakota"
+      },
+      "name": "Prairie Kitchen",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Spearfish",
+        "state": "South Dakota"
+      },
+      "name": "Canyon View Steakhouse",
+      "types": ["steakhouse", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Nashville",
+        "state": "Tennessee"
+      },
+      "name": "Music City Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Memphis",
+        "state": "Tennessee"
+      },
+      "name": "Beale Street BBQ",
+      "types": ["bbq", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Knoxville",
+        "state": "Tennessee"
+      },
+      "name": "Market Square Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Chattanooga",
+        "state": "Tennessee"
+      },
+      "name": "Riverfront Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Clarksville",
+        "state": "Tennessee"
+      },
+      "name": "Downtown Diner",
+      "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Franklin",
+        "state": "Tennessee"
+      },
+      "name": "The Paddock",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Murfreesboro",
+        "state": "Tennessee"
+      },
+      "name": "Square Delights",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Johnson City",
+        "state": "Tennessee"
+      },
+      "name": "Mountain View Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Gatlinburg",
+        "state": "Tennessee"
+      },
+      "name": "Mountain Hideaway",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Kingsport",
+        "state": "Tennessee"
+      },
+      "name": "Riverwalk Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Houston",
+        "state": "Texas"
+      },
+      "name": "Bayou Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Austin",
+        "state": "Texas"
+      },
+      "name": "South Congress Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Dallas",
+        "state": "Texas"
+      },
+      "name": "Downtown Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "San Antonio",
+        "state": "Texas"
+      },
+      "name": "Riverwalk Restaurant",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Fort Worth",
+        "state": "Texas"
+      },
+      "name": "Stockyards Steakhouse",
+      "types": ["steakhouse", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "El Paso",
+        "state": "Texas"
+      },
+      "name": "Sunset Grill",
+      "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Arlington",
+        "state": "Texas"
+      },
+      "name": "Sports Bar & Grill",
+      "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Corpus Christi",
+        "state": "Texas"
+      },
+      "name": "Coastal Cuisine",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Plano",
+        "state": "Texas"
+      },
+      "name": "Urban Eats",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Lubbock",
+        "state": "Texas"
+      },
+      "name": "West Texas Grill",
+      "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Salt Lake City",
+        "state": "Utah"
+      },
+      "name": "The Red Rock Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Provo",
+        "state": "Utah"
+      },
+      "name": "Mountain View Grill",
+      "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Orem",
+        "state": "Utah"
+      },
+      "name": "Alpine Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "St. George",
+        "state": "Utah"
+      },
+      "name": "Desert Oasis",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Logan",
+        "state": "Utah"
+      },
+      "name": "Downtown Diner",
+      "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Park City",
+        "state": "Utah"
+      },
+      "name": "Ski Resort Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Moab",
+        "state": "Utah"
+      },
+      "name": "Canyon View Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Cedar City",
+        "state": "Utah"
+      },
+      "name": "Mountain Top Grill",
+      "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Ogden",
+        "state": "Utah"
+      },
+      "name": "Riverfront Restaurant",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Vernal",
+        "state": "Utah"
+      },
+      "name": "Western Grill",
+      "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Burlington",
+        "state": "Vermont"
+      },
+      "name": "Lakeview Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Montpelier",
+        "state": "Vermont"
+      },
+      "name": "Capital City Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Rutland",
+        "state": "Vermont"
+      },
+      "name": "Downtown Diner",
+      "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Brattleboro",
+        "state": "Vermont"
+      },
+      "name": "Riverfront Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Bennington",
+        "state": "Vermont"
+      },
+      "name": "Main Street Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Stowe",
+        "state": "Vermont"
+      },
+      "name": "Mountain View Restaurant",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Middlebury",
+        "state": "Vermont"
+      },
+      "name": "College Town Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Manchester",
+        "state": "Vermont"
+      },
+      "name": "Town Square Grill",
+      "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Warren",
+        "state": "Vermont"
+      },
+      "name": "Riverside Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Woodstock",
+        "state": "Vermont"
+      },
+      "name": "Village Tavern",
+      "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Virginia Beach",
+        "state": "Virginia"
+      },
+      "name": "Oceanfront Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Richmond",
+        "state": "Virginia"
+      },
+      "name": "Historic District Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Arlington",
+        "state": "Virginia"
+      },
+      "name": "Pentagon Grill",
+      "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Norfolk",
+        "state": "Virginia"
+      },
+      "name": "Waterside Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Chesapeake",
+        "state": "Virginia"
+      },
+      "name": "Harbor View Restaurant",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Alexandria",
+        "state": "Virginia"
+      },
+      "name": "Historic District Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Roanoke",
+        "state": "Virginia"
+      },
+      "name": "Mountain View Grill",
+      "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Newport News",
+        "state": "Virginia"
+      },
+      "name": "Riverfront Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Fredericksburg",
+        "state": "Virginia"
+      },
+      "name": "Main Street Cafe",
+      "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Charlottesville",
+        "state": "Virginia"
+      },
+      "name": "Downtown Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Seattle",
+        "state": "Washington"
+      },
+      "name": "Waterfront Bistro",
+      "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+      "location": {
+        "city": "Bellevue",
+        "state": "Washington"
+      },
+      "name": "Downtown Grill",
+      "types": ["restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {
+          "city": "Rochester",
+          "state": "Minnesota"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Duluth",
+          "state": "Minnesota"
+        },
+        "name": "Lakefront Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Bloomington",
+          "state": "Minnesota"
+        },
+        "name": "Urban Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Plymouth",
+          "state": "Minnesota"
+        },
+        "name": "Cruise Bar",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Brooklyn Park",
+          "state": "Minnesota"
+        },
+        "name": "Lakeview Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Mankato",
+          "state": "Minnesota"
+        },
+        "name": "Downtown Grill",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Eagan",
+          "state": "Minnesota"
+        },
+        "name": "Town Center Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Woodbury",
+          "state": "Minnesota"
+        },
+        "name": "City Park Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Jackson",
+          "state": "Mississippi"
+        },
+        "name": "Southern Cuisine",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Gulfport",
+          "state": "Mississippi"
+        },
+        "name": "Beachside Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Southaven",
+          "state": "Mississippi"
+        },
+        "name": "Main Street Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Hattiesburg",
+          "state": "Mississippi"
+        },
+        "name": "Downtown Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Biloxi",
+          "state": "Mississippi"
+        },
+        "name": "Oceanfront Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Meridian",
+          "state": "Mississippi"
+        },
+        "name": "City Center Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Oxford",
+          "state": "Mississippi"
+        },
+        "name": "Campus Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Starkville",
+          "state": "Mississippi"
+        },
+        "name": "Bulldog Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Greenville",
+          "state": "Mississippi"
+        },
+        "name": "Riverfront Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Vicksburg",
+          "state": "Mississippi"
+        },
+        "name": "Historic District Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Kansas City",
+          "state": "Missouri"
+        },
+        "name": "Downtown Bar & Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "St. Louis",
+          "state": "Missouri"
+        },
+        "name": "Gateway Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Springfield",
+          "state": "Missouri"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Columbia",
+          "state": "Missouri"
+        },
+        "name": "University Town Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Independence",
+          "state": "Missouri"
+        },
+        "name": "Main Street Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Lee's Summit",
+          "state": "Missouri"
+        },
+        "name": "Lakeview Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "O'Fallon",
+          "state": "Missouri"
+        },
+        "name": "City Center Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "St. Joseph",
+          "state": "Missouri"
+        },
+        "name": "Riverside Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "St. Charles",
+          "state": "Missouri"
+        },
+        "name": "Historic District Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Blue Springs",
+          "state": "Missouri"
+        },
+        "name": "Downtown Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Billings",
+          "state": "Montana"
+        },
+        "name": "Mountain View Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Missoula",
+          "state": "Montana"
+        },
+        "name": "Riverside Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Bozeman",
+          "state": "Montana"
+        },
+        "name": "Downtown Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Great Falls",
+          "state": "Montana"
+        },
+        "name": "Riverfront Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Helena",
+          "state": "Montana"
+        },
+        "name": "Capital City Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Kalispell",
+          "state": "Montana"
+        },
+        "name": "Lakeview Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Butte",
+          "state": "Montana"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Whitefish",
+          "state": "Montana"
+        },
+        "name": "Mountain Retreat Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Livingston",
+          "state": "Montana"
+        },
+        "name": "Town Center Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Miles City",
+          "state": "Montana"
+        },
+        "name": "Riverfront Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Omaha",
+          "state": "Nebraska"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Lincoln",
+          "state": "Nebraska"
+        },
+        "name": "Capital City Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Bellevue",
+          "state": "Nebraska"
+        },
+        "name": "Lakeview Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Grand Island",
+          "state": "Nebraska"
+        },
+        "name": "Town Center Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Kearney",
+          "state": "Nebraska"
+        },
+        "name": "Downtown Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Fremont",
+          "state": "Nebraska"
+        },
+        "name": "City Center Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Hastings",
+          "state": "Nebraska"
+        },
+        "name": "Downtown Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Norfolk",
+          "state": "Nebraska"
+        },
+        "name": "Riverside Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "North Platte",
+          "state": "Nebraska"
+        },
+        "name": "Main Street Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Columbus",
+          "state": "Nebraska"
+        },
+        "name": "City Park Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Las Vegas",
+          "state": "Nevada"
+        },
+        "name": "Stripside Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Reno",
+          "state": "Nevada"
+        },
+        "name": "Downtown Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Henderson",
+          "state": "Nevada"
+        },
+        "name": "Lakeview Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "North Las Vegas",
+          "state": "Nevada"
+        },
+        "name": "City Center Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Sparks",
+          "state": "Nevada"
+        },
+        "name": "Riverside Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Carson City",
+          "state": "Nevada"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Mesquite",
+          "state": "Nevada"
+        },
+        "name": "City Park Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Elko",
+          "state": "Nevada"
+        },
+        "name": "Mountain View Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Boulder City",
+          "state": "Nevada"
+        },
+        "name": "Lakefront Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Fernley",
+          "state": "Nevada"
+        },
+        "name": "Town Center Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Manchester",
+          "state": "New Hampshire"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Nashua",
+          "state": "New Hampshire"
+        },
+        "name": "City Center Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Concord",
+          "state": "New Hampshire"
+        },
+        "name": "State Street Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Dover",
+          "state": "New Hampshire"
+        },
+        "name": "Downtown Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Rochester",
+          "state": "New Hampshire"
+        },
+        "name": "Main Street Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Keene",
+          "state": "New Hampshire"
+        },
+        "name": "Town Center Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Portsmouth",
+          "state": "New Hampshire"
+        },
+        "name": "Harborfront Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Laconia",
+          "state": "New Hampshire"
+        },
+        "name": "Lakeside Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Lebanon",
+          "state": "New Hampshire"
+        },
+        "name": "Downtown Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Berlin",
+          "state": "New Hampshire"
+        },
+        "name": "City Park Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Newark",
+          "state": "New Jersey"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Jersey City",
+          "state": "New Jersey"
+        },
+        "name": "Waterfront Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Paterson",
+          "state": "New Jersey"
+        },
+        "name": "City Center Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Elizabeth",
+          "state": "New Jersey"
+        },
+        "name": "Historic District Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Edison",
+          "state": "New Jersey"
+        },
+        "name": "Town Center Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Woodbridge",
+          "state": "New Jersey"
+        },
+        "name": "Lakeview Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Lakewood",
+          "state": "New Jersey"
+        },
+        "name": "Downtown Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Trenton",
+          "state": "New Jersey"
+        },
+        "name": "Capital City Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Clifton",
+          "state": "New Jersey"
+        },
+        "name": "Main Street Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Camden",
+          "state": "New Jersey"
+        },
+        "name": "Waterfront Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Albuquerque",
+          "state": "New Mexico"
+        },
+        "name": "Southwest Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Santa Fe",
+          "state": "New Mexico"
+        },
+        "name": "Plaza Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Las Cruces",
+          "state": "New Mexico"
+        },
+        "name": "Downtown Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Roswell",
+          "state": "New Mexico"
+        },
+        "name": "Alien Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Farmington",
+          "state": "New Mexico"
+        },
+        "name": "Riverside Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Rio Rancho",
+          "state": "New Mexico"
+        },
+        "name": "City Center Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Gallup",
+          "state": "New Mexico"
+        },
+        "name": "Downtown Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Taos",
+          "state": "New Mexico"
+        },
+        "name": "Artisan Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Carlsbad",
+          "state": "New Mexico"
+        },
+        "name": "Cavern View Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Hobbs",
+          "state": "New Mexico"
+        },
+        "name": "Desert Oasis Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Raleigh",
+          "state": "North Carolina"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Charlotte",
+          "state": "North Carolina"
+        },
+        "name": "City Center Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Durham",
+          "state": "North Carolina"
+        },
+        "name": "University Town Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Asheville",
+          "state": "North Carolina"
+        },
+        "name": "Mountain View Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Wilmington",
+          "state": "North Carolina"
+        },
+        "name": "Riverfront Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Greensboro",
+          "state": "North Carolina"
+        },
+        "name": "Downtown Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Fayetteville",
+          "state": "North Carolina"
+        },
+        "name": "Historic District Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Winston-Salem",
+          "state": "North Carolina"
+        },
+        "name": "City Park Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Chapel Hill",
+          "state": "North Carolina"
+        },
+        "name": "Campus Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Greenville",
+          "state": "North Carolina"
+        },
+        "name": "Riverfront Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "New York City",
+          "state": "New York"
+        },
+        "name": "Times Square Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Buffalo",
+          "state": "New York"
+        },
+        "name": "Waterfront Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Rochester",
+          "state": "New York"
+        },
+        "name": "Parkside Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Albany",
+          "state": "New York"
+        },
+        "name": "City Center Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Syracuse",
+          "state": "New York"
+        },
+        "name": "Lakeview Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Yonkers",
+          "state": "New York"
+        },
+        "name": "Downtown Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Ithaca",
+          "state": "New York"
+        },
+        "name": "College Town Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "White Plains",
+          "state": "New York"
+        },
+        "name": "Main Street Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Schenectady",
+          "state": "New York"
+        },
+        "name": "Riverside Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Binghamton",
+          "state": "New York"
+        },
+        "name": "Downtown Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Fargo",
+          "state": "North Dakota"
+        },
+        "name": "Downtown Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Bismarck",
+          "state": "North Dakota"
+        },
+        "name": "Capital City Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Grand Forks",
+          "state": "North Dakota"
+        },
+        "name": "Riverside Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Minot",
+          "state": "North Dakota"
+        },
+        "name": "Downtown Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "West Fargo",
+          "state": "North Dakota"
+        },
+        "name": "Town Center Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Williston",
+          "state": "North Dakota"
+        },
+        "name": "Lakefront Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Dickinson",
+          "state": "North Dakota"
+        },
+        "name": "Prairie View Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Mandan",
+          "state": "North Dakota"
+        },
+        "name": "Riverfront Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Jamestown",
+          "state": "North Dakota"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Valley City",
+          "state": "North Dakota"
+        },
+        "name": "City Park Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Columbus",
+          "state": "Ohio"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Cleveland",
+          "state": "Ohio"
+        },
+        "name": "Lakefront Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Cincinnati",
+          "state": "Ohio"
+        },
+        "name": "Riverfront Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Toledo",
+          "state": "Ohio"
+        },
+        "name": "Downtown Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Dayton",
+          "state": "Ohio"
+        },
+        "name": "City Center Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Akron",
+          "state": "Ohio"
+        },
+        "name": "Main Street Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Youngstown",
+          "state": "Ohio"
+        },
+        "name": "Town Center Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Springfield",
+          "state": "Ohio"
+        },
+        "name": "Downtown Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Lima",
+          "state": "Ohio"
+        },
+        "name": "Riverfront Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Mansfield",
+          "state": "Ohio"
+        },
+        "name": "Lakeview Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Oklahoma City",
+          "state": "Oklahoma"
+        },
+        "name": "Downtown Diner",
+        "types": ["diner", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Tulsa",
+          "state": "Oklahoma"
+        },
+        "name": "City Center Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Norman",
+          "state": "Oklahoma"
+        },
+        "name": "Lakefront Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Edmond",
+          "state": "Oklahoma"
+        },
+        "name": "Town Center Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Broken Arrow",
+          "state": "Oklahoma"
+        },
+        "name": "Riverside Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Lawton",
+          "state": "Oklahoma"
+        },
+        "name": "Main Street Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Moore",
+          "state": "Oklahoma"
+        },
+        "name": "City Park Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Stillwater",
+          "state": "Oklahoma"
+        },
+        "name": "Downtown Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Enid",
+          "state": "Oklahoma"
+        },
+        "name": "Riverside Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Midwest City",
+          "state": "Oklahoma"
+        },
+        "name": "Town Center Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Portland",
+          "state": "Oregon"
+        },
+        "name": "Downtown Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Eugene",
+          "state": "Oregon"
+        },
+        "name": "Riverfront Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Salem",
+          "state": "Oregon"
+        },
+        "name": "City Center Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Bend",
+          "state": "Oregon"
+        },
+        "name": "Lakeview Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Medford",
+          "state": "Oregon"
+        },
+        "name": "Downtown Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Corvallis",
+          "state": "Oregon"
+        },
+        "name": "Riverside Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Hillsboro",
+          "state": "Oregon"
+        },
+        "name": "Main Street Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Beaverton",
+          "state": "Oregon"
+        },
+        "name": "City Park Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Ashland",
+          "state": "Oregon"
+        },
+        "name": "Plaza Bistro",
+        "types": ["bistro", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Philadelphia",
+          "state": "Pennsylvania"
+        },
+        "name": "City Center Grill",
+        "types": ["grill", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Pittsburgh",
+          "state": "Pennsylvania"
+        },
+        "name": "Riverside Restaurant",
+        "types": ["restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": {
+          "city": "Harrisburg",
+          "state": "Pennsylvania"
+        },
+        "name": "Downtown Cafe",
+        "types": ["cafe", "restaurant", "food", "point_of_interest", "establishment"]
+      },
+      {
+        "location": { "city": "Bloomington", "state": "Illinois" },
+        "name": "Taste Buds",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Decatur", "state": "Illinois" },
+        "name": "Savor Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Aurora", "state": "Illinois" },
+        "name": "Flavorsome Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Elgin", "state": "Illinois" },
+        "name": "Tempting Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Indianapolis", "state": "Indiana" },
+        "name": "Palate Pleasers",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Fort Wayne", "state": "Indiana" },
+        "name": "Gusto Grille",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Evansville", "state": "Indiana" },
+        "name": "Savory Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "South Bend", "state": "Indiana" },
+        "name": "Yummy Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Carmel", "state": "Indiana" },
+        "name": "The Tasty Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Fishers", "state": "Indiana" },
+        "name": "Flavor Junction",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Bloomington", "state": "Indiana" },
+        "name": "Zestful Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Hammond", "state": "Indiana" },
+        "name": "Gourmet Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Gary", "state": "Indiana" },
+        "name": "Satisfying Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Muncie", "state": "Indiana" },
+        "name": "Delectable Diner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Des Moines", "state": "Iowa" },
+        "name": "Tasty Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Cedar Rapids", "state": "Iowa" },
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Davenport", "state": "Iowa" },
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Sioux City", "state": "Iowa" },
+        "name": "The Savory Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Iowa City", "state": "Iowa" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Waterloo", "state": "Iowa" },
+        "name": "Savorful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Ames", "state": "Iowa" },
+        "name": "Flavorsome Grille",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Council Bluffs", "state": "Iowa" },
+        "name": "Tempting Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Dubuque", "state": "Iowa" },
+        "name": "Yummy Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Ankeny", "state": "Iowa" },
+        "name": "The Tasty Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Wichita", "state": "Kansas" },
+        "name": "Savor Junction",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Overland Park", "state": "Kansas" },
+        "name": "Zestful Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Kansas City", "state": "Kansas" },
+        "name": "The Flavor Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Topeka", "state": "Kansas" },
+        "name": "Gusto Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Olathe", "state": "Kansas" },
+        "name": "Satisfying Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Lawrence", "state": "Kansas" },
+        "name": "Delectable Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Manhattan", "state": "Kansas" },
+        "name": "Tasty Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Salina", "state": "Kansas" },
+        "name": "Flavorful Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Hutchinson", "state": "Kansas" },
+        "name": "Tempting Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Lenexa", "state": "Kansas" },
+        "name": "Yummy Grille",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Louisville", "state": "Kentucky" },
+        "name": "The Savory Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Lexington", "state": "Kentucky" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Bowling Green", "state": "Kentucky" },
+        "name": "Savorful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Owensboro", "state": "Kentucky" },
+        "name": "Zestful Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Covington", "state": "Kentucky" },
+        "name": "The Flavor Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Paducah", "state": "Kentucky" },
+        "name": "Gusto Junction",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Florence", "state": "Kentucky" },
+        "name": "Satisfying Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Ashland", "state": "Kentucky" },
+        "name": "Delectable Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Elizabethtown", "state": "Kentucky" },
+        "name": "Tasty Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Richmond", "state": "Kentucky" },
+        "name": "Flavorful Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "New Orleans", "state": "Louisiana" },
+        "name": "Zesty Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Baton Rouge", "state": "Louisiana" },
+        "name": "Taste Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Shreveport", "state": "Louisiana" },
+        "name": "Savor Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Lafayette", "state": "Louisiana" },
+        "name": "Flavorsome Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Lake Charles", "state": "Louisiana" },
+        "name": "Gusto Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Kenner", "state": "Louisiana" },
+        "name": "Satisfying Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Bossier City", "state": "Louisiana" },
+        "name": "Delectable Junction",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Monroe", "state": "Louisiana" },
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Alexandria", "state": "Louisiana" },
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Houma", "state": "Louisiana" },
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Portland", "state": "Maine" },
+        "name": "Zestful Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Bangor", "state": "Maine" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Lewiston", "state": "Maine" },
+        "name": "Savorful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "South Portland", "state": "Maine" },
+        "name": "Flavorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Auburn", "state": "Maine" },
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Biddeford", "state": "Maine" },
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Augusta", "state": "Maine" },
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Saco", "state": "Maine" },
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Westbrook", "state": "Maine" },
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Presque Isle", "state": "Maine" },
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Baltimore", "state": "Maryland" },
+        "name": "Zestful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Annapolis", "state": "Maryland" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Rockville", "state": "Maryland" },
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Silver Spring", "state": "Maryland" },
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Bethesda", "state": "Maryland" },
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Frederick", "state": "Maryland" },
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Gaithersburg", "state": "Maryland" },
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Columbia", "state": "Maryland" },
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Hagerstown", "state": "Maryland" },
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Ocean City", "state": "Maryland" },
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Boston", "state": "Massachusetts"},
+        "name": "Zesty Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Cambridge", "state": "Massachusetts"},
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Worcester", "state": "Massachusetts"},
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Springfield", "state": "Massachusetts"},
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Lowell", "state": "Massachusetts"},
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Newton", "state": "Massachusetts"},
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Quincy", "state": "Massachusetts"},
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Somerville", "state": "Massachusetts"},
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Brockton", "state": "Massachusetts"},
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Lynn", "state": "Massachusetts"},
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Detroit", "state": "Michigan"},
+        "name": "Zestful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Grand Rapids", "state": "Michigan"},
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Ann Arbor", "state": "Michigan"},
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Lansing", "state": "Michigan"},
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Kalamazoo", "state": "Michigan"},
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Flint", "state": "Michigan"},
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Traverse City", "state": "Michigan"},
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Muskegon", "state": "Michigan"},
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Holland", "state": "Michigan"},
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Saginaw", "state": "Michigan"},
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Minneapolis", "state": "Minnesota"},
+        "name": "Zesty Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Saint Paul", "state": "Minnesota"},
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Meriden", "state": "Connecticut" },
+        "name": "Savorful Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Wilmington", "state": "Delaware" },
+        "name": "Zestful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Dover", "state": "Delaware" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Newark", "state": "Delaware" },
+        "name": "Flavorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Middletown", "state": "Delaware" },
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Smyrna", "state": "Delaware" },
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Milford", "state": "Delaware" },
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Seaford", "state": "Delaware" },
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Georgetown", "state": "Delaware" },
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Elsmere", "state": "Delaware" },
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "New Castle", "state": "Delaware" },
+        "name": "Zesty Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Miami", "state": "Florida"},
+        "name": "Flavorful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Orlando", "state": "Florida"},
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Tampa", "state": "Florida"},
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Jacksonville", "state": "Florida"},
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Fort Lauderdale", "state": "Florida"},
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "St. Petersburg", "state": "Florida"},
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Naples", "state": "Florida"},
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Sarasota", "state": "Florida"},
+        "name": "Zestful Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Key West", "state": "Florida"},
+        "name": "Flavorful Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Pensacola", "state": "Florida"},
+        "name": "Savorful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Atlanta", "state": "Georgia"},
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Savannah", "state": "Georgia"},
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Augusta", "state": "Georgia"},
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Macon", "state": "Georgia"},
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Athens", "state": "Georgia"},
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Albany", "state": "Georgia"},
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Columbus", "state": "Georgia"},
+        "name": "Zestful Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Roswell", "state": "Georgia"},
+        "name": "Flavorful Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Marietta", "state": "Georgia"},
+        "name": "Savorful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Valdosta", "state": "Georgia"},
+        "name": "Gusto Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Boise", "state": "Idaho" },
+        "name": "Zesty Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Meridian", "state": "Idaho" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Nampa", "state": "Idaho" },
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Idaho Falls", "state": "Idaho" },
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Coeur d'Alene", "state": "Idaho" },
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Twin Falls", "state": "Idaho" },
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Pocatello", "state": "Idaho" },
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Caldwell", "state": "Idaho" },
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Moscow", "state": "Idaho" },
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Lewiston", "state": "Idaho" },
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Chicago", "state": "Illinois"},
+        "name": "Zestful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Springfield", "state": "Illinois"},
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Peoria", "state": "Illinois"},
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Rockford", "state": "Illinois"},
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Naperville", "state": "Illinois"},
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Champaign", "state": "Illinois"},
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Springdale", "state": "Arkansas" },
+        "name": "Zesty Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Jonesboro", "state": "Arkansas" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Bentonville", "state": "Arkansas" },
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Conway", "state": "Arkansas" },
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Rogers", "state": "Arkansas" },
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Hot Springs", "state": "Arkansas" },
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Benton", "state": "Arkansas" },
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Denver", "state": "Colorado"},
+        "name": "Zestful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Colorado Springs", "state": "Colorado"},
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Aurora", "state": "Colorado"},
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Fort Collins", "state": "Colorado"},
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Boulder", "state": "Colorado"},
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Pueblo", "state": "Colorado"},
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Greeley", "state": "Colorado"},
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Longmont", "state": "Colorado"},
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Loveland", "state": "Colorado"},
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Grand Junction", "state": "Colorado"},
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Hartford", "state": "Connecticut" },
+        "name": "Zestful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "New Haven", "state": "Connecticut" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Stamford", "state": "Connecticut" },
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Bridgeport", "state": "Connecticut" },
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Waterbury", "state": "Connecticut" },
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Norwalk", "state": "Connecticut" },
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Danbury", "state": "Connecticut" },
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Manchester", "state": "Connecticut" },
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Bristol", "state": "Connecticut" },
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Tuscaloosa", "state": "Alabama" },
+        "name": "Zesty Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Hoover", "state": "Alabama" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Decatur", "state": "Alabama" },
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Auburn", "state": "Alabama" },
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Dothan", "state": "Alabama" },
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Florence", "state": "Alabama" },
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Phoenix", "state": "Arizona"},
+        "name": "Zestful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Tucson", "state": "Arizona"},
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Mesa", "state": "Arizona"},
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Chandler", "state": "Arizona"},
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Scottsdale", "state": "Arizona"},
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Glendale", "state": "Arizona"},
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Gilbert", "state": "Arizona"},
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Tempe", "state": "Arizona"},
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Peoria", "state": "Arizona"},
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Surprise", "state": "Arizona"},
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Little Rock", "state": "Arkansas" },
+        "name": "Zesty Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Fayetteville", "state": "Arkansas" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Fort Smith", "state": "Arkansas" },
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Los Angeles", "state": "California"},
+        "name": "Zestful Delights",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "San Francisco", "state": "California"},
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "San Diego", "state": "California"},
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Sacramento", "state": "California"},
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "San Jose", "state": "California"},
+        "name": "Gusto Grillhouse",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Oakland", "state": "California"},
+        "name": "Satisfying Spot",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Santa Monica", "state": "California"},
+        "name": "Delectable Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Berkeley", "state": "California"},
+        "name": "Yummy Tastes",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Long Beach", "state": "California"},
+        "name": "The Savory Grill",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": {"city": "Palm Springs", "state": "California"},
+        "name": "Tempting Bistro",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Birmingham", "state": "Alabama" },
+        "name": "Zesty Eats",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Montgomery", "state": "Alabama" },
+        "name": "Taste Haven",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Mobile", "state": "Alabama" },
+        "name": "Savorful Corner",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    },
+    {
+        "location": { "city": "Huntsville", "state": "Alabama" },
+        "name": "Flavorful Bites",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"]
+    }
