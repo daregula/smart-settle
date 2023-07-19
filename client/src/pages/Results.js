@@ -1,6 +1,13 @@
 import React, {useEffect, useState, useMemo} from 'react'
 import axios from 'axios';
 import {
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverHeader,
+    PopoverBody,
+    PopoverArrow,
+    PopoverCloseButton,
     Box,
     Center,
     Heading,
@@ -17,7 +24,7 @@ import { useNavigate } from 'react-router-dom';
 export const Results = () => {
     const [results, setResults] = useState([]);
     const responseID = useMemo(() => ({ responseID: window.localStorage.getItem("responseID") }), []);
-
+    
     useEffect(() => {
     const fetchSavedResults = async () => {
         try {
@@ -38,7 +45,7 @@ export const Results = () => {
                 <SimpleGrid columns={3}>
                     
                     {results.map((resultItem, index) => {
-                        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = resultItem;
+                        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs, additionalData } = resultItem;
                         return (
                             <BlogPostWithImage
                                 key={`${resultItem.city_name}-${index}`} // Add a unique key prop
@@ -48,6 +55,7 @@ export const Results = () => {
                                 averageTemperature={averageTemperature}
                                 population={population}
                                 availableJobs={availableJobs}
+                                additionalData={additionalData}
                             />
                         );
                     })
@@ -99,11 +107,28 @@ export default function BlogPostWithImage(props) {
                 <Text color={'gray.500'}>
                 Cost of Living: {props.cost_of_living}
                 <br />
-                Average Temperature: {props.averageTemperature}
+                Average Temperature: {props.averageTemperature}F
                 <br />
                 Population: {props.population}
                 <br />
                 Number of Jobs: {props.availableJobs}
+                <br />
+                Safety: 
+                <br />
+                Total repoted crimes in the past year: {props.additionalData.crimeCount}
+                <br />
+                <br />
+                    <Popover>
+                        <PopoverTrigger>
+                            <Button>Entertainment</Button>
+                        </PopoverTrigger>
+                        <PopoverContent>
+                            <PopoverArrow />
+                        <PopoverCloseButton />
+                            <PopoverHeader>Nearby Popular Eats</PopoverHeader>
+                            <PopoverBody>{props.additionalData.pointsOfInterest}</PopoverBody>
+                        </PopoverContent>
+                    </Popover>
                 </Text>
             </Stack>
             </Box>

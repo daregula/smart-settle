@@ -33,12 +33,10 @@ router.post("/", async (req, res) => {
     }
 
     filteredArray.sort((a, b) => a.cost_of_living - b.cost_of_living);
-    const finalArray = []
+    
     // need to loop through the final array to get all the results this is just going to return the additional information for the first result
-    if (filteredArray[0]){
-        const additionalDataRes = await additionalData(filteredArray[0])
-        console.log(additionalDataRes)
-    }
+    // this is kinda the last filter but its not really a filter just a funcition to add some more data 
+    const finalArray = await additionalData(filteredArray)
 
     const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
     await newResult.save();
@@ -48,10 +46,26 @@ router.post("/", async (req, res) => {
 // function that will attach additional data to the final array and we will be calling multiple apis inside this function
 async function additionalData(result) {
     // make api call to get the lat and long for the city and state
-    const crimeCount = await getCrimeCount(result.state)
-    const pointsOfInterest = getPointsOfInterest(result.state)
-    
-    return { crimeCount, pointsOfInterest }
+    const finalArray = []
+    for (const entry of result){
+        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs, additionalData } = entry;
+        const crimeCount = await getCrimeCount(state)
+        const pointsOfInterest = getPointsOfInterest(state)
+        const additionalDataResult = { crimeCount, pointsOfInterest }
+
+        const updatedObject = {
+            city_name: city_name,
+            state: state,
+            cost_of_living: cost_of_living,
+            averageTemperature: averageTemperature,
+            population: population,
+            availableJobs: availableJobs,
+            additionalData: additionalDataResult
+        }
+        finalArray.push(updatedObject)
+    }
+
+    return finalArray
 }
 
 async function getCrimeCount(state_name){
