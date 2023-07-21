@@ -35,7 +35,9 @@ export const Results = () => {
         }
     };
     fetchSavedResults();
-}, [responseID]);
+    }, [responseID]);
+
+
 
     console.log(results.length);
     if(results.length > 0){
@@ -89,11 +91,10 @@ export default function BlogPostWithImage(props) {
                 mb={6}
                 pos={'relative'}>
                 <Image
+                alt='city/State Image'
                 h = '230px'
                 w = '500px'
-                src={
-                    'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-                }
+                src={props.additionalData.image}
                 layout={'fill'}
                 />
             </Box>
@@ -113,20 +114,33 @@ export default function BlogPostWithImage(props) {
                 <br />
                 Number of Jobs: {props.availableJobs}
                 <br />
-                Safety: 
-                <br />
                 Total repoted crimes in the past year: {props.additionalData.crimeCount}
-                <br />
                 <br />
                     <Popover>
                         <PopoverTrigger>
-                            <Button>Entertainment</Button>
+                            <Button
+                            color={'white'}
+                            bg={'purple.400'}
+                            m={1}
+                            _hover={{bg: 'purple.300'}}>
+                            Entertainment
+                            </Button>
                         </PopoverTrigger>
                         <PopoverContent>
                             <PopoverArrow />
                         <PopoverCloseButton />
                             <PopoverHeader>Nearby Popular Eats</PopoverHeader>
-                            <PopoverBody>{props.additionalData.pointsOfInterest}</PopoverBody>
+                            <ul>
+                                <PopoverBody>
+                                    {props.additionalData.pointsOfInterest.map((listItems) => {
+                                        return (
+                                                <li>
+                                                    {listItems}
+                                                </li>
+                                            )
+                                    })}
+                                </PopoverBody>
+                            </ul>
                         </PopoverContent>
                     </Popover>
                 </Text>

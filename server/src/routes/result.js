@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
     // need to loop through the final array to get all the results this is just going to return the additional information for the first result
     // this is kinda the last filter but its not really a filter just a funcition to add some more data 
     const finalArray = await additionalData(filteredArray)
-
+    console.log("done")
     const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
     await newResult.save();
     res.send(true)
@@ -51,7 +51,9 @@ async function additionalData(result) {
         const { city_name, state, cost_of_living, averageTemperature, population, availableJobs, additionalData } = entry;
         const crimeCount = await getCrimeCount(state)
         const pointsOfInterest = getPointsOfInterest(state)
-        const additionalDataResult = { crimeCount, pointsOfInterest }
+        const image = await getImage(state, city_name)
+
+        const additionalDataResult = { crimeCount, pointsOfInterest, image }
 
         const updatedObject = {
             city_name: city_name,
@@ -67,6 +69,24 @@ async function additionalData(result) {
 
     return finalArray
 }
+
+async function getImage(state, city){
+    const apiKey = process.env.REACT_APP_IMAGESAPI
+    try {
+        const url = `https://api.pexels.com/v1/search?query=${city}, ${state}&per_page=1`
+        const response = await axios.get(url, {
+            headers: {
+                'Authorization': apiKey
+            }
+        });
+        
+        return response.data.photos[0].src.landscape
+    } catch (error) {
+        console.log(error)
+        return ""
+    }
+}
+
 
 async function getCrimeCount(state_name){
     const crime_API_KEY = process.env.REACT_APP_CRIMEAPI
