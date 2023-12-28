@@ -1,6 +1,13 @@
 import React, {useEffect, useState, useMemo} from 'react'
 import axios from 'axios';
 import {
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverHeader,
+    PopoverBody,
+    PopoverArrow,
+    PopoverCloseButton,
     Box,
     Center,
     Heading,
@@ -17,7 +24,7 @@ import { useNavigate } from 'react-router-dom';
 export const Results = () => {
     const [results, setResults] = useState([]);
     const responseID = useMemo(() => ({ responseID: window.localStorage.getItem("responseID") }), []);
-
+    
     useEffect(() => {
     const fetchSavedResults = async () => {
         try {
@@ -28,7 +35,9 @@ export const Results = () => {
         }
     };
     fetchSavedResults();
-}, [responseID]);
+    }, [responseID]);
+
+
 
     console.log(results.length);
     if(results.length > 0){
@@ -38,7 +47,7 @@ export const Results = () => {
                 <SimpleGrid columns={3}>
                     
                     {results.map((resultItem, index) => {
-                        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs } = resultItem;
+                        const { city_name, state, cost_of_living, averageTemperature, population, availableJobs, additionalData } = resultItem;
                         return (
                             <BlogPostWithImage
                                 key={`${resultItem.city_name}-${index}`} // Add a unique key prop
@@ -48,6 +57,7 @@ export const Results = () => {
                                 averageTemperature={averageTemperature}
                                 population={population}
                                 availableJobs={availableJobs}
+                                additionalData={additionalData}
                             />
                         );
                     })
@@ -81,11 +91,10 @@ export default function BlogPostWithImage(props) {
                 mb={6}
                 pos={'relative'}>
                 <Image
+                alt='city/State Image'
                 h = '230px'
                 w = '500px'
-                src={
-                    'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-                }
+                src={props.additionalData.image}
                 layout={'fill'}
                 />
             </Box>
@@ -99,11 +108,41 @@ export default function BlogPostWithImage(props) {
                 <Text color={'gray.500'}>
                 Cost of Living: {props.cost_of_living}
                 <br />
-                Average Temperature: {props.averageTemperature}
+                Average Temperature: {props.averageTemperature}F
                 <br />
                 Population: {props.population}
                 <br />
                 Number of Jobs: {props.availableJobs}
+                <br />
+                Total repoted crimes in the past year: {props.additionalData.crimeCount}
+                <br />
+                    <Popover>
+                        <PopoverTrigger>
+                            <Button
+                            color={'white'}
+                            bg={'purple.400'}
+                            m={1}
+                            _hover={{bg: 'purple.300'}}>
+                            Entertainment
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent>
+                            <PopoverArrow />
+                        <PopoverCloseButton />
+                            <PopoverHeader>Nearby Popular Eats</PopoverHeader>
+                            <ul>
+                                <PopoverBody>
+                                    {props.additionalData.pointsOfInterest.map((listItems) => {
+                                        return (
+                                                <li>
+                                                    {listItems}
+                                                </li>
+                                            )
+                                    })}
+                                </PopoverBody>
+                            </ul>
+                        </PopoverContent>
+                    </Popover>
                 </Text>
             </Stack>
             </Box>
