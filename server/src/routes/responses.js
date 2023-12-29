@@ -10,8 +10,11 @@ const router = express.Router();
 // post endpoint to update a response and associate it with a user
 router.post("/", async (req, res) => {
     const newResponse = req.body
-    
-    try {
+    // if the user that is attempting a new query is a logged in user then do this 
+    if (newResponse.userOwner){
+        // first here
+        console.log("first");
+        try {
         const responses = new ResponseModel(newResponse);
         await responses.save()
 
@@ -20,9 +23,20 @@ router.post("/", async (req, res) => {
         await user.save()
         // using put we dont need the res
         res.json({savedResponses: user.savedResponses})
-    } catch (err) {
-        console.log(err); 
+        } catch (err) {
+            console.log(err); 
+        }
     }
+    // if the user is not logged in and is a guest they should still be able to run our program do this instead
+    else {
+        try {
+            res.json({savedResponses: newResponse})
+        } catch (error) {
+            console.log(error);
+        }
+        
+    }
+    
 })
 
 // GET endpoint to fetch saved responses for a specific user (handles showing "My previous searches" page)

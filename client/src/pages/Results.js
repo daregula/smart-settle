@@ -23,23 +23,32 @@ import { useNavigate } from 'react-router-dom';
 
 export const Results = () => {
     const [results, setResults] = useState([]);
-    const responseID = useMemo(() => ({ responseID: window.localStorage.getItem("responseID") }), []);
-    
+    const responseID = useMemo(() => ({ responseID: window.sessionStorage.getItem("responseID")}), []);
+     
     useEffect(() => {
     const fetchSavedResults = async () => {
-        try {
+        console.log(responseID);
+        if (responseID.responseID !== "guest"){
+            try {
+            // fourth and sixth
             const response = await axios.post("http://localhost:3001/result/getResults", responseID)
+            
             setResults(response.data)
-        } catch (err) {
-            console.log(err);
+            } catch (err) {
+                console.log(err);
+            }
         }
+        else {
+            let res = await window.sessionStorage.getItem("guestData");
+            res = JSON.parse(res);
+            setResults(res)
+        }
+        
     };
     fetchSavedResults();
     }, [responseID]);
 
 
-
-    console.log(results.length);
     if(results.length > 0){
         return (
             <div style={{ flexGrow: "1"}}>
