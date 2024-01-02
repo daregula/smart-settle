@@ -7,15 +7,11 @@ import {
     FormControl,
     FormLabel,
     Input,
-    Checkbox,
     Stack,
-    Link,
     Button,
     Heading,
-    Text,
     useColorModeValue,
 } from '@chakra-ui/react'
-import { useNavigate } from 'react-router-dom'
 
 export const ResetPassword = () => {
     return (
@@ -43,7 +39,7 @@ export function Reset() {
             }
             else{
                 try{
-                    const response = await axios.post("http://localhost:3001/smtp/tempPwd",{email})
+                    await axios.post("http://localhost:3001/smtp/tempPwd",{email})
                     alert("Check email for secure code")
                 }
                 catch(err){
