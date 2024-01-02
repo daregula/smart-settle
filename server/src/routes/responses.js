@@ -12,8 +12,6 @@ router.post("/", async (req, res) => {
     const newResponse = req.body
     // if the user that is attempting a new query is a logged in user then do this 
     if (newResponse.userOwner){
-        // first here
-        console.log("first");
         try {
         const responses = new ResponseModel(newResponse);
         await responses.save()

@@ -24,10 +24,9 @@ import { useNavigate } from 'react-router-dom';
 export const Results = () => {
     const [results, setResults] = useState([]);
     const responseID = useMemo(() => ({ responseID: window.sessionStorage.getItem("responseID")}), []);
-     
+    
     useEffect(() => {
     const fetchSavedResults = async () => {
-        console.log(responseID);
         if (responseID.responseID !== "guest"){
             try {
             // fourth and sixth
@@ -49,17 +48,15 @@ export const Results = () => {
     }, [responseID]);
 
 
-    if(results.length > 0){
+    if (results.length > 0) {
         return (
-            <div style={{ flexGrow: "1"}}>
-                
+            <div style={{ flexGrow: "1" }}>
                 <SimpleGrid columns={3}>
-                    
                     {results.map((resultItem, index) => {
                         const { city_name, state, cost_of_living, averageTemperature, population, availableJobs, additionalData } = resultItem;
                         return (
                             <BlogPostWithImage
-                                key={`${resultItem.city_name}-${index}`} // Add a unique key prop
+                                key={index} // Add a unique key prop
                                 city_name={city_name}
                                 state={state}
                                 cost_of_living={cost_of_living}
@@ -69,11 +66,10 @@ export const Results = () => {
                                 additionalData={additionalData}
                             />
                         );
-                    })
-                    }
+                    })}
                 </SimpleGrid>
             </div>
-        )
+        );
     }
     else {
         return <Warning />
@@ -82,57 +78,59 @@ export const Results = () => {
 
 export default function BlogPostWithImage(props) {
         return (
-        
         <Center py={6}>
             <Box
-            maxW={'445px'}
-            w={'full'}
-            bg={useColorModeValue('white', 'gray.900')}
-            boxShadow={'2xl'}
-            rounded={'md'}
-            p={6}
-            overflow={'hidden'}>
+                maxW={'445px'}
+                w={'full'}
+                bg={useColorModeValue('white', 'gray.900')}
+                boxShadow={'2xl'}
+                rounded={'md'}
+                p={6}
+                overflow={'hidden'}
+            >
             <Box
                 h={'210px'}
                 bg={'gray.100'}
                 mt={-6}
                 mx={-6}
                 mb={6}
-                pos={'relative'}>
-                <Image
+                pos={'relative'}
+            >
+            <Image
                 alt='city/State Image'
                 h = '230px'
                 w = '500px'
                 src={props.additionalData.image}
                 layout={'fill'}
-                />
+            />
             </Box>
             <Stack>
                 <Heading
-                color={useColorModeValue('gray.700', 'white')}
-                fontSize={'2xl'}
-                fontFamily={'body'}>
-                {props.city_name}, {props.state}
+                    color={useColorModeValue('gray.700', 'white')}
+                    fontSize={'2xl'}
+                    fontFamily={'body'}>
+                    {props.city_name}, {props.state}
                 </Heading>
                 <Text color={'gray.500'}>
-                Cost of Living: {props.cost_of_living}
-                <br />
-                Average Temperature: {props.averageTemperature}F
-                <br />
-                Population: {props.population}
-                <br />
-                Number of Jobs: {props.availableJobs}
-                <br />
-                Total repoted crimes in the past year: {props.additionalData.crimeCount}
-                <br />
+                    Cost of Living: {props.cost_of_living}
+                    <br />
+                    Average Temperature: {props.averageTemperature}F
+                    <br />
+                    Population: {props.population}
+                    <br />
+                    Number of Jobs: {props.availableJobs}
+                    <br />
+                    Total repoted crimes in the past year: {props.additionalData.crimeCount}
+                    <br />
+                </Text>
                     <Popover>
                         <PopoverTrigger>
                             <Button
-                            color={'white'}
-                            bg={'purple.400'}
-                            m={1}
-                            _hover={{bg: 'purple.300'}}>
-                            Entertainment
+                                color={'white'}
+                                bg={'purple.400'}
+                                m={1}
+                                _hover={{bg: 'purple.300'}}>
+                                Entertainment
                             </Button>
                         </PopoverTrigger>
                         <PopoverContent>
@@ -141,9 +139,9 @@ export default function BlogPostWithImage(props) {
                             <PopoverHeader>Nearby Popular Eats</PopoverHeader>
                             <ul>
                                 <PopoverBody>
-                                    {props.additionalData.pointsOfInterest.map((listItems) => {
+                                    {props.additionalData.pointsOfInterest.map((listItems, index) => {
                                         return (
-                                                <li>
+                                                <li key={`poi_${index}`}>
                                                     {listItems}
                                                 </li>
                                             )
@@ -152,7 +150,6 @@ export default function BlogPostWithImage(props) {
                             </ul>
                         </PopoverContent>
                     </Popover>
-                </Text>
             </Stack>
             </Box>
         </Center>
