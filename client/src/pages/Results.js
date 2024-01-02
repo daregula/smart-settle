@@ -29,7 +29,6 @@ export const Results = () => {
     const fetchSavedResults = async () => {
         if (responseID.responseID !== "guest"){
             try {
-            // fourth and sixth
             const response = await axios.post("http://localhost:3001/result/getResults", responseID)
             
             setResults(response.data)

@@ -1,23 +1,49 @@
 import React from 'react'
-import { Box, Center, Text } from '@chakra-ui/react'
+import {
+    Box,
+    Heading,
+    Container,
+    Text,
+    Stack
+    } from '@chakra-ui/react';
 
 export const Terms = () => {
 
     return (
         <div style={{ flexGrow: "1"}}>
-            <TermsContent />
+            <CallToActionWithAnnotation />
         </div>
     )
 }
 
-
-export const TermsContent = () => {
-
+export default function CallToActionWithAnnotation() {
     return (
-        <Center p='10' axis='both' m='auto'>
-            <Box  ml= '300' bg='gray.100' borderRadius='lg' width='100vh' p ='4'>
-                <Text  fontWeight={'500'} fontSize={'lg'} mb={2}>
-                    TERMS OF USE
+        <div style={{flexGrow: "1"}}>
+            <div>
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
+                    rel="stylesheet"
+                />
+            </div>
+        <Container maxW={'container.xl'}>
+            <Stack
+                as={Box}
+                textAlign={'center'}
+                spacing={{ base: 8, md: 20 }}
+                py={{ base: 20, md: 30 }}
+            >
+            <Heading
+                fontWeight={600}
+                fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+                lineHeight={'110%'}
+            >
+                Terms of <br />
+                <Text as={'span'} color={'purple.400'}>
+                    Service
+                </Text>
+            </Heading>
+            <Text color={'gray.500'} maxW={'100vh'}>
+                TERMS OF USE
                     
                     Last updated __________
 
@@ -260,9 +286,10 @@ export const TermsContent = () => {
                     Smart Settle
                     __________
                     __________
-                </Text>
-            </Box>
-        </Center>
-    )
+            </Text>
+        </Stack>
+    </Container>
+    </div>
+    );
 }
 
