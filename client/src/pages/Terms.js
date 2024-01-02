@@ -42,7 +42,7 @@ export default function CallToActionWithAnnotation() {
                     Service
                 </Text>
             </Heading>
-            <Text color={'gray.500'} maxW={'100vh'}>
+            <Text color={'gray.500'}>
                 TERMS OF USE
                     
                     Last updated __________
