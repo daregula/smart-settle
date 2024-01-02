@@ -43,7 +43,7 @@ export function ContactForm() {
         event.preventDefault()
         try {
             // grabbing the reponse form the api = json webtoken so we can authenticate the user 
-            const response = await axios.post("http://localhost:3001/smtp/support", {
+            await axios.post("http://localhost:3001/smtp/support", {
                 from,
                 body,
                 name
