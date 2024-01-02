@@ -412,11 +412,19 @@ export const Survey = () => {
         try {
             await axios.post("http://localhost:3001/responses", response);
             const test = await axios.post("http://localhost:3001/result", response);
-            if (test.data){
+            if (!test.data.isGuest){
                 const finalResult = await axios.post("http://localhost:3001/result/savedResults", response);
-                window.localStorage.setItem("responseID", finalResult.data)
+                window.sessionStorage.setItem("responseID", finalResult.data)
+                
                 navigate("/results");
                 }
+            else {
+                console.log(test.data.result);
+                window.sessionStorage.setItem("responseID", "guest")
+                await window.sessionStorage.setItem("guestData", JSON.stringify(test.data.result));
+
+                navigate("/results");
+            }
             } catch (err) {
                 console.log(err);
             }
