@@ -215,20 +215,20 @@ export const Survey = () => {
                     </Text>
                         <br />
                         <Menu>
-                            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} >
-                                Industries
+                            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                                {("urban" === props.name || "suburban" === props.name) ? "Industires" : props.name}
                             </MenuButton>
                             <MenuList onClick={props.handleChange} sx={{overflow:"scroll"}} maxH='300px'>
-                                <MenuItem maxH='38px' name="industry" value="tech">
+                                <MenuItem maxH='38px' name="industry" value="Tech">
                                     Tech
                                 </MenuItem >
-                                <MenuItem maxH='38px' name="industry" value="education">
+                                <MenuItem maxH='38px' name="industry" value="Education">
                                     Education
                                 </MenuItem>
-                                <MenuItem maxH='38px' name="industry" value="healthcare">
+                                <MenuItem maxH='38px' name="industry" value="Healthcare">
                                     Healthcare
                                 </MenuItem>
-                                <MenuItem maxH='38px' name="industry" value="business">
+                                <MenuItem maxH='38px' name="industry" value="Business">
                                     Business
                                 </MenuItem>
                                 <MenuItem maxH='38px' name="industry" value="Administration">
@@ -300,7 +300,7 @@ export const Survey = () => {
                                 <MenuItem maxH='38px' name="industry" value="Transportation">
                                     Transportation
                                 </MenuItem>
-                                <MenuItem maxH='38px' name="industry" value="fast food">
+                                <MenuItem maxH='38px' name="industry" value="Fast Food">
                                     Fast Food
                                 </MenuItem>
                             </MenuList>
@@ -365,11 +365,13 @@ export const Survey = () => {
     const [one, setOne] = useState(true); 
     const [two, setTwo] = useState(true); 
     const [three, setThree] = useState(true); 
+    const [name, setName] = useState(""); 
     
     
     //Uses onChange to grab what the user responded and sets the response based off the name : value
     const handleChange = (e) => {
         const { name, value } = e.target || {};
+        setName(value)
 
         const updatePriority = (key) => {
             const currentPriority = response.priorities[0][key];
@@ -449,7 +451,7 @@ export const Survey = () => {
                         mb="5%"
                         mx="5%"
                         isAnimated></Progress>
-                        {step === 1 ? <Introduction handleChange={handleChange}/> : step === 2 ? <Priorities handleChange={handleChange} one={one} two={two} three={three}/> : step === 3 ? <Salary handleChange={handleChange}/> : step === 4 ? <Weather handleChange={handleChange}/> : step === 5 ? <Infrastructure handleChange={handleChange}/> : step === 6 ? <Industry handleChange={handleChange}/> : <Submit handleChange={handleChange}/>}
+                        {step === 1 ? <Introduction handleChange={handleChange}/> : step === 2 ? <Priorities handleChange={handleChange} one={one} two={two} three={three}/> : step === 3 ? <Salary handleChange={handleChange}/> : step === 4 ? <Weather handleChange={handleChange}/> : step === 5 ? <Infrastructure handleChange={handleChange}/> : step === 6 ? <Industry name={name} handleChange={handleChange}/> : <Submit handleChange={handleChange}/>}
                         <ButtonGroup mt="5%" w="100%">
                         <Flex w="100%" justifyContent="space-between">
                             <Flex>

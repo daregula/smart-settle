@@ -82,7 +82,7 @@ export default function Pricing(props) {
     const navigate = useNavigate()
     const fetchSavedResults = async (responseID) => {
         try {
-            window.localStorage.setItem("responseID", responseID)
+            window.sessionStorage.setItem("responseID", responseID)
             navigate("/results");
             
         } catch (err) {
