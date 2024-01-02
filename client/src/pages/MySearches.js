@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import axios from 'axios';
 import { useGetUserID } from '../hooks/useGetUserID'
 import '../styles/MySearches.css'
@@ -18,11 +18,19 @@ import {
 } from '@chakra-ui/react';
 import { CheckIcon } from '@chakra-ui/icons';
 
-
 export const MySearches = (props) => {
     const [responses, setResponses] = useState([]);
     const userOwner = useGetUserID();
     const navigate = useNavigate();
+
+    const fetchSavedResponses = useCallback(async () => {
+        try {
+            const response = await axios.get(`http://localhost:3001/responses/savedResponses/ids/${userOwner}`);
+            setResponses(response.data);
+        } catch (err) {
+            console.log(err);
+        }
+    }, [userOwner]);
 
     //Fetches all data from mongoDB where the userID is found
     useEffect(() => {
@@ -32,20 +40,11 @@ export const MySearches = (props) => {
             fetchSavedResponses();
         }
         
-    }, [props.cookie.access_token, navigate, userOwner]);
-
-    const fetchSavedResponses = async () => {
-        try {
-            const response = await axios.get(`http://localhost:3001/responses/savedResponses/ids/${userOwner}`);
-            setResponses(response.data);
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    }, [props.cookie.access_token, navigate, userOwner, fetchSavedResponses]);
 
     const deleteResponse = async (RID) => {
         try {
-            const confirm = await axios.delete(`http://localhost:3001/responses/deleteResponse/ids/${RID}`).then(() => {
+            await axios.delete(`http://localhost:3001/responses/deleteResponse/ids/${RID}`).then(() => {
                 setResponses(prevResponses => prevResponses.filter(response => response.responseID !== RID))
             })
         } catch (err) {
