@@ -1,11 +1,11 @@
 import  express   from "express"
 import cors from "cors"
 import mongoose from "mongoose"
-import { userRouter } from "./routes/users.js"
-import { responseRouter } from "./routes/responses.js"
-import { emailRouter } from "./routes/email.js"
-import { resultRouter } from "./routes/result.js"
-import { editProfileRouter } from "./routes/edit-profile.js"
+import { userRouter } from "../routes/users.js"
+import { responseRouter } from "../routes/responses.js"
+import { emailRouter } from "../routes/email.js"
+import { resultRouter } from "../routes/result.js"
+import { editProfileRouter } from "../routes/edit-profile.js"
 import env from "dotenv"
 
 // Create an Express application
