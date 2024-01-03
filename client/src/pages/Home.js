@@ -12,7 +12,6 @@ import {
     Icon,
     useColorModeValue,
     createIcon,
-    Center
     } from '@chakra-ui/react';
 
 export const Home = () => {

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from "axios"
-import { useNavigate } from 'react-router-dom'
 import {
     Container,
     Flex,
@@ -44,7 +43,7 @@ export function ContactForm() {
         event.preventDefault()
         try {
             // grabbing the reponse form the api = json webtoken so we can authenticate the user 
-            const response = await axios.post("http://localhost:3001/smtp/support", {
+            await axios.post("http://localhost:3001/smtp/support", {
                 from,
                 body,
                 name
