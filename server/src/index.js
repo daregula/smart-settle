@@ -13,7 +13,13 @@ const app = express();
 
 // Middleware setup
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin: [""],
+        method: ["POST", "GET"],
+        credentials: true
+    }
+));
 
 // Route setup
 app.use("/auth", userRouter)
