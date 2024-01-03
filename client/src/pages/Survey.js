@@ -428,7 +428,7 @@ export const Survey = () => {
                 navigate("/results");
             }
             } catch (err) {
-                console.log(err);
+                console.log(err, 'some bs');
             }
     }
 
