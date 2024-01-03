@@ -39,7 +39,7 @@ export function Reset() {
             }
             else{
                 try{
-                    await axios.post("https://smart-settle-frontend.vercel.app/smtp/tempPwd",{email})
+                    await axios.post("http://localhost:3001/smtp/tempPwd",{email})
                     alert("Check email for secure code")
                 }
                 catch(err){
