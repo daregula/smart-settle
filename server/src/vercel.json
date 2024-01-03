@@ -5,14 +5,14 @@
             "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
         },
         {
-            "src": "./index.js",
+            "src": "./api/index.js",
             "use": "@vercel/node"
         }
         ],
         "routes": [
         {
-            "src": "/(.*)",
-            "dest": "/"
+            "src": "/api/(.*)",
+            "dest": "/api"
         }
         ]
 }
