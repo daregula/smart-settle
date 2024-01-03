@@ -27,7 +27,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
     );
 };
 
-const Logo = (props: any) => {
+const Logo = (props) => {
     return (
         <img src={logo} alt='' className='logo'></img>
     );
