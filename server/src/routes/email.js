@@ -1,7 +1,7 @@
 import { SMTPClient } from 'emailjs';
 import  express  from "express";
 import { UserModel } from "../models/Users.js"
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 
 const router = express.Router();
