@@ -15,11 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(cors(
     // {
-<<<<<<< HEAD
-    //     origin: ["smart-settle-frontend.vercel.app"],
-=======
     //     origin: ["https://smart-settle-frontend.vercel.app/"],
->>>>>>> 95afc4c275bcae63786e8e599b9c79f43b388809
     //     method: ["POST", "GET"],
     //     credentials: true
     // }
