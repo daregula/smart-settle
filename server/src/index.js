@@ -32,5 +32,9 @@ app.use("/edit-profile", editProfileRouter)
 // create an environment variable for the mongodb authentication
 mongoose.connect(process.env.REACT_APP_MONGOCONNECT)
 
+app.get("/", (req, res) => {
+    res.json("Server Started");
+})
+
 // Start the server and listen on port 3001
 app.listen(3001, () => console.log("Server Started"));
