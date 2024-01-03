@@ -27,7 +27,7 @@ export function Reset() {
             // first check if the user email is tied to an account
             let user;
             try{
-                user = await axios.post("http://localhost:3001/auth/verify",{email})
+                user = await axios.post("https://smart-settle-server.vercel.app/auth/verify",{email})
                 console.log(user)
             }
             catch(err){
@@ -39,7 +39,7 @@ export function Reset() {
             }
             else{
                 try{
-                    await axios.post("http://localhost:3001/smtp/tempPwd",{email})
+                    await axios.post("https://smart-settle-server.vercel.app/smtp/tempPwd",{email})
                     alert("Check email for secure code")
                 }
                 catch(err){

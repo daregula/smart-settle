@@ -29,7 +29,7 @@ export const Results = () => {
     const fetchSavedResults = async () => {
         if (responseID.responseID !== "guest"){
             try {
-            const response = await axios.post("http://localhost:3001/result/getResults", responseID)
+            const response = await axios.post("https://smart-settle-server.vercel.app/result/getResults", responseID)
             
             setResults(response.data)
             } catch (err) {
