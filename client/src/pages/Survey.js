@@ -413,7 +413,9 @@ export const Survey = () => {
         e.preventDefault();
         try {
             await axios.post("https://smart-settle-server.vercel.app/responses", response);
-            const test = await axios.post("https://smart-settle-server.vercel.app/result", response);
+            const test = await axios.post("https://smart-settle-server.vercel.app/result", response, {
+                timeout: 10000 // Timeout in milliseconds (adjust as needed)
+            });
             if (!test.data.isGuest){
                 const finalResult = await axios.post("https://smart-settle-server.vercel.app/result/savedResults", response);
                 window.sessionStorage.setItem("responseID", finalResult.data)
