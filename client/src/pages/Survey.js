@@ -412,12 +412,16 @@ export const Survey = () => {
         
         e.preventDefault();
         try {
-            await axios.post("https://smart-settle-server.vercel.app/responses", response);
+            await axios.post("https://smart-settle-server.vercel.app/responses", response,{
+                timeout: 60000 // Timeout in milliseconds (adjust as needed)
+            });
             const test = await axios.post("https://smart-settle-server.vercel.app/result", response, {
                 timeout: 60000 // Timeout in milliseconds (adjust as needed)
             });
             if (!test.data.isGuest){
-                const finalResult = await axios.post("https://smart-settle-server.vercel.app/result/savedResults", response);
+                const finalResult = await axios.post("https://smart-settle-server.vercel.app/result/savedResults", response, {
+                    timeout: 60000 // Timeout in milliseconds (adjust as needed)
+                });
                 window.sessionStorage.setItem("responseID", finalResult.data)
                 
                 navigate("/results");
