@@ -43,7 +43,7 @@ export function ContactForm() {
         event.preventDefault()
         try {
             // grabbing the reponse form the api = json webtoken so we can authenticate the user 
-            await axios.post("https://smart-settle-server.vercel.app/smtp/support", {
+            await axios.post("https://smart-settle-api-sigma.vercel.app/smtp/support", {
                 from,
                 body,
                 name

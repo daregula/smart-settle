@@ -412,10 +412,10 @@ export const Survey = () => {
         
         e.preventDefault();
         try {
-            await axios.post("https://smart-settle-server.vercel.app/responses", response);
-            const test = await axios.post("https://smart-settle-server.vercel.app/result", response);
+            await axios.post("https://smart-settle-api-sigma.vercel.app/responses", response);
+            const test = await axios.post("https://smart-settle-api-sigma.vercel.app/result", response);
             if (!test.data.isGuest){
-                const finalResult = await axios.post("https://smart-settle-server.vercel.app/result/savedResults", response);
+                const finalResult = await axios.post("https://smart-settle-api-sigma.vercel.app/result/savedResults", response);
                 window.sessionStorage.setItem("responseID", finalResult.data)
                 
                 navigate("/results");
