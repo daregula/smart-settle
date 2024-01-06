@@ -6,7 +6,6 @@ import { responseRouter } from "./src/routes/responses.js"
 import { emailRouter } from "./src/routes/email.js"
 import { resultRouter } from "./src/routes/result.js"
 import { editProfileRouter } from "./src/routes/edit-profile.js"
-import env from "dotenv"
 
 // Create an Express application
 const app = express();
