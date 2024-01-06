@@ -134,35 +134,41 @@ function getPointsOfInterest(state) {
 
 
 function filterCostOfLiving(salaryResponse) {
-    const result = fs.readFileSync("../server/src/sample-data/cost_of_living.json", "utf8", (err, res) => {
-        if (err) {
-            console.log("File read failed: ", err);
-            return;
-        }
-        
-    });
-    const resultData = JSON.parse(result)
-    
-    const monthlyIncome = (salaryResponse * 0.3) / 12;
-    const resultArray = []
-
-    for (const entry of resultData) {
-        const { state, city_name, cost_of_living } = entry;
-        
-        if(monthlyIncome > cost_of_living) {
-            const updatedObject = {
-                city_name: city_name,
-                state: state,
-                cost_of_living: cost_of_living,
-                averageTemperature: "",
-                population: "",
-                availableJobs: "",
-                additionalData: {}
+    try{
+        const result = fs.readFileSync("../sample-data/cost_of_living.json", "utf8", (err, res) => {
+            if (err) {
+                console.log("File read failed: ", err);
+                return;
             }
-            resultArray.push(updatedObject);
+            
+        });
+        const resultData = JSON.parse(result)
+        
+        const monthlyIncome = (salaryResponse * 0.3) / 12;
+        const resultArray = []
+    
+        for (const entry of resultData) {
+            const { state, city_name, cost_of_living } = entry;
+            
+            if(monthlyIncome > cost_of_living) {
+                const updatedObject = {
+                    city_name: city_name,
+                    state: state,
+                    cost_of_living: cost_of_living,
+                    averageTemperature: "",
+                    population: "",
+                    availableJobs: "",
+                    additionalData: {}
+                }
+                resultArray.push(updatedObject);
+            }
         }
+        return resultArray;
     }
-    return resultArray;
+    catch(error) {
+        console.log("Error fetching cost of living",error)
+    }
+    
 }
 
 
