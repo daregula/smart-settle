@@ -140,7 +140,7 @@ function getPointsOfInterest(state) {
 
 function filterCostOfLiving(salaryResponse) {
     try{
-        const result = fs.readFileSync("../sample-data/cost_of_living.json", "utf8", (err, res) => {
+        const result = fs.readFileSync("server/src/sample-data/cost_of_living.json", "utf8", (err, res) => {
             if (err) {
                 console.log("File read failed: ", err);
                 return;
