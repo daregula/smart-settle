@@ -116,7 +116,7 @@ async function getCrimeCount(state_name){
 function getPointsOfInterest(state) {
     try {
         const pointsOfInterest = []
-        const result = fs.readFileSync("../sample-data/points_of_interest.json", "utf8", (err, res) =>{
+        const result = fs.readFileSync("server/src/sample-data/points_of_interest.json", "utf8", (err, res) =>{
             if (err) {
                 console.log("File read failed: ", err);
                 return;
