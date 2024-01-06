@@ -13,7 +13,10 @@ const router = express.Router();
 // results/ids/:userOwner
 router.post("/", async (req, res) => {
     const data = req.body;
-    res.header("Access-Control-Allow-Origin", "https://smart-settle-frontend.vercel.app");
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "POST");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    
     if (!data || !data.priorities || !data.salary) {
         return res.status(400).json({ error: 'Incomplete data provided' });
     }
@@ -316,7 +319,9 @@ router.post("/savedResults", async (req, res) => {
     const responseID = req.body.responseID;
     try {
         const userResults = await ResultModel.find({ responseID });
-        res.header("Access-Control-Allow-Origin", "https://smart-settle-frontend.vercel.app");
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Methods", "POST");
+        res.header("Access-Control-Allow-Headers", "Content-Type");
         res.send(userResults[0].responseID)
     } catch (err) {
         res.json("Error with /savedResults endpoint",err);
@@ -328,7 +333,9 @@ router.post("/getResults/", async (req, res) => {
     const responseID = req.body.responseID;
     try {
         const userResults = await ResultModel.find({ responseID });
-        res.header("Access-Control-Allow-Origin", "https://smart-settle-frontend.vercel.app");
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Methods", "POST");
+        res.header("Access-Control-Allow-Headers", "Content-Type");
         
         res.send(userResults[0].result)
     } catch (err) {
