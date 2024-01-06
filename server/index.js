@@ -21,6 +21,7 @@ const allowedOrigins = [
 
 const options = [
     cors({
+            Connection: "keep-alive",
             origin: allowedOrigins,
             methods: "*",
             allowedHeaders: ['Content-Type', 'Authorization'],
