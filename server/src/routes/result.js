@@ -13,6 +13,10 @@ const router = express.Router();
 router.post("/", async (req, res) => {
     const data = req.body;
 
+    if (!data || !data.priorities || !data.salary) {
+        return res.status(400).json({ error: 'Incomplete data provided' });
+    }
+
     const sortedPrioritiesArray = Object.entries(data.priorities[0])
     sortedPrioritiesArray.sort((a,b) => a[1] - b[1])
     
@@ -86,7 +90,7 @@ async function getImage(state, city){
         
         return response.data.photos[0].src.landscape
     } catch (error) {
-        console.log(error)
+        console.log("Error fetching image", error)
         return ""
     }
 }
@@ -104,7 +108,7 @@ async function getCrimeCount(state_name){
 
         return parseInt(sum)
     } catch (error) {
-        console.log(error)
+        console.log("Error fetching crime",error)
     }
 }
 
@@ -197,7 +201,7 @@ async function filterWeather(resultArray, temperatureResponse) {
                 filteredWeatherArray.push(updatedObject);
             }
         } catch (err) {
-            console.error(err);
+            console.error("Error fetching weather",err);
         }   
     }
     return filteredWeatherArray
@@ -247,7 +251,7 @@ async function filterInfrastructure(resultArray, infrastructureResponse) {
             }
 
         } catch (err) {
-            console.error(err);
+            console.error("Error fetching population",err);
         }   
     }
     return filteredInfrastructureArray;
@@ -287,7 +291,7 @@ async function filterIndustry(resultArray, industryResponse){
         }
         
     } catch (err) {
-        console.error(err);
+        console.error("Error fetching industry",err);
     }
     }
     return filteredIndustryArray
@@ -300,7 +304,7 @@ router.post("/savedResults", async (req, res) => {
         const userResults = await ResultModel.find({ responseID });
         res.send(userResults[0].responseID)
     } catch (err) {
-        res.json(err);
+        res.json("Error with /savedResults endpoint",err);
     }
 })
 
@@ -311,7 +315,7 @@ router.post("/getResults/", async (req, res) => {
         const userResults = await ResultModel.find({ responseID });
         res.send(userResults[0].result)
     } catch (err) {
-        res.json(err);
+        res.json("Error with /getResults endpoint", err);
     }
 })
 
