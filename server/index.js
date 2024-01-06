@@ -12,15 +12,13 @@ import env from "dotenv"
 const app = express();
 app.use(express.json());
 // Middleware setup
-const corsOptions = {
-    origin: 'https://smart-settle-frontend.vercel.app/',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-};
-
-app.use(cors(corsOptions));
-
-
+app.use(cors(
+    // {
+    //     origin: "https://smart-settle-frontend.vercel.app/",
+    //     methods: ["POST", "GET"],
+    //     credentials: true
+    // }
+    ));
     
 // Route setup
 app.use("/auth", userRouter)
