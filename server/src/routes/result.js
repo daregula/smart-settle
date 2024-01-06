@@ -6,6 +6,27 @@ import  { ResultModel }  from "../models/Results.js";
 import states from "us-state-converter"
 
 env.config()
+const app = express();
+app.use(express.json());
+// Middleware setup
+const allowedOrigins = [
+    "https://smart-settle-frontend.vercel.app",
+    "https://api.pexels.com",
+    "https://api.usa.gov",
+    "http://api.weatherapi.com/",
+    "https://data.usajobs.gov"
+  ];
+
+const options = [
+    cors({
+            origin: allowedOrigins,
+            methods: "*",
+            allowedHeaders: ['Content-Type', 'Authorization'],
+            credentials: true
+        })
+]
+
+app.use(options);
 const router = express.Router();
 // Created an API endpoint to recieve survey response data
 // Data is retrieved in JSON format (e.g. data.salary)
