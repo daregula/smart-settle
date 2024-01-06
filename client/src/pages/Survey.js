@@ -414,6 +414,7 @@ export const Survey = () => {
         try {
             await axios.post("https://smart-settle-api.vercel.app/responses", response);
             const test = await axios.post("https://smart-settle-api.vercel.app/result", response);
+            console.log(test);
             if (!test.data.isGuest){
                 const finalResult = await axios.post("https://smart-settle-api.vercel.app/result/savedResults", response);
                 window.sessionStorage.setItem("responseID", finalResult.data)
