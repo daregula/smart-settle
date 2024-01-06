@@ -12,11 +12,26 @@ import env from "dotenv"
 const app = express();
 
 // Middleware setup
-app.use(cors(
-    {
-        origin: "https://smart-settle-frontend.vercel.app",
-    }
-    ));
+const allowedOrigins = [
+    'https://smart-settle-frontend.vercel.app',
+    'https://smart-settle-frontend-277le1tyv-sebastian-escobars-projects.vercel.app',
+    'https://smart-settle-frontend-git-main-sebastian-escobars-projects.vercel.app'
+    // Add other allowed origins as needed
+];
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: ['POST', 'GET'],
+    credentials: true
+    };
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
     
