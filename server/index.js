@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 // Middleware setup
 const corsOptions = {
-    origin: 'https://smart-settle-frontend-kwtel5mua-sebastian-escobars-projects.vercel.app',
+    origin: 'https://smart-settle-frontend-hekg0yx1w-sebastian-escobars-projects.vercel.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 };
