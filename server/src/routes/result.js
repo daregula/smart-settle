@@ -13,45 +13,49 @@ const router = express.Router();
 // results/ids/:userOwner
 router.post("/", async (req, res) => {
     const data = req.body;
+    // 
+    // testing shit out
+    res.json(process.cwd())
+    // 
+    // 
+    // if (!data || !data.priorities || !data.salary) {
+    //     return res.status(400).json({ error: 'Incomplete data provided' });
+    // }
 
-    if (!data || !data.priorities || !data.salary) {
-        return res.status(400).json({ error: 'Incomplete data provided' });
-    }
+    // const sortedPrioritiesArray = Object.entries(data.priorities[0])
+    // sortedPrioritiesArray.sort((a,b) => a[1] - b[1])
+    
+    // const costOfLivingArray = filterCostOfLiving(data.salary);
+    
+    // let filteredArray = costOfLivingArray;
+    
+    // for (let i = 0; i < sortedPrioritiesArray.length; i++) {
+    //     const priority = sortedPrioritiesArray[i][0];
 
-    const sortedPrioritiesArray = Object.entries(data.priorities[0])
-    sortedPrioritiesArray.sort((a,b) => a[1] - b[1])
-    
-    const costOfLivingArray = filterCostOfLiving(data.salary);
-    
-    let filteredArray = costOfLivingArray;
-    
-    for (let i = 0; i < sortedPrioritiesArray.length; i++) {
-        const priority = sortedPrioritiesArray[i][0];
+    //     if (priority === "weatherPriority") {
+    //         filteredArray = await filterWeather(filteredArray, data.weather);
+    //     } else if (priority === "infrastructurePriority") {
+    //         filteredArray = await filterInfrastructure(filteredArray, data.infrastructure);
+    //     } else if (priority === "industryPriority") {
+    //         filteredArray = await filterIndustry(filteredArray, data.industry);
+    //     }
+    // }
 
-        if (priority === "weatherPriority") {
-            filteredArray = await filterWeather(filteredArray, data.weather);
-        } else if (priority === "infrastructurePriority") {
-            filteredArray = await filterInfrastructure(filteredArray, data.infrastructure);
-        } else if (priority === "industryPriority") {
-            filteredArray = await filterIndustry(filteredArray, data.industry);
-        }
-    }
-
-    filteredArray.sort((a, b) => a.cost_of_living - b.cost_of_living);
+    // filteredArray.sort((a, b) => a.cost_of_living - b.cost_of_living);
     
-    // need to loop through the final array to get all the results this is just going to return the additional information for the first result
-    // this is kinda the last filter but its not really a filter just a funcition to add some more data 
-    const finalArray = await additionalData(filteredArray)
-    if (data.userOwner){
-        const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
-        await newResult.save();
+    // // need to loop through the final array to get all the results this is just going to return the additional information for the first result
+    // // this is kinda the last filter but its not really a filter just a funcition to add some more data 
+    // const finalArray = await additionalData(filteredArray)
+    // if (data.userOwner){
+    //     const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
+    //     await newResult.save();
         
-        res.json({ isGuest: false })
-    }
-    else{
+    //     res.json({ isGuest: false })
+    // }
+    // else{
         
-        res.json({ isGuest: true, result: finalArray })
-    }
+    //     res.json({ isGuest: true, result: finalArray })
+    // }
 })
 
 // function that will attach additional data to the final array and we will be calling multiple apis inside this function
