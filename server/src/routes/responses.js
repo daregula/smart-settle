@@ -20,7 +20,9 @@ router.post("/", async (req, res) => {
         user.savedResponses.push(req.body.responseID)
         await user.save()
         // using put we dont need the res
-        res.json({savedResponses: user.savedResponses})
+        res.header("Access-Control-Allow-Origin", "true");
+
+        res.json({ crossorigin:true, savedResponses: user.savedResponses})
         } catch (err) {
             console.log(err); 
         }
@@ -28,7 +30,9 @@ router.post("/", async (req, res) => {
     // if the user is not logged in and is a guest they should still be able to run our program do this instead
     else {
         try {
-            res.json({savedResponses: newResponse})
+            res.header("Access-Control-Allow-Origin", "true");
+
+            res.json({crossorigin:true, savedResponses: newResponse})
         } catch (error) {
             console.log(error);
         }
@@ -44,7 +48,9 @@ router.get("/savedResponses/ids/:userOwner", async (req, res) => {
         const userResponses = await ResponseModel.find({
             userOwner,
         });
-        res.json(userResponses)
+        res.header("Access-Control-Allow-Origin", "true");
+
+        res.json({ crossorigin:true }, userResponses)
     } catch (err) {
         res.json(err);
     }

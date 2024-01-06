@@ -45,10 +45,12 @@ router.post("/", async (req, res) => {
     if (data.userOwner){
         const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
         await newResult.save();
-        res.json({ isGuest: false })
+        res.header("Access-Control-Allow-Origin", "true");
+        res.json({ crossorigin:true, isGuest: false })
     }
     else{
-        res.json({ isGuest: true, result: finalArray })
+        res.header("Access-Control-Allow-Origin", "true");
+        res.json({ crossorigin:true, isGuest: true, result: finalArray })
     }
 })
 
@@ -314,6 +316,7 @@ router.post("/savedResults", async (req, res) => {
     const responseID = req.body.responseID;
     try {
         const userResults = await ResultModel.find({ responseID });
+        res.header("Access-Control-Allow-Origin", "true");
         res.send(userResults[0].responseID)
     } catch (err) {
         res.json("Error with /savedResults endpoint",err);
@@ -325,6 +328,8 @@ router.post("/getResults/", async (req, res) => {
     const responseID = req.body.responseID;
     try {
         const userResults = await ResultModel.find({ responseID });
+        res.header("Access-Control-Allow-Origin", "true");
+        
         res.send(userResults[0].result)
     } catch (err) {
         res.json("Error with /getResults endpoint", err);
