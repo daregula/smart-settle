@@ -13,7 +13,7 @@ app.use(express.json());
 // Middleware setup
 
 app.use(cors({
-    origin: "https://smart-settle-frontend.vercel.app/",
+    origin: "*",
     methods: "*",
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
