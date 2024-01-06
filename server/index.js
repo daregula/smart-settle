@@ -12,7 +12,11 @@ const app = express();
 app.use(express.json());
 // Middleware setup
 const allowedOrigins = [
-    "https://smart-settle-frontend.vercel.app"
+    "https://smart-settle-frontend.vercel.app",
+    "https://api.pexels.com",
+    "https://api.usa.gov",
+    "http://api.weatherapi.com/",
+    "https://data.usajobs.gov"
   ];
 
 const options = [
