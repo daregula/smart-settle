@@ -11,9 +11,13 @@ import { editProfileRouter } from "./src/routes/edit-profile.js"
 const app = express();
 app.use(express.json());
 // Middleware setup
+const allowedOrigins = [
+    "https://smart-settle-frontend.vercel.app"
+  ];
+
 const options = [
     cors({
-            origin: "https://smart-settle-frontend.vercel.app",
+            origin: allowedOrigins,
             methods: "*",
             allowedHeaders: ['Content-Type', 'Authorization'],
             credentials: true
