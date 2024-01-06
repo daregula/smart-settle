@@ -49,7 +49,7 @@ router.get("/savedResponses/ids/:userOwner", async (req, res) => {
         });
         
         
-
+        res.header({ "access-control-allow-origin": "*" })
         res.json({ crossorigin:true }, userResponses)
     } catch (err) {
         res.json(err);
