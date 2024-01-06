@@ -114,22 +114,27 @@ async function getCrimeCount(state_name){
 
 // api to get the points of interest by city and state
 function getPointsOfInterest(state) {
-    const pointsOfInterest = []
-    const result = fs.readFileSync("../server/src/sample-data/points_of_interest.json", "utf8", (err, res) =>{
-        if (err) {
-            console.log("File read failed: ", err);
-            return;
-        }
-    });
+    try {
+        const pointsOfInterest = []
+        const result = fs.readFileSync("../sample-data/points_of_interest.json", "utf8", (err, res) =>{
+            if (err) {
+                console.log("File read failed: ", err);
+                return;
+            }
+        });
 
-    const resultData = JSON.parse(result)
-    for (const entry of resultData){
-        if (state === entry.location.state){
-            pointsOfInterest.push(entry.name)
+        const resultData = JSON.parse(result)
+        for (const entry of resultData){
+            if (state === entry.location.state){
+                pointsOfInterest.push(entry.name)
+            }
         }
+
+        return pointsOfInterest
     }
-
-    return pointsOfInterest
+    catch(error){
+        console.log("Error fetching point of interest",error)
+    }
 }
 
 
