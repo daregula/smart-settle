@@ -133,7 +133,7 @@ function getPointsOfInterest(state) {
         return pointsOfInterest
     }
     catch(error){
-        console.log("Error fetching point of interest",error)
+        console.log("Error fetching point of interest.",error)
     }
 }
 
