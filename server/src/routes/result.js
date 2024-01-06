@@ -46,11 +46,11 @@ router.post("/", async (req, res) => {
         const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
         await newResult.save();
         
-        res.json({ crossorigin:true, isGuest: false })
+        res.json({ isGuest: false })
     }
     else{
         
-        res.json({ crossorigin:true, isGuest: true, result: finalArray })
+        res.json({ isGuest: true, result: finalArray })
     }
 })
 

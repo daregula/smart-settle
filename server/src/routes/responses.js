@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
         await user.save()
         // using put we dont need the res
 
-        res.json({ crossorigin:true, savedResponses: user.savedResponses})
+        res.json({ savedResponses: user.savedResponses})
         } catch (err) {
             console.log(err); 
         }
@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
         try {
             
 
-            res.json({crossorigin:true, savedResponses: newResponse})
+            res.json({ savedResponses: newResponse})
         } catch (error) {
             console.log(error);
         }
@@ -50,7 +50,7 @@ router.get("/savedResponses/ids/:userOwner", async (req, res) => {
         
         
         res.header({ "access-control-allow-origin": "*" })
-        res.json({ crossorigin:true }, userResponses)
+        res.json(userResponses)
     } catch (err) {
         res.json(err);
     }
