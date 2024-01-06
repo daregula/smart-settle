@@ -43,7 +43,7 @@ export default function SignupCard() {
     const onSubmit = async (event) => {
         event.preventDefault()
         try {
-            await axios.post("https://smart-settle-api-sigma.vercel.app/auth/register", {
+            await axios.post("https://smart-settle-api.vercel.app/auth/register", {
                 username,
                 password,
                 firstname,
