@@ -13,7 +13,7 @@ const router = express.Router();
 // results/ids/:userOwner
 router.post("/", async (req, res) => {
     const data = req.body;
-
+    res.header("Access-Control-Allow-Origin", "https://smart-settle-frontend.vercel.app");
     if (!data || !data.priorities || !data.salary) {
         return res.status(400).json({ error: 'Incomplete data provided' });
     }
@@ -45,11 +45,11 @@ router.post("/", async (req, res) => {
     if (data.userOwner){
         const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
         await newResult.save();
-        res.header("Access-Control-Allow-Origin", "https://smart-settle-frontend.vercel.app");
+        
         res.json({ crossorigin:true, isGuest: false })
     }
     else{
-        res.header("Access-Control-Allow-Origin", "https://smart-settle-frontend.vercel.app");
+        
         res.json({ crossorigin:true, isGuest: true, result: finalArray })
     }
 })
