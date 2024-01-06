@@ -14,9 +14,7 @@ const app = express();
 // Middleware setup
 app.use(cors(
     {
-        origin: "https://smart-settle-frontend.vercel.app/",
-        methods: ["POST", "GET"],
-        credentials: true
+        origin: "https://smart-settle-frontend.vercel.app",
     }
     ));
 
