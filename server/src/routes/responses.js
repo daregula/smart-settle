@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
         user.savedResponses.push(req.body.responseID)
         await user.save()
         // using put we dont need the res
-        res.header("Access-Control-Allow-Origin", "true");
+        res.header("Access-Control-Allow-Origin", "https://smart-settle-frontend.vercel.app");
 
         res.json({ crossorigin:true, savedResponses: user.savedResponses})
         } catch (err) {
@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
     // if the user is not logged in and is a guest they should still be able to run our program do this instead
     else {
         try {
-            res.header("Access-Control-Allow-Origin", "true");
+            res.header("Access-Control-Allow-Origin", "https://smart-settle-frontend.vercel.app");
 
             res.json({crossorigin:true, savedResponses: newResponse})
         } catch (error) {
@@ -48,7 +48,7 @@ router.get("/savedResponses/ids/:userOwner", async (req, res) => {
         const userResponses = await ResponseModel.find({
             userOwner,
         });
-        res.header("Access-Control-Allow-Origin", "true");
+        res.header("Access-Control-Allow-Origin", "https://smart-settle-frontend.vercel.app");
 
         res.json({ crossorigin:true }, userResponses)
     } catch (err) {
