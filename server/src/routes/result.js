@@ -17,6 +17,7 @@ const router = express.Router();
 // results/ids/:userOwner
 router.post("/", async (req, res) => {
     const data = req.body;
+    console.log('test');
     // 
     // testing shit out
     // so we are getting errors saying that we cannot read from the file paths for our local sample data
@@ -30,7 +31,7 @@ router.post("/", async (req, res) => {
         console.log(stdout);
         console.log(process.cwd());
     });
-    
+
     res.json(process.cwd())
     // 
     // 
