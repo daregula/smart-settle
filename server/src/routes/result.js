@@ -23,12 +23,12 @@ router.post("/", async (req, res) => {
     // so we are getting errors saying that we cannot read from the file paths for our local sample data
     // so right now we are currenly trying to figure out how to navigate to that path
     const exec = child_process.exec;
-    exec('ls', (error, stdout, stderr) => {
+    exec('ls server/', (error, stdout, stderr) => {
         if (error){
             console.log(error);
             return;
         }
-        console.log(stdout);
+        console.log("output from ls->",stdout);
         console.log(process.cwd());
     });
 
