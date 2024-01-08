@@ -3,7 +3,11 @@ import fs from "fs";
 import axios from "axios";
 import env from "dotenv";
 import  { ResultModel }  from "../models/Results.js";
-import states from "us-state-converter"
+import states from "us-state-converter";
+// using child processes to look for the sample folder in our server dir
+import child_process from 'child_process';
+
+// 
 
 env.config()
 
@@ -15,6 +19,18 @@ router.post("/", async (req, res) => {
     const data = req.body;
     // 
     // testing shit out
+    // so we are getting errors saying that we cannot read from the file paths for our local sample data
+    // so right now we are currenly trying to figure out how to navigate to that path
+    const exec = child_process.exec;
+    exec('ls', (error, stdout, stderr) => {
+        if (error){
+            console.log(error);
+            return;
+        }
+        console.log(stdout);
+        console.log(process.cwd());
+    });
+    
     res.json(process.cwd())
     // 
     // 
