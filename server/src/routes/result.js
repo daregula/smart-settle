@@ -140,7 +140,7 @@ async function getCrimeCount(state_name){
 function getPointsOfInterest(state) {
     try {
         const pointsOfInterest = []
-        const result = fs.readFileSync(process.cwd() + "server/src/sample-data/points_of_interest.json", "utf8", (err, res) =>{
+        const result = fs.readFileSync(process.cwd() + "server/src/sample_data/points_of_interest.json", "utf8", (err, res) =>{
             if (err) {
                 console.log("File read failed: ", err);
                 return;
@@ -164,7 +164,7 @@ function getPointsOfInterest(state) {
 
 function filterCostOfLiving(salaryResponse) {
     try{
-        const result = fs.readFileSync(process.cwd() + "server/src/sample-data/cost_of_living.json", "utf8", (err, res) => {
+        const result = fs.readFileSync(process.cwd() + "server/src/sample_data/cost_of_living.json", "utf8", (err, res) => {
             if (err) {
                 console.log("File read failed: ", err);
                 return;
