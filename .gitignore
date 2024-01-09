@@ -26,5 +26,4 @@ yarn-error.log*
 node_modules
 .vercel
 
-./server/assets/*
-!./server/assets/*.json
+./server/assets/*.json
