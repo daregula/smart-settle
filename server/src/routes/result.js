@@ -42,7 +42,7 @@ router.post("/", async (req, res) => {
     });
     // inside process.cwd() we can access server fs
     
-
+    res.setHeader('access-control-allow-origin','*')
     res.json(process.cwd())
     // 
     // 
