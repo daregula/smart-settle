@@ -413,7 +413,11 @@ export const Survey = () => {
         e.preventDefault();
         try {
             await axios.post("https://smart-settle-api-sigma.vercel.app/responses", response);
-            const test = await axios.post("https://smart-settle-api-sigma.vercel.app/result", response);
+            const test = await axios.post("https://smart-settle-api-sigma.vercel.app/result", response, {
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                }
+            });
             console.log(test);
             if (!test.data.isGuest){
                 // for now until we can get a good path for the sample data to be recognized by the server
