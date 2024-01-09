@@ -415,8 +415,10 @@ export const Survey = () => {
             await axios.post("https://smart-settle-api-sigma.vercel.app/responses", response);
             const test = await axios.post("https://smart-settle-api-sigma.vercel.app/result", response, {
                 headers: {
-                    'Access-Control-Allow-Origin': '*'
-                }
+                    'Access-control-allow-origin': '*',
+                    'Access-Control-Allow-Headers': '*',
+                    'Access-Control-Allow-Methods': '*',
+                  }
             });
             console.log(test);
             if (!test.data.isGuest){
