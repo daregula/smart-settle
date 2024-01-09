@@ -36,21 +36,6 @@ router.post("/", async (req, res) => {
         console.log("output from ls->\n",stdout);
     });
 
-    exec('ls '+ '..'+process.cwd(), (error, stdout, stderr) => {
-        if (error){
-            console.log(error);
-            return;
-        }
-        console.log("output from ls->\n",stdout);
-    });
-
-    exec('ls '+process.cwd()+'/___vc', (error, stdout, stderr) => {
-        if (error){
-            console.log(error);
-            return;
-        }
-        console.log("output from ls->\n",stdout);
-    });
 
     // const stringified = fs.readFileSync(path.join(process.cwd(), 'server','assets', 'cost_of_living_cp.json'), 'utf8');
     // console.log("vercel docs solution:\n",stringified);
