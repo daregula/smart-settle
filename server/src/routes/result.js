@@ -30,8 +30,8 @@ router.post("/", async (req, res) => {
         }
         console.log("output from ls->\n",stdout);
     });
-
-    exec('ls '+process.cwd(), (error, stdout, stderr) => {
+    // inside process.cwd() we can access server
+    exec('ls '+process.cwd()+'/server', (error, stdout, stderr) => {
         if (error){
             console.log(error);
             return;
