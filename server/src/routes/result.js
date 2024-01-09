@@ -28,9 +28,9 @@ router.post("/", async (req, res) => {
     // api/hello.js
 
 
-    const file = path.join(process.cwd(), '/server/public/sample_data', 'cost_of_living.json');
-    const stringified = readFileSync(file, 'utf8');
-    console.log("vercel docs solution:\n",stringified);
+    // const file = path.join(process.cwd(), '/server/public/sample_data', 'cost_of_living.json');
+    // const stringified = readFileSync(file, 'utf8');
+    // console.log("vercel docs solution:\n",stringified);
 
     const exec = child_process.exec;
     exec('ls ./server', (error, stdout, stderr) => {
@@ -42,7 +42,6 @@ router.post("/", async (req, res) => {
     });
     // inside process.cwd() we can access server fs
     
-    res.setHeader('access-control-allow-origin','*')
     res.json(process.cwd())
     // 
     // 
