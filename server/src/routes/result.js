@@ -33,7 +33,7 @@ router.post("/", async (req, res) => {
             console.log(error);
             return;
         }
-        console.log("output from ls->\n",stdout);
+        console.log("output from ls using process.cwd->\n",stdout);
     });
 
     // const file = path.join(process.cwd(), 'server','public','assets', 'cost_of_living_cp.json');
