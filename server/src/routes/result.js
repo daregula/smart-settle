@@ -42,6 +42,7 @@ router.post("/", async (req, res) => {
     });
     // inside process.cwd() we can access server fs
     res.setHeader('Access-Control-Allow-Credentials', true)
+    res.setHeader('Access-Control-Allow-Headers', '*')
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.json(process.cwd())
     // 
