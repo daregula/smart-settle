@@ -29,7 +29,15 @@ router.post("/", async (req, res) => {
             return;
         }
         console.log("output from ls->\n",stdout);
-        console.log(process.cwd());
+    });
+
+    exec('ls '+process.cwd(), (error, stdout, stderr) => {
+        if (error){
+            console.log(error);
+            return;
+        }
+        console.log("output from ls using process.cwd->\n",stdout);
+        
     });
 
     res.json(process.cwd())
