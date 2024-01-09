@@ -14,9 +14,5 @@
       }
     ],
     
-    "functions": {
-      "./src/routes/result.js": {
-        "includeFiles": "./public/**"
-      }
-    }
+    "files": "./public/**"
 }
