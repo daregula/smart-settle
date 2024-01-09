@@ -44,6 +44,7 @@ router.post("/", async (req, res) => {
     res.setHeader('Access-Control-Allow-Credentials', true)
     res.setHeader('Access-Control-Allow-Headers', '*')
     res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Content-Type', '*')
     res.json(process.cwd())
     // 
     // 
