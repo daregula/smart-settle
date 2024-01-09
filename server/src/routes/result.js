@@ -27,19 +27,19 @@ router.post("/", async (req, res) => {
     // so right now we are currenly trying to figure out how to navigate to that path
     // api/hello.js
 
-
-    const file = path.join(process.cwd(), 'server','public','assets', 'cost_of_living_cp.json');
-    const stringified = readFileSync(file, 'utf8');
-    console.log("vercel docs solution:\n",stringified);
-
     const exec = child_process.exec;
-    exec('ls ./server', (error, stdout, stderr) => {
+    exec('ls '+ process.cwd() + '/server', (error, stdout, stderr) => {
         if (error){
             console.log(error);
             return;
         }
         console.log("output from ls->\n",stdout);
     });
+
+    const file = path.join(process.cwd(), 'server','public','assets', 'cost_of_living_cp.json');
+    const stringified = readFileSync(file, 'utf8');
+    console.log("vercel docs solution:\n",stringified);
+
     // inside process.cwd() we can access server fs
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Credentials", "true");
