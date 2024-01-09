@@ -6,7 +6,9 @@ import  { ResultModel }  from "../models/Results.js";
 import states from "us-state-converter";
 // using child processes to look for the sample folder in our server dir
 import child_process from 'child_process';
-
+// possible solution from vercel docs
+import { readFileSync } from 'fs';
+import path from 'path';
 // 
 
 env.config()
@@ -16,12 +18,20 @@ const router = express.Router();
 // Data is retrieved in JSON format (e.g. data.salary)
 // results/ids/:userOwner
 router.post("/", async (req, res) => {
+
     const data = req.body;
-    console.log('test');
+    
     // 
     // testing shit out
     // so we are getting errors saying that we cannot read from the file paths for our local sample data
     // so right now we are currenly trying to figure out how to navigate to that path
+    // api/hello.js
+
+
+    const file = path.join(process.cwd(), '/server/public/sample_data', 'cost_of_living.json');
+    const stringified = readFileSync(file, 'utf8');
+    console.log("vercel docs solution:\n",stringified);
+
     const exec = child_process.exec;
     exec('ls ./server', (error, stdout, stderr) => {
         if (error){
@@ -30,15 +40,8 @@ router.post("/", async (req, res) => {
         }
         console.log("output from ls->\n",stdout);
     });
-    // inside process.cwd() we can access server
-    exec('ls '+process.cwd()+'/server', (error, stdout, stderr) => {
-        if (error){
-            console.log(error);
-            return;
-        }
-        console.log("output from ls using process.cwd->\n",stdout);
-        
-    });
+    // inside process.cwd() we can access server fs
+    
 
     res.json(process.cwd())
     // 
