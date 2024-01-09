@@ -43,6 +43,7 @@ router.post("/", async (req, res) => {
         }
         console.log("output from ls->\n",stdout);
     });
+    
     exec('ls '+process.cwd()+'/___vc', (error, stdout, stderr) => {
         if (error){
             console.log(error);
