@@ -6,10 +6,7 @@ import { responseRouter } from "./src/routes/responses.js"
 import { emailRouter } from "./src/routes/email.js"
 import { resultRouter } from "./src/routes/result.js"
 import { editProfileRouter } from "./src/routes/edit-profile.js"
-import { nodeFileTrace } from '@vercel/nft';
-const files = ['./public/sample_data/cost_of_living.json', './public/sample_data/points_of_interest.json']
-const { fileList } = await nodeFileTrace(files)
-console.log(fileList);
+
 // Create an Express application
 const app = express();
 app.use(express.json());
