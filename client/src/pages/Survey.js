@@ -416,7 +416,6 @@ export const Survey = () => {
             const test = await axios.post("https://smart-settle-api-sigma.vercel.app/result", response, {
                 headers: {
                     'Access-Control-Allow-Headers': '*',
-                    'Access-Control-Allow-Methods': '*',
                   }
             });
             console.log(test);
