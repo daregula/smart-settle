@@ -15,8 +15,8 @@
     ],
 
     "functions": {
-      "./src/routes/result.js":{
-        "includeFiles": ["./public/sample_data/cost_of_living.json", "./public/sample_data/points_of_interest.json"]
+      "./src/routes/result.js": {
+        "includeFiles": "./public/**"
       }
     }
 }
