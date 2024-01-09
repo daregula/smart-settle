@@ -36,9 +36,9 @@ router.post("/", async (req, res) => {
         console.log("output from ls->\n",stdout);
     });
 
-    const file = path.join(process.cwd(), 'server','public','assets', 'cost_of_living_cp.json');
-    const stringified = readFileSync(file, 'utf8');
-    console.log("vercel docs solution:\n",stringified);
+    // const file = path.join(process.cwd(), 'server','public','assets', 'cost_of_living_cp.json');
+    // const stringified = readFileSync(file, 'utf8');
+    // console.log("vercel docs solution:\n",stringified);
 
     // inside process.cwd() we can access server fs
     res.setHeader("Access-Control-Allow-Origin", "*");
