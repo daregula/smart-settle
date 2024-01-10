@@ -2,6 +2,8 @@ Welcome to Smart Settle, a web application used to identify the ideal living loc
 
 Explore the website using the credentials:
 
+https://smart-settle-frontend.vercel.app/
+
 username: guest
 
 password: guest
