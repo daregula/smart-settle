@@ -410,29 +410,29 @@ export const Survey = () => {
     
     const onSubmit = async (e) => {
         
-        e.preventDefault();
-        try {
-            await axios.post("http://localhost:3001/responses", response);
-            const test = await axios.post("http://localhost:3001/result", response);
-            console.log(test);
-            if (!test.data.isGuest){
-                // for now until we can get a good path for the sample data to be recognized by the server
+        // e.preventDefault();
+        // try {
+        //     await axios.post("https://smart-settle-api-sigma.vercel.app/responses", response);
+        //     const test = await axios.post("https://smart-settle-api-sigma.vercel.app/result", response);
+        //     console.log(test);
+        //     if (!test.data.isGuest){
+        //         // for now until we can get a good path for the sample data to be recognized by the server
                 
-                const finalResult = await axios.post("http://localhost:3001/result/savedResults", response);
-                window.sessionStorage.setItem("responseID", finalResult.data)
+        //         const finalResult = await axios.post("https://smart-settle-api-sigma.vercel.app/result/savedResults", response);
+        //         window.sessionStorage.setItem("responseID", finalResult.data)
                 
-                navigate("/results");
-                }
-            else {
-                console.log(test.data.result);
-                window.sessionStorage.setItem("responseID", "guest")
-                await window.sessionStorage.setItem("guestData", JSON.stringify(test.data.result));
+        //         navigate("/results");
+        //         }
+        //     else {
+        //         console.log(test.data.result);
+        //         window.sessionStorage.setItem("responseID", "guest")
+        //         await window.sessionStorage.setItem("guestData", JSON.stringify(test.data.result));
 
-                navigate("/results");
-            }
-            } catch (err) {
-                console.log(err, 'some bs');
-            }
+        //         navigate("/results");
+        //     }
+        //     } catch (err) {
+        //         console.log(err, 'some bs');
+        //     }
     }
 
     //Parent component that utilizes all previous components and submits all responses that were recorded

@@ -27,65 +27,65 @@ router.post("/", async (req, res) => {
     // so right now we are currenly trying to figure out how to navigate to that path
     // api/hello.js
 
-    const exec = child_process.exec;
-    exec('ls '+ process.cwd() + '/server', (error, stdout, stderr) => {
-        if (error){
-            console.log(error);
-            return;
-        }
-        console.log("output from ls->\n",stdout);
-    });
+    // const exec = child_process.exec;
+    // exec('ls '+ process.cwd() + '/server', (error, stdout, stderr) => {
+    //     if (error){
+    //         console.log(error);
+    //         return;
+    //     }
+    //     console.log("output from ls->\n",stdout);
+    // });
 
 
     // const stringified = fs.readFileSync(path.join(process.cwd(), 'server','assets', 'cost_of_living_cp.json'), 'utf8');
     // console.log("vercel docs solution:\n",stringified);
 
     // inside process.cwd() we can access server fs
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-    res.json(process.cwd())
+    // res.setHeader("Access-Control-Allow-Origin", "*");
+    // res.setHeader("Access-Control-Allow-Credentials", "true");
+    // res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    // res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+    // res.json(process.cwd())
     // 
     // 
     // if (!data || !data.priorities || !data.salary) {
     //     return res.status(400).json({ error: 'Incomplete data provided' });
     // }
 
-    // const sortedPrioritiesArray = Object.entries(data.priorities[0])
-    // sortedPrioritiesArray.sort((a,b) => a[1] - b[1])
+    const sortedPrioritiesArray = Object.entries(data.priorities[0])
+    sortedPrioritiesArray.sort((a,b) => a[1] - b[1])
     
-    // const costOfLivingArray = filterCostOfLiving(data.salary);
+    const costOfLivingArray = filterCostOfLiving(data.salary);
     
-    // let filteredArray = costOfLivingArray;
+    let filteredArray = costOfLivingArray;
     
-    // for (let i = 0; i < sortedPrioritiesArray.length; i++) {
-    //     const priority = sortedPrioritiesArray[i][0];
+    for (let i = 0; i < sortedPrioritiesArray.length; i++) {
+        const priority = sortedPrioritiesArray[i][0];
 
-    //     if (priority === "weatherPriority") {
-    //         filteredArray = await filterWeather(filteredArray, data.weather);
-    //     } else if (priority === "infrastructurePriority") {
-    //         filteredArray = await filterInfrastructure(filteredArray, data.infrastructure);
-    //     } else if (priority === "industryPriority") {
-    //         filteredArray = await filterIndustry(filteredArray, data.industry);
-    //     }
-    // }
+        if (priority === "weatherPriority") {
+            filteredArray = await filterWeather(filteredArray, data.weather);
+        } else if (priority === "infrastructurePriority") {
+            filteredArray = await filterInfrastructure(filteredArray, data.infrastructure);
+        } else if (priority === "industryPriority") {
+            filteredArray = await filterIndustry(filteredArray, data.industry);
+        }
+    }
 
-    // filteredArray.sort((a, b) => a.cost_of_living - b.cost_of_living);
+    filteredArray.sort((a, b) => a.cost_of_living - b.cost_of_living);
     
-    // // need to loop through the final array to get all the results this is just going to return the additional information for the first result
-    // // this is kinda the last filter but its not really a filter just a funcition to add some more data 
-    // const finalArray = await additionalData(filteredArray)
-    // if (data.userOwner){
-    //     const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
-    //     await newResult.save();
+    // need to loop through the final array to get all the results this is just going to return the additional information for the first result
+    // this is kinda the last filter but its not really a filter just a funcition to add some more data 
+    const finalArray = await additionalData(filteredArray)
+    if (data.userOwner){
+        const newResult = new ResultModel({ result: finalArray, userOwner: data.userOwner, responseID: data.responseID })
+        await newResult.save();
         
-    //     res.json({ isGuest: false })
-    // }
-    // else{
+        res.json({ isGuest: false })
+    }
+    else{
         
-    //     res.json({ isGuest: true, result: finalArray })
-    // }
+        res.json({ isGuest: true, result: finalArray })
+    }
 })
 
 // function that will attach additional data to the final array and we will be calling multiple apis inside this function
@@ -153,7 +153,7 @@ async function getCrimeCount(state_name){
 function getPointsOfInterest(state) {
     try {
         const pointsOfInterest = []
-        const result = fs.readFileSync("./server/src/sample_data/points_of_interest.json", "utf8", (err, res) =>{
+        const result = fs.readFileSync("../server/src/assets/points_of_interest_cp.json", "utf8", (err, res) =>{
             if (err) {
                 console.log("File read failed: ", err);
                 return;
@@ -177,7 +177,7 @@ function getPointsOfInterest(state) {
 
 function filterCostOfLiving(salaryResponse) {
     try{
-        const result = fs.readFileSync("./server/src/sample_data/cost_of_living.json", "utf8", (err, res) => {
+        const result = fs.readFileSync("../server/src/assets/cost_of_living_cp.json", "utf8", (err, res) => {
             if (err) {
                 console.log("File read failed: ", err);
                 return;

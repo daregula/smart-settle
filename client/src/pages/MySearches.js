@@ -25,7 +25,7 @@ export const MySearches = (props) => {
 
     const fetchSavedResponses = useCallback(async () => {
         try {
-            const response = await axios.get(`http://localhost:3001/responses/savedResponses/ids/${userOwner}`);
+            const response = await axios.get(`https://smart-settle-api-sigma.vercel.app/responses/savedResponses/ids/${userOwner}`);
             setResponses(response.data);
         } catch (err) {
             console.log(err);
@@ -44,7 +44,7 @@ export const MySearches = (props) => {
 
     const deleteResponse = async (RID) => {
         try {
-            await axios.delete(`http://localhost:3001/responses/deleteResponse/ids/${RID}`).then(() => {
+            await axios.delete(`https://smart-settle-api-sigma.vercel.app/responses/deleteResponse/ids/${RID}`).then(() => {
                 setResponses(prevResponses => prevResponses.filter(response => response.responseID !== RID))
             })
         } catch (err) {

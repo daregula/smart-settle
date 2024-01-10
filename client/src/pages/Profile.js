@@ -67,7 +67,7 @@ export default function SignupCard() {
         e.preventDefault();
 
         try {
-            const res = await axios.post("http://localhost:3001/edit-profile", updatedProfile);
+            const res = await axios.post("https://smart-settle-api-sigma.vercel.app/edit-profile", updatedProfile);
             if(res.data.message === "Invalid Password"){
                 alert("Invalid Password")
             }
