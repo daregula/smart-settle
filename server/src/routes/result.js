@@ -4,12 +4,6 @@ import axios from "axios";
 import env from "dotenv";
 import  { ResultModel }  from "../models/Results.js";
 import states from "us-state-converter";
-// using child processes to look for the sample folder in our server dir
-import child_process from 'child_process';
-// possible solution from vercel docs
-import { readFileSync } from 'fs';
-import path from 'path';
-// 
 
 env.config()
 
@@ -20,37 +14,6 @@ const router = express.Router();
 router.post("/", async (req, res) => {
 
     const data = req.body;
-    
-    // 
-    // testing shit out
-    // so we are getting errors saying that we cannot read from the file paths for our local sample data
-    // so right now we are currenly trying to figure out how to navigate to that path
-    // api/hello.js
-
-    // const exec = child_process.exec;
-    // exec('ls '+ process.cwd() + '/server', (error, stdout, stderr) => {
-    //     if (error){
-    //         console.log(error);
-    //         return;
-    //     }
-    //     console.log("output from ls->\n",stdout);
-    // });
-
-
-    // const stringified = fs.readFileSync(path.join(process.cwd(), 'server','assets', 'cost_of_living_cp.json'), 'utf8');
-    // console.log("vercel docs solution:\n",stringified);
-
-    // inside process.cwd() we can access server fs
-    // res.setHeader("Access-Control-Allow-Origin", "*");
-    // res.setHeader("Access-Control-Allow-Credentials", "true");
-    // res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    // res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-    // res.json(process.cwd())
-    // 
-    // 
-    // if (!data || !data.priorities || !data.salary) {
-    //     return res.status(400).json({ error: 'Incomplete data provided' });
-    // }
 
     const sortedPrioritiesArray = Object.entries(data.priorities[0])
     sortedPrioritiesArray.sort((a,b) => a[1] - b[1])
