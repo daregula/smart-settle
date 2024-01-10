@@ -1,6 +1,6 @@
 Welcome to Smart Settle, a web application used to identify the ideal living location within the United States based on your personal preferences and priorities. This a full-stack application developed using the MERN stack and styled using ChakraUI components. 
 
-Explore the website using the credentials:
+Explore the website, or log in using the credentials:
 
 https://smart-settle-frontend.vercel.app/
 
