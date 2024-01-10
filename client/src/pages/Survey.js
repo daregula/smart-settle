@@ -412,16 +412,16 @@ export const Survey = () => {
         
         e.preventDefault();
         try {
-            await axios.post("https://smart-settle-api-sigma.vercel.app/responses", response);
-            const test = await axios.post("https://smart-settle-api-sigma.vercel.app/result", response);
+            await axios.post("http://localhost:3001/responses", response);
+            const test = await axios.post("http://localhost:3001/result", response);
             console.log(test);
             if (!test.data.isGuest){
                 // for now until we can get a good path for the sample data to be recognized by the server
                 
-                // const finalResult = await axios.post("https://smart-settle-api.vercel.app/result/savedResults", response);
-                // window.sessionStorage.setItem("responseID", finalResult.data)
+                const finalResult = await axios.post("http://localhost:3001/result/savedResults", response);
+                window.sessionStorage.setItem("responseID", finalResult.data)
                 
-                // navigate("/results");
+                navigate("/results");
                 }
             else {
                 console.log(test.data.result);
