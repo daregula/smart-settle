@@ -6,7 +6,7 @@
         "src": "/index.js",
         "use": "@vercel/node",
         "config": {
-          "includeFiles": ["/server/src/public/sample_data/cost_of_living.json", "/server/src/public/sample_data/points_of_interest.json"]
+          "includeFiles": ["/cost_of_living_cp.json"]
         }
       }
     ],
