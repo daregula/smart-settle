@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
     // api/hello.js
 
     const exec = child_process.exec;
-    exec('ls '+ process.cwd() + '/server', (error, stdout, stderr) => {
+    exec('ls '+ process.cwd() + '/server/src', (error, stdout, stderr) => {
         if (error){
             console.log(error);
             return;
